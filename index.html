@@ -6,6 +6,7 @@
 <title>Technix-Pro | Oficjalna Strona Projektu</title>
 <meta name="description" content="Technix-Pro – ekosystem Web3 z mini-aplikacją na Telegramie, airdropami i społecznością.">
 <meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27%2307060f%27 stroke=%27%23b44cff%27 stroke-width=%274%27/%3E%3Ctext x=%2732%27 y=%2742%27 text-anchor=%27middle%27 font-size=%2726%27 font-weight=%27900%27 fill=%27%2322e5ff%27 font-family=%27Arial%27%3ETP%3C/text%3E%3C/svg%3E">
 <style>
 :root{--bg:#0d1117;--bg2:#161b22;--line:#30363d;--text:#c9d1d9;--muted:#8b949e;--white:#f0f6fc;--blue:#58a6ff;--cyan:#39d0ff;--violet:#a371f7;--green:#2ea043}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -126,9 +127,21 @@ nav ul.open{display:flex}
 .tech span:hover{border-color:var(--cyan);color:var(--white)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero .wrap{text-align:center}.hero .btns,.hero .stats{justify-content:center}.chip{max-width:320px}}
 @media(max-width:1000px){nav ul a{padding:8px 9px;font-size:.85rem}}
+
+/* v3 token + particles */
+:root{--neon-v:#b44cff;--neon-c:#22e5ff}
+.coin{position:absolute;right:2%;bottom:4%;width:30%;max-width:130px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:clamp(1.4rem,4vw,2.4rem);color:#fff;background:radial-gradient(circle at 35% 30%,#2a1b4d,#07060f 70%);border:4px solid #8b949e;box-shadow:0 0 0 3px var(--neon-v),0 0 26px var(--neon-c),inset 0 0 22px rgba(180,76,255,.6);animation:spin 6s linear infinite;transform-style:preserve-3d}
+.coin span{text-shadow:0 0 10px var(--neon-c),0 0 22px var(--neon-v);background:linear-gradient(135deg,var(--neon-c),var(--neon-v));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px var(--neon-c))}
+.coin:hover{animation-duration:1.5s}
+@keyframes spin{to{transform:rotateY(360deg)}}
+.pt{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.pt i{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--neon-c);box-shadow:0 0 8px var(--neon-v);opacity:0;animation:rise linear infinite}
+@keyframes rise{10%{opacity:.8}to{transform:translateY(-110vh);opacity:0}}
+.tp{background:linear-gradient(135deg,var(--neon-c),var(--neon-v))}
 </style>
 </head>
 <body>
+<div class="pt" id="pt" aria-hidden="true"></div>
 <header>
 <div class="wrap"><nav aria-label="Główna nawigacja">
 <a href="#glowna" class="logo" aria-label="Technix-Pro"><span class="tp">TP</span><span>TECHNIX<b>-PRO</b></span></a>
@@ -165,7 +178,9 @@ nav ul.open{display:flex}
 <rect x="118" y="118" width="144" height="144" rx="18" fill="#0d1117" stroke="url(#cg)" stroke-width="3" class="core"/>
 <rect x="134" y="134" width="112" height="112" rx="10" fill="none" stroke="#30363d"/>
 <text x="190" y="205" text-anchor="middle" font-size="46" font-weight="900" fill="url(#cg)" font-family="Segoe UI,Arial,sans-serif">TP</text>
-</svg></div>
+<text x="190" y="228" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="2" fill="#39d0ff" font-family="Segoe UI,Arial,sans-serif">COREENGINE</text>
+</svg>
+<div class="coin" role="img" aria-label="Token TP Technix-Pro"><span>TP</span></div></div>
 </div></section>
 
 <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
@@ -271,6 +286,7 @@ document.querySelectorAll('[data-open]').forEach(function(a){var u=OPEN[a.getAtt
 document.querySelectorAll('.soc[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
 var mq=document.getElementById('mq'),w='Technix-Pro,Web3,Telegram Mini-App,Airdropy,Społeczność,Tokenizacja,Innowacje'.split(',').map(function(t){return '<span>'+t+'</span>'}).join('');
 mq.innerHTML=w+w;
+var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<24;k++){var p=document.createElement('i');p.style.left=(k*4.2+Math.random()*4)+'%';p.style.animationDuration=(8+Math.random()*10)+'s';p.style.animationDelay=(-Math.random()*14)+'s';pt.appendChild(p)}}
 var burger=document.getElementById('burger'),menu=document.getElementById('menu');
 burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
 menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
