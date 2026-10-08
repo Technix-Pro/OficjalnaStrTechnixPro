@@ -1,171 +1,183 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technix-Pro | Oficjalna Strona Projektu</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 16px;
-            padding: 40px 24px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #58a6ff;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            color: #8b949e;
-            margin-bottom: 28px;
-            line-height: 1.5;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(56, 139, 253, 0.15);
-            color: #58a6ff;
-            border: 1px solid rgba(56, 139, 253, 0.4);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 32px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-            margin-bottom: 36px;
-            text-align: left;
-        }
-
-        .card {
-            background: #0d1117;
-            border: 1px solid #21262d;
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .card h3 {
-            color: #f0f6fc;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            color: #8b949e;
-            font-size: 0.88rem;
-            line-height: 1.4;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background-color: #238636;
-            color: #ffffff;
-            border: 1px solid rgba(240, 246, 252, 0.1);
-        }
-
-        .btn-primary:hover {
-            background-color: #2ea043;
-        }
-
-        .btn-secondary {
-            background-color: #21262d;
-            color: #c9d1d9;
-            border: 1px solid #30363d;
-        }
-
-        .btn-secondary:hover {
-            background-color: #30363d;
-            color: #f0f6fc;
-        }
-
-        footer {
-            margin-top: 32px;
-            color: #484f58;
-            font-size: 0.8rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technix-Pro | Oficjalna Strona Projektu</title>
+<meta name="description" content="Technix-Pro – ekosystem Web3 z mini-aplikacją na Telegramie, airdropami i społecznością.">
+<meta name="theme-color" content="#0d1117">
+<style>
+:root{--bg:#0d1117;--bg2:#161b22;--line:#30363d;--text:#c9d1d9;--muted:#8b949e;--white:#f0f6fc;--blue:#58a6ff;--cyan:#39d0ff;--violet:#a371f7;--green:#2ea043}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 400px at 15% 10%,rgba(88,166,255,.16),transparent),radial-gradient(500px 400px at 85% 30%,rgba(163,113,247,.14),transparent),radial-gradient(500px 400px at 50% 100%,rgba(57,208,255,.1),transparent);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(0,-30px,0) scale(1.08)}}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+/* logo */
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:1px;color:var(--white)}
+.tp{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:1.05rem;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 0 18px rgba(88,166,255,.5);animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{to{box-shadow:0 0 30px rgba(163,113,247,.7)}}
+.logo b{color:var(--blue)}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,17,23,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav ul{display:flex;gap:4px;list-style:none}
+nav ul a{display:block;padding:8px 14px;border-radius:8px;color:var(--muted);font-size:.92rem;font-weight:600;transition:.2s}
+nav ul a:hover,nav ul a.active{color:var(--white);background:rgba(88,166,255,.14)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--white);border-radius:8px;width:42px;height:42px;font-size:1.3rem;cursor:pointer}
+/* sections */
+section{padding:90px 0 40px}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+.hero .wrap{text-align:center}
+.badge{display:inline-block;background:rgba(56,139,253,.15);color:var(--blue);border:1px solid rgba(56,139,253,.4);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:600;margin-bottom:24px}
+h1{font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.1;color:var(--white);margin-bottom:18px}
+.grad{background:linear-gradient(90deg,var(--blue),var(--violet),var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.lead{max-width:640px;margin:0 auto 32px;color:var(--muted);font-size:1.1rem}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--white);margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:32px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer}
+.btn:hover{transform:translateY(-3px)}
+.btn-p{background:linear-gradient(135deg,#238636,var(--green));color:#fff;border-color:rgba(240,246,252,.1)}
+.btn-p:hover{box-shadow:0 8px 24px rgba(46,160,67,.4)}
+.btn-s{background:var(--bg2);color:var(--white)}
+.btn-s:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(88,166,255,.2)}
+.stats{display:flex;justify-content:center;gap:40px;margin-top:56px;flex-wrap:wrap}
+.stats div{font-size:.85rem;color:var(--muted)}.stats strong{display:block;font-size:1.6rem;color:var(--white)}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 12px 30px rgba(88,166,255,.15)}
+.card .ic{font-size:1.8rem;margin-bottom:10px}
+.card h3{color:var(--white);font-size:1.05rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.9rem}
+/* roadmap */
+.road{list-style:none;position:relative;padding-left:34px}
+.road::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--blue),var(--violet))}
+.road li{position:relative;margin-bottom:18px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 20px;transition:.3s}
+.road li:hover{border-color:var(--violet);transform:translateX(6px)}
+.road li::before{content:"";position:absolute;left:-31px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--muted)}
+.road li.done::before{background:var(--green);border-color:var(--green)}
+.road li.now::before{background:var(--blue);border-color:var(--blue);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(88,166,255,.7)}100%{box-shadow:0 0 0 12px rgba(88,166,255,0)}}
+.road small{color:var(--blue);font-weight:700;text-transform:uppercase;font-size:.72rem;letter-spacing:1px}
+.road h3{color:var(--white);font-size:1.05rem}.road p{color:var(--muted);font-size:.9rem}
+/* social */
+.social{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.soc{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:.3s}
+.soc svg{width:34px;height:34px;fill:var(--blue);flex:none;transition:.3s}
+.soc strong{display:block;color:var(--white)}.soc span{font-size:.8rem;color:var(--muted)}
+.soc:hover{transform:translateY(-5px);border-color:var(--violet);box-shadow:0 10px 28px rgba(163,113,247,.2)}
+.soc:hover svg{fill:var(--violet);transform:scale(1.15) rotate(-6deg)}
+.cta{margin-top:40px;text-align:center;background:linear-gradient(135deg,rgba(88,166,255,.12),rgba(163,113,247,.12));border:1px solid var(--line);border-radius:18px;padding:36px 20px}
+.cta p{color:var(--muted);margin:6px 0 22px}
+footer{margin-top:70px;border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:.85rem}
+footer .logo{margin-bottom:12px}
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.hero .badge,.hero h1,.hero .lead,.hero .btns,.hero .stats{animation:up .8s both}
+.hero h1{animation-delay:.1s}.hero .lead{animation-delay:.2s}.hero .btns{animation-delay:.3s}.hero .stats{animation-delay:.45s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+@media(max-width:760px){
+.burger{display:block}
+nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px}
+nav ul.open{display:flex}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
+<header>
+<div class="wrap"><nav aria-label="Główna nawigacja">
+<a href="#glowna" class="logo" aria-label="Technix-Pro"><span class="tp">TP</span><span>TECHNIX<b>-PRO</b></span></a>
+<button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+<ul id="menu">
+<li><a href="#glowna">Strona główna</a></li>
+<li><a href="#informacje">Informacje</a></li>
+<li><a href="#roadmapa">Roadmapa</a></li>
+<li><a href="#social">Social Media</a></li>
+<li><a href="#kontakt">Kontakt / Społeczność</a></li>
+</ul>
+</nav></div>
+</header>
 
-    <div class="container">
-        <div class="logo">TECHNIX-PRO</div>
-        <div class="badge">Budowanie Ekosystemu Web3 od Podstaw</div>
-        <p class="tagline">Jednoosobowa wizja rozwijana w potężną społeczność. Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy i tokenizację.</p>
+<main>
+<section id="glowna" class="hero"><div class="wrap">
+<div class="badge">Budowanie Ekosystemu Web3 od Podstaw</div>
+<h1><span class="grad">Technix-Pro</span><br>Oficjalna strona projektu</h1>
+<p class="lead">Jednoosobowa wizja rozwijana w potężną społeczność. Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy i tokenizację.</p>
+<div class="btns">
+<a href="https://t.me/TechnicalproBot" target="_blank" rel="noopener noreferrer" class="btn btn-p">📲 Otwórz Telegram Mini-App</a>
+<a href="#informacje" class="btn btn-s">Dowiedz się więcej</a>
+</div>
+<div class="stats"><div><strong>Web3</strong>ekosystem</div><div><strong>Telegram</strong>mini-aplikacja</div><div><strong>Airdropy</strong>nagrody dla społeczności</div></div>
+</div></section>
 
-        <div class="grid">
-            <div class="card">
-                <h3>📲 Telegram Mini-App</h3>
-                <p>Uruchamiaj naszą aplikację bezpośrednio w komunikatorze Telegram bez instalacji zewnętrznego oprogramowania.</p>
-            </div>
-            <div class="card">
-                <h3>🌐 Ekosystem Web3</h3>
-                <p>Tworzymy przestrzeń pod airdropy, nagrody społecznościowe i przyszłą integrację tokenów na giełdach.</p>
-            </div>
-            <div class="card">
-                <h3>👥 Społeczność & Dev</h3>
-                <p>Szukamy aktywnych moderatorów, twórców treści oraz programistów chcących współtworzyć projekt od zera.</p>
-            </div>
-        </div>
+<section id="informacje"><div class="wrap">
+<h2 class="rv">Informacje</h2><p class="sub rv">Czym jest Technix-Pro i co budujemy.</p>
+<div class="grid">
+<div class="card rv"><div class="ic">📲</div><h3>Telegram Mini-App</h3><p>Uruchamiaj naszą aplikację bezpośrednio w komunikatorze Telegram bez instalacji zewnętrznego oprogramowania.</p></div>
+<div class="card rv"><div class="ic">🌐</div><h3>Ekosystem Web3</h3><p>Tworzymy przestrzeń pod airdropy, nagrody społecznościowe i przyszłą integrację tokenów na giełdach.</p></div>
+<div class="card rv"><div class="ic">🛠️</div><h3>Sprzęt i rozwój</h3><p>Projekt rozwijany od podstaw – od warstwy sprzętowej po aplikację dla użytkowników.</p></div>
+<div class="card rv"><div class="ic">👥</div><h3>Społeczność & Dev</h3><p>Szukamy aktywnych moderatorów, twórców treści oraz programistów chcących współtworzyć projekt od zera.</p></div>
+</div>
+</div></section>
 
-        <div class="btn-group">
-            <a href="https://t.me/TechnicalproBot" target="_blank" class="btn btn-primary">Otwórz Telegram Mini-App</a>
-            <a href="#" target="_blank" class="btn btn-secondary">Dołącz do Discorda</a>
-        </div>
-    </div>
+<section id="roadmapa"><div class="wrap">
+<h2 class="rv">Roadmapa</h2><p class="sub rv">Dokąd zmierzamy – plan może ulegać zmianom.</p>
+<ol class="road">
+<li class="done rv"><small>Zrealizowane</small><h3>Faza 1 – Fundament</h3><p>Pierwsza wersja mini-aplikacji na Telegramie i oficjalna strona projektu.</p></li>
+<li class="now rv"><small>W trakcie</small><h3>Faza 2 – Rozwój aplikacji</h3><p>Rozbudowa funkcji aplikacji i wspólnego zaplecza dla użytkowników.</p></li>
+<li class="rv"><small>Planowane</small><h3>Faza 3 – Społeczność</h3><p>Budowa społeczności, moderacja i program twórców treści.</p></li>
+<li class="rv"><small>Planowane</small><h3>Faza 4 – Web3</h3><p>Airdropy, nagrody i tokenizacja projektu.</p></li>
+</ol>
+</div></section>
 
-    <footer>
-        &copy; 2026 Technix-Pro. Wszelkie prawa zastrzeżone.
-    </footer>
+<section id="social"><div class="wrap">
+<h2 class="rv">Social Media</h2><p class="sub rv">Bądź na bieżąco z projektem.</p>
+<div class="social">
+<a class="soc rv" href="https://t.me/TechnicalproBot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13 1.8 11.5c-1-.3-1-1 .2-1.5L20.400 3c.9-.3 1.700.2 1.500 1.300z"/></svg><div><strong>Telegram</strong><span>Mini-App / bot</span></div></a>
+<a class="soc rv" href="#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.800 19.800 0 0 0 15.400 3l-.6 1.300a18.400 18.400 0 0 0-5.600 0L8.600 3a19.700 19.700 0 0 0-4.900 1.400C.6 9 -.200 13.500.2 18a19.900 19.900 0 0 0 6 3l1.300-2.100c-.7-.3-1.400-.6-2-1l.5-.4a14.200 14.200 0 0 0 12 0l.5.4c-.6.400-1.300.700-2 1l1.300 2.100a19.800 19.800 0 0 0 6-3c.5-5.200-.8-9.700-3.500-13.600zM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400z"/></svg><div><strong>Discord</strong><span>Wkrótce</span></div></a>
+<a class="soc rv" href="#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.500 11.500 0 0 0-3.600 22.400c.6.100.8-.2.8-.6v-2c-3.200.7-3.900-1.500-3.900-1.500-.5-1.300-1.300-1.700-1.300-1.700-1-.7.100-.7.100-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.800 1.300 3.400 1 .1-.8.400-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.200.7.800.6A11.500 11.500 0 0 0 12 .5z"/></svg><div><strong>GitHub</strong><span>Wkrótce</span></div></a>
+<a class="soc rv" href="#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.200 2h3.400l-7.400 8.500L23 22h-6.800l-5.300-7-6.100 7H1.400l7.900-9L1 2h7l4.800 6.400L18.200 2zm-1.200 18h1.900L7 3.900H5z"/></svg><div><strong>X / Twitter</strong><span>Wkrótce</span></div></a>
+</div>
+</div></section>
 
+<section id="kontakt"><div class="wrap">
+<h2 class="rv">Kontakt / Społeczność</h2><p class="sub rv">Dołącz do Technix-Pro i współtwórz projekt.</p>
+<div class="grid">
+<div class="card rv"><div class="ic">🛡️</div><h3>Moderatorzy</h3><p>Dbaj o porządek i pomagaj nowym osobom.</p></div>
+<div class="card rv"><div class="ic">🎬</div><h3>Twórcy treści</h3><p>Twórz materiały, które pokażą projekt światu.</p></div>
+<div class="card rv"><div class="ic">💻</div><h3>Programiści</h3><p>Współtwórz aplikację i ekosystem od podstaw.</p></div>
+</div>
+<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Napisz do nas przez bota i dołącz do społeczności.</p>
+<a href="https://t.me/TechnicalproBot" target="_blank" rel="noopener noreferrer" class="btn btn-p">Otwórz Telegram Mini-App</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<div class="logo"><span class="tp">TP</span><span>TECHNIX<b>-PRO</b></span></div>
+<p>&copy; 2026 Technix-Pro. Wszelkie prawa zastrzeżone.</p>
+</div></footer>
+
+<script>
+(function(){
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+var links=document.querySelectorAll('#menu a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
 </body>
 </html>
