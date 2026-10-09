@@ -27,6 +27,9 @@ nav ul a{display:block;padding:8px 14px;border-radius:8px;color:var(--muted);fon
 nav ul a:hover,nav ul a.active{color:var(--white);background:rgba(88,166,255,.14)}
 .burger{display:none;background:none;border:1px solid var(--line);color:var(--white);border-radius:8px;width:42px;height:42px;font-size:1.3rem;cursor:pointer}
 section{padding:90px 0 40px}
+.wrap>h2{letter-spacing:-.035em}
+.wrap>h2::after{content:"";display:block;width:54px;height:3px;margin-top:12px;border-radius:3px;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+.wrap>.sub{max-width:650px;margin-top:10px;margin-bottom:34px}
 .hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
 .badge{display:inline-block;background:rgba(56,139,253,.15);color:var(--blue);border:1px solid rgba(56,139,253,.4);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:600;margin-bottom:24px}
 h1{font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.1;color:var(--white);margin-bottom:18px}
@@ -47,7 +50,7 @@ h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--white);margin-bottom:8px}
 .stats{display:flex;justify-content:center;gap:40px;margin-top:56px;flex-wrap:wrap}
 .stats div{font-size:.85rem;color:var(--muted)}.stats strong{display:block;font-size:1.6rem;color:var(--white)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px;transition:.3s;position:relative;overflow:hidden}
+.card{background:linear-gradient(145deg,rgba(22,27,34,.96),rgba(13,17,23,.94));border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;inset:-2px;background:linear-gradient(135deg,rgba(88,166,255,.18),rgba(163,113,247,.08),transparent);opacity:0;transition:opacity .3s ease;pointer-events:none}
 .card:hover::before{opacity:1}
 .card:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 12px 30px rgba(88,166,255,.15)}
@@ -74,6 +77,9 @@ h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--white);margin-bottom:8px}
 .cta p{color:var(--muted);margin:6px 0 22px}
 footer{margin-top:70px;border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:.85rem}
 footer .logo{margin-bottom:12px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.btn:active{transform:translateY(-1px) scale(.98)}
+.card:focus-within,.soc:focus-visible{border-color:var(--cyan);box-shadow:0 12px 30px rgba(57,208,255,.12)}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 .hero .badge,.hero h1,.hero .lead,.hero .btns,.hero .stats{animation:up .8s both}
@@ -124,6 +130,15 @@ footer .logo{margin-bottom:12px}
 .detail-grid h3{margin-bottom:5px;color:var(--white);font-size:.98rem}
 .detail-grid p{color:var(--muted);font-size:.88rem}
 .detail-kicker{display:block;margin-bottom:6px;color:var(--cyan);font-size:.72rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+.token-feature{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:26px 0;padding:26px 34px;border:1px solid rgba(57,208,255,.2);border-radius:18px;background:radial-gradient(ellipse at 85% 50%,rgba(163,113,247,.13),transparent 42%),linear-gradient(135deg,rgba(22,27,34,.96),rgba(13,17,23,.92));overflow:hidden;position:relative}
+.token-feature::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(57,208,255,.06) 50%,transparent 80%);transform:translateX(-100%);animation:token-sheen 8s ease-in-out infinite}
+@keyframes token-sheen{50%,100%{transform:translateX(100%)}}
+.token-copy{position:relative;max-width:700px}
+.token-copy .detail-kicker{margin-bottom:8px}
+.token-copy h3{color:var(--white);font-size:clamp(1.2rem,3vw,1.6rem);margin-bottom:6px}
+.token-copy p{color:var(--muted);max-width:620px}
+.token-feature .coin{position:relative;inset:auto;flex:none;width:110px;max-width:none}
+.token-feature:hover{border-color:rgba(57,208,255,.45);box-shadow:0 16px 38px rgba(57,208,255,.08)}
 .grid .card.rv:nth-child(3n+2){transition-delay:.08s}
 .grid .card.rv:nth-child(3n){transition-delay:.16s}
 .road li.rv:nth-child(2){transition-delay:.08s}.road li.rv:nth-child(3){transition-delay:.16s}.road li.rv:nth-child(4){transition-delay:.24s}
@@ -131,7 +146,7 @@ footer .logo{margin-bottom:12px}
 .hero-badge{position:absolute;left:6%;top:8%;padding:10px 14px;border-radius:14px;border:1px solid rgba(88,166,255,.25);background:rgba(13,17,23,.72);color:var(--white);box-shadow:0 10px 30px rgba(0,0,0,.16);backdrop-filter:blur(8px);animation:float 4s ease-in-out infinite alternate}
 .hero-badge.b2{left:auto;right:0;top:16%;animation-delay:.5s}
 .hero-badge.b3{left:8%;top:auto;bottom:8%;animation-delay:1s}
-.coin{position:absolute;right:4%;bottom:4%;width:30%;max-width:130px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:clamp(1.4rem,4vw,2.4rem);color:#fff;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.18),rgba(163,113,247,.16) 42%,rgba(13,17,23,.95) 75%);border:1px solid rgba(57,208,255,.35);box-shadow:inset 0 0 28px rgba(255,255,255,.08),0 0 28px rgba(163,113,247,.18);animation:spin 12s linear infinite;transform-style:preserve-3d}
+.coin{width:100%;max-width:130px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:clamp(1.4rem,4vw,2.4rem);color:#fff;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.18),rgba(163,113,247,.16) 42%,rgba(13,17,23,.95) 75%);border:1px solid rgba(57,208,255,.35);box-shadow:inset 0 0 28px rgba(255,255,255,.08),0 0 28px rgba(163,113,247,.18);animation:spin 12s linear infinite;transform-style:preserve-3d}
 .coin span{text-shadow:0 0 10px var(--neon-c),0 0 22px var(--neon-v);background:linear-gradient(135deg,var(--neon-c),var(--neon-v));-webkit-background-clip:text;background-clip:text;color:transparent;transform:translateZ(18px)}
 .coin:hover{animation-duration:1.5s}
 @keyframes spin{to{transform:rotateY(360deg)}}
@@ -141,7 +156,7 @@ footer .logo{margin-bottom:12px}
 .tp{background:linear-gradient(135deg,var(--neon-c),var(--neon-v))}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero .wrap{text-align:center}.hero .btns,.hero .stats{justify-content:center}.chip{max-width:320px}.hero-art{min-height:380px}.hero-badge{left:0;right:auto;top:0}.hero-badge.b2{right:0;left:auto}.hero-badge.b3{left:0;bottom:0}}
 @media(max-width:1000px){nav ul a{padding:8px 9px;font-size:.85rem}}
-@media(max-width:600px){.detail-grid{grid-template-columns:1fr}.grid .card.rv:nth-child(n),.road li.rv:nth-child(n){transition-delay:0s}.hero-badge{position:static;display:inline-flex;margin:8px 0}.hero-art{gap:12px;min-height:auto;align-items:center}.coin{position:relative;right:auto;bottom:auto;width:110px;max-width:none}}
+@media(max-width:600px){section{padding:76px 0 30px}.detail-grid{grid-template-columns:1fr}.grid .card.rv:nth-child(n),.road li.rv:nth-child(n){transition-delay:0s}.hero-badge{position:static;display:inline-flex;margin:8px 0}.hero-art{gap:12px;min-height:auto;align-items:center}.token-feature{padding:22px;gap:16px}.token-feature .coin{width:82px}.coin{width:110px;max-width:none}}
 </style>
 </head>
 <body>
@@ -189,7 +204,7 @@ footer .logo{margin-bottom:12px}
 <text x="190" y="228" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="2" fill="#39d0ff" font-family="Segoe UI,Arial,sans-serif">COREENGINE</text>
 </g>
 </svg>
-<div class="coin" role="img" aria-label="Token TP Technix-Pro"><span>TP</span></div></div>
+</div>
 </div></section>
 
 <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
@@ -202,6 +217,7 @@ footer .logo{margin-bottom:12px}
 <div class="card rv"><div class="ic">🛠️</div><h3>Sprzęt i rozwój</h3><p>Projekt rozwijany od podstaw – od warstwy sprzętowej po aplikację.</p></div>
 <div class="card rv"><div class="ic">👥</div><h3>Społeczność & Dev</h3><p>Szukamy moderatorów, twórców treści i programistów.</p></div>
 </div>
+<div class="token-feature rv"><div class="token-copy"><span class="detail-kicker">Element wizualny projektu</span><h3>Token TP — kierunek przyszłego rozwoju</h3><p>Tokenizacja pozostaje planowanym etapem ekosystemu. Szczegóły i dostępność będą komunikowane wraz z postępem roadmapy.</p></div><div class="coin" role="img" aria-label="Token TP Technix-Pro"><span>TP</span></div></div>
 <div class="counters" style="margin-top:20px">
 <div class="card rv"><strong data-count="7">0</strong><span>platform social</span></div>
 <div class="card rv"><strong data-count="4">0</strong><span>fazy roadmapy</span></div>
