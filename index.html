@@ -394,6 +394,12 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 .ck-list li::before{content:"▸";position:absolute;left:4px;color:var(--cyan)}
 .content-block h3{color:var(--white);font-size:1.25rem}
 #bezpieczenstwo .card:hover,#engine .card:hover{border-color:var(--cyan)}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0 24px}
+.tech span{padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--bg2);color:var(--white);font-size:.9rem;font-weight:600}
+.story-quote{max-width:1000px;margin-inline:auto}
+.road>li>p{max-width:850px;margin:5px 0 8px;line-height:1.55}
+.cta>.btn{margin:4px}
+@media(max-width:600px){.tech{grid-template-columns:1fr}}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -547,7 +553,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 
 <section id="technologia"><div class="wrap">
 <h2 class="rv">Technologia</h2><p class="sub rv">Obszary techniczne projektu i planowanych integracji — nie wszystkie są już wdrożone.</p>
-<div class="tech rv"><span>Telegram Mini Apps</span><span>TON / Web3</span><span>JavaScript</span><span>API</span><span>Infrastruktura cloud</span><span>Bezpieczeństwo</span><span>Integracje</span><span>Transparentny rozwój</span></div>
+<div class="tech rv"><span>HTML, CSS i JavaScript · strona</span><span>Telegram Mini Apps · planowane</span><span>TON / Web3 · kierunek rozwoju</span><span>API · do określenia</span><span>Cloud · zależnie od potrzeb</span><span>Bezpieczeństwo · testy przed startem</span><span>Integracje · po ocenie wykonalności</span><span>Publiczna roadmapa i aktualizacje</span></div>
 <details class="deep-dive rv"><summary>Więcej o warstwach technologii</summary><div class="detail-content">
 <p>Publiczna strona korzysta z HTML, CSS i JavaScript; zawiera responsywny interfejs oraz lekkie interakcje po stronie przeglądarki. To, jakich usług serwerowych, API i rozwiązań TON będzie wymagała mini-aplikacja, zostanie opisane po zatwierdzeniu architektury — nie przedstawiamy planowanych integracji jako już działających.</p>
 <div class="detail-grid"><article><span class="detail-kicker">Dostępne teraz</span><h3>Strona projektu</h3><p>Responsywna strona statyczna publikuje roadmapę, oficjalne odnośniki i aktualne zastrzeżenia dotyczące planów.</p></article><article><span class="detail-kicker">W przygotowaniu</span><h3>Telegram Mini Apps</h3><p>Docelowy interfejs ma działać w Telegramie; konkretne funkcje przejdą rozwój i testy przed publicznym udostępnieniem.</p></article><article><span class="detail-kicker">Do decyzji</span><h3>API i TON</h3><p>Zaplecze i integracje będą dobierane do potrzeb funkcji, bezpieczeństwa i możliwości utrzymania przez jednoosobowy projekt.</p></article></div>
@@ -620,11 +626,11 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="engine"><div class="wrap">
-<h2 class="rv">EngineCore, nagrody i aktywna społeczność</h2><p class="sub rv">Kierunek współpracy i plany dla społeczności — szczegóły będą publikowane po ich potwierdzeniu.</p>
+<h2 class="rv">EngineCore, nagrody i aktywna społeczność</h2><p class="sub rv">Współpraca techniczna i udział społeczności mogą pomóc rozwijać projekt odpowiedzialnie — zakres kolejnych kroków będzie komunikowany jawnie.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">⚙️</div><h3>Współpraca z EngineCore</h3><p>Rozwijany kierunek współpracy wspierający ambicje technologiczne projektu. Zakres i konkretne rezultaty będą przedstawiane publicznie, gdy zostaną potwierdzone.</p></div>
+<div class="card rv"><div class="ic">⚙️</div><h3>Współpraca z EngineCore</h3><p>Ten kierunek ma uzupełniać jednoosobowy rozwój Technix-Pro o wymianę wiedzy i konsultacje techniczne. W praktyce można wspólnie oceniać architekturę, rozwiązania i sens przyszłych integracji TON. Konkretne role, zakres oraz rezultaty wymagają uzgodnienia — nie przedstawiamy ich jako już wdrożonych.</p></div>
 <div class="card rv"><div class="ic">🎁</div><h3>Możliwe przyszłe nagrody</h3><p>Nagrody i korzyści dla aktywnych osób są planem, nie gwarancją. Zasady, jeśli zostaną wdrożone, opublikujemy z wyprzedzeniem.</p></div>
-<div class="card rv"><div class="ic">🔥</div><h3>Szukamy aktywnych</h3><p>Zapraszamy moderatorów, twórców, programistów i użytkowników do opiniowania projektu oraz pomocy w jego rozwijaniu.</p></div>
+<div class="card rv"><div class="ic">🔥</div><h3>Dlaczego społeczność jest kluczowa</h3><p>Użytkownicy sprawdzają, czy pomysły rozwiązują realne potrzeby, testerzy pomagają wykrywać błędy, a moderatorzy dbają o bezpieczną komunikację. Ich głos pomaga jednej osobie wybierać właściwe priorytety. Zapraszamy do opiniowania, tworzenia treści i współpracy programistycznej.</p></div>
 </div>
 <div class="btns rv"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do aktywnej społeczności</a><a class="btn btn-s" href="#spolecznosc">Zobacz, jak pomóc</a></div>
 </div></section>
@@ -686,7 +692,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="faq"><div class="wrap">
-<h2 class="rv">FAQ</h2><p class="sub rv">Najczęstsze pytania.</p>
+<h2 class="rv">FAQ</h2><p class="sub rv">Najważniejsze informacje o zespole, planie trzech faz, współpracy i dalszych celach projektu.</p>
 <label class="vh" for="faq-search">Szukaj w pytaniach i odpowiedziach</label><input class="faq-search" id="faq-search" type="search" placeholder="Szukaj w FAQ…" autocomplete="off">
 <p class="faq-status" id="faq-status" aria-live="polite"></p>
 <div class="faq rv">
@@ -704,7 +710,9 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <details><summary>Kto tworzy Technix-Pro?</summary><p>Projekt tworzy i rozwija jedna osoba – od pomysłu, przez kod, po społeczność. Robi to publicznie i krok po kroku.</p></details>
 <details><summary>Jakie są fazy wdrożenia aplikacji?</summary><p>Plan obejmuje trzy fazy aplikacji: Fundament, Rozwój i testy oraz Publiczny start i społeczność. Token i ewentualny listing to dalsze, warunkowe plany, a nie gwarantowany element wdrożenia.</p></details>
 <details><summary>Co będzie publiczne, a co nie?</summary><p>Publiczne będą postępy, roadmapa, zasady nagród i decyzje. Niepubliczne pozostają wyłącznie dane wrażliwe – Twoje i projektu.</p></details>
-<details><summary>Czym jest współpraca z EngineCore?</summary><p>To rozwijany kierunek współpracy związany z ambicjami technologicznymi projektu. Konkretne zakresy i efekty będą publikowane po ich potwierdzeniu.</p></details>
+<details><summary>Dlaczego społeczność jest ważna?</summary><p>Opinie pomagają sprawdzić, czy funkcje są potrzebne; testy ujawniają problemy przed szerszym startem, a moderacja wspiera bezpieczeństwo. Przy jednoosobowym zespole udział społeczności pomaga także ustalać priorytety i rozwijać projekt w sposób otwarty.</p></details>
+<details><summary>Na czym ma polegać współpraca z EngineCore?</summary><p>To kierunek wymiany wiedzy i konsultacji technicznych, który może pomóc ocenić architekturę oraz przyszłe integracje. Dokładny zakres, role i rezultaty nie są jeszcze potwierdzone; zostaną przedstawione publicznie po uzgodnieniu.</p></details>
+<details><summary>Czy Technix-Pro na pewno wyemituje token i trafi na listing?</summary><p>Nie. Token w TON i ewentualny listing są ambitnymi, warunkowymi celami zależnymi od gotowości produktu, społeczności i wielu czynników zewnętrznych. Nie ma gwarancji realizacji, terminu ani zysku.</p></details>
 <details><summary>Jak chronicie użytkowników przed oszustwami?</summary><p>Komunikujemy tylko przez oficjalne linki, nie prosimy o seed ani klucze, nie obiecujemy zysków i planujemy moderację oraz zgłaszanie fałszywych kont. Szczegóły w sekcji Bezpieczeństwo.</p></details>
 <details><summary>Czy będą nagrody dla społeczności?</summary><p>Nagrody i korzyści są możliwym kierunkiem rozwoju, nie obietnicą. Jeśli zostaną wdrożone, zasady i warunki zostaną opublikowane z wyprzedzeniem.</p></details>
 </div>
@@ -715,7 +723,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="kontakt"><div class="wrap">
-<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Projekt rozwija jedna osoba, a jego kolejne etapy są publiczne. Dołącz do oficjalnego kanału, śledź status prac i zgłoś, jak możesz pomóc.</p>
+<div class="cta rv"><h2>Dołącz do rozwoju Technix-Pro</h2><p>Projekt tworzy jedna osoba, dlatego liczą się testy, konstruktywne uwagi i pomoc społeczności. Dołącz do oficjalnego kanału, sprawdzaj publiczną roadmapę i napisz, w czym możesz pomóc.</p>
 <span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <form class="notify-form" id="notify-form" action="https://t.me/TechnixProTg" method="get" target="_blank">
@@ -725,7 +733,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <p class="support-note">Nie zbieramy adresu e-mail ani innych danych — powiadomienia włączysz bezpośrednio w Telegramie.</p>
 </div>
 <details class="deep-dive rv"><summary>Jak skontaktować się z projektem?</summary><div class="detail-content">
-<p>Oficjalnym punktem kontaktu i źródłem potwierdzonych ogłoszeń jest kanał Technix-Pro w Telegramie. Napisz, czy pytasz o roadmapę, chcesz zgłosić błąd lub zaoferować pomoc. Nie wysyłaj danych wrażliwych, kluczy ani kodów; Mini-App pozostaje oznaczona jako „Wkrótce”.</p>
+<p>Oficjalnym punktem kontaktu i źródłem potwierdzonych ogłoszeń jest kanał Technix-Pro w Telegramie. Napisz, czy pytasz o konkretny etap roadmapy, chcesz zgłosić błąd, przetestować aplikację lub zaoferować pomoc przy treściach, moderacji czy kodzie. Jeśli plan albo termin ulegnie zmianie, aktualizacje będą publikowane otwarcie. Nie wysyłaj danych osobowych, frazy seed, kluczy ani kodów; Mini-App pozostaje oznaczona jako „Wkrótce”.</p>
 <div class="detail-grid"><article><span class="detail-kicker">1. Otwórz</span><h3>Przejdź do Telegrama</h3><p>Użyj przycisku „Dołącz do kanału Telegram” powyżej, aby otworzyć oficjalny kanał w nowej karcie.</p></article><article><span class="detail-kicker">2. Wybierz</span><h3>Rodzaj kontaktu</h3><p>Napisz, czy chodzi o współpracę, społeczność, aktualności czy pytania o projekt.</p></article><article><span class="detail-kicker">3. Działaj</span><h3>Dołącz do rozwoju</h3><p>Po kontakcie możesz zostać skierowany do odpowiedniego kanału lub zespołu.</p></article></div>
 </div></details>
 </div></section>
