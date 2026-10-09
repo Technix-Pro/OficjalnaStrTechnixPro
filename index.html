@@ -85,7 +85,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .hero .badge,.hero h1,.hero .lead,.hero .btns,.hero .stats{animation:up .8s both}
 .hero h1{animation-delay:.1s}.hero .lead{animation-delay:.2s}.hero .btns{animation-delay:.3s}.hero .stats{animation-delay:.45s}
 @keyframes up{from{opacity:0;transform:translateY(24px)}}
-@media(max-width:1000px){.burger{display:block}nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px}nav ul.open{display:flex}}
+@media(max-width:1100px){.burger{display:block}nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 20px}nav ul.open{display:flex}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 .hero{padding-top:100px}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
@@ -157,9 +157,92 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero .wrap{text-align:center}.hero .btns,.hero .stats{justify-content:center}.chip{max-width:320px}.hero-art{min-height:380px}.hero-badge{left:0;right:auto;top:0}.hero-badge.b2{right:0;left:auto}.hero-badge.b3{left:0;bottom:0}}
 @media(max-width:1000px){nav ul a{padding:8px 9px;font-size:.85rem}}
 @media(max-width:600px){section{padding:76px 0 30px}.detail-grid{grid-template-columns:1fr}.grid .card.rv:nth-child(n),.road li.rv:nth-child(n){transition-delay:0s}.hero-badge{position:static;display:inline-flex;margin:8px 0}.hero-art{gap:12px;min-height:auto;align-items:center}.token-feature{padding:22px;gap:16px}.token-feature .coin{width:82px}.coin{width:110px;max-width:none}}
+
+.logo{white-space:nowrap}nav ul{flex-wrap:nowrap}nav ul a{white-space:nowrap}
+/* --- v3: Wkrótce, chip premium, animacje, roadmapa --- */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.btn-soon{cursor:not-allowed;user-select:none;background:linear-gradient(135deg,#2a2f37,#21262d);color:#9aa4af;border-color:var(--line);opacity:.82;filter:grayscale(.6);gap:10px}
+.btn-soon::after{display:none}
+.btn-soon:hover,.btn-soon:active{transform:none;box-shadow:none}
+.soon-badge{display:inline-flex;align-items:center;gap:6px;font-style:normal;font-size:.66rem;font-weight:800;letter-spacing:1.2px;padding:3px 9px;border-radius:20px;color:#ffd66b;border:1px solid rgba(255,214,107,.45);background:linear-gradient(110deg,rgba(255,214,107,.08) 30%,rgba(255,214,107,.28) 50%,rgba(255,214,107,.08) 70%) 0 0/200% 100%;animation:shimmer 2.4s linear infinite}
+.soon-badge i{width:7px;height:7px;border-radius:50%;background:#ffd66b;animation:dotp 1.4s ease-in-out infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+@keyframes dotp{0%{box-shadow:0 0 0 0 rgba(255,214,107,.7)}100%{box-shadow:0 0 0 8px rgba(255,214,107,0)}}
+.hero .wrap{max-width:1280px}
+.hero-grid{grid-template-columns:.95fr 1.05fr;gap:20px}
+.hero-art{min-height:680px;perspective:900px}
+.chip-tilt{width:100%;display:grid;place-items:center;transition:transform .2s ease-out;transform-style:preserve-3d}
+.chip{max-width:640px;overflow:visible;filter:drop-shadow(0 0 22px rgba(163,113,247,.28))}
+.chipbox::before{width:80%}
+.hero-art::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(88,166,255,.3),rgba(163,113,247,.14) 50%,transparent 70%);animation:glow2 3s ease-in-out infinite alternate;pointer-events:none}
+.ring{transform-box:fill-box;transform-origin:center}
+.ring.r1{animation:spin2 18s linear infinite}
+.ring.r2{animation:spin2 26s linear infinite reverse;opacity:.7}
+@keyframes spin2{to{transform:rotate(360deg)}}
+.pad{fill:#0d1117;stroke:var(--neon-c);stroke-width:1.6;animation:padp 2.2s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes padp{50%{fill:var(--neon-c);filter:drop-shadow(0 0 5px var(--neon-c))}}
+.dp{filter:drop-shadow(0 0 4px #22e5ff)}
+.core-glow{animation:coreg 2.4s ease-in-out infinite;pointer-events:none}
+@keyframes coreg{50%{opacity:.25}}
+.scan{animation:scan 3.2s ease-in-out infinite alternate}
+@keyframes scan{to{transform:translateY(98px)}}
+.sp{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:linear-gradient(90deg,var(--neon-c),var(--neon-v));transform-origin:left;transform:scaleX(0);box-shadow:0 0 10px var(--neon-v)}
+.orbs{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.orbs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.28;animation:orb 20s ease-in-out infinite alternate}
+.orbs i:nth-child(1){width:360px;height:360px;left:-80px;top:20%;background:var(--neon-v)}
+.orbs i:nth-child(2){width:300px;height:300px;right:-60px;top:55%;background:var(--neon-c);animation-duration:26s}
+.orbs i:nth-child(3){width:260px;height:260px;left:45%;top:-80px;background:var(--blue);animation-duration:23s}
+@keyframes orb{to{transform:translate3d(60px,-80px,0) scale(1.2)}}
+.pt i{background:var(--neon-c)}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+.card{border-color:transparent;background:linear-gradient(145deg,rgba(22,27,34,.97),rgba(13,17,23,.96)) padding-box,conic-gradient(from var(--ang),#30363d 0,var(--cyan) 12%,var(--violet) 24%,#30363d 40%,#30363d 100%) border-box;animation:bord 7s linear infinite}
+@keyframes bord{to{--ang:360deg}}
+.card::after,.soc::after{content:"";position:absolute;inset:0;background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),rgba(57,208,255,.16),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::after,.soc:hover::after{opacity:1}
+.card.rv.in{transition:opacity .7s ease,transform .25s ease,box-shadow .3s ease}
+.card.rv.in:hover{transform:perspective(800px) translateY(-6px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));box-shadow:0 12px 30px rgba(88,166,255,.18)}
+.road li.rv.in:hover{transform:translateX(6px)}
+.social>.rv,.counters>.rv{transition-delay:calc(var(--i,0)*70ms)}
+.wrap>h2::after{width:0;transition:width .9s ease .2s;background-size:200% 100%;animation:shine 4s linear infinite}
+.wrap>h2.in::after{width:90px}
+.btn:not(.btn-soon):hover{transform:translate(var(--bx,0),var(--by,0)) translateY(-3px)}
+.btn-p:not(.btn-soon)::after{animation:btnsh 4s ease-in-out infinite}
+@keyframes btnsh{60%,100%{transform:translateX(120%)}}
+.ck{list-style:none;margin:10px 0 4px;display:grid;gap:4px}
+.ck li{display:flex;gap:8px;align-items:flex-start;font-size:.88rem;color:var(--muted)}
+.ck li.ok{color:var(--text)}
+.ck .st{flex:none}
+.road .ck li{background:none;border:0;border-radius:0;padding:0;margin:0;transform:none}.road .ck li::before{display:none}
+.road .note{margin-top:8px;font-size:.8rem;font-style:italic}
+.tl{position:relative;display:grid;gap:18px;padding-left:56px}
+.tl-line{position:absolute;left:19px;top:10px;bottom:10px;width:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.tl-line i{display:block;width:100%;height:100%;background:linear-gradient(var(--neon-c),var(--neon-v));transform-origin:top;transform:scaleY(0);box-shadow:0 0 12px var(--neon-v)}
+.ms-card{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 22px;transition:border-color .3s,box-shadow .3s,opacity .7s,transform .7s}
+.ms-card:hover{border-color:var(--violet);box-shadow:0 10px 28px rgba(163,113,247,.15)}
+.ms-node{position:absolute;left:-56px;top:14px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:1.2rem;background:var(--bg);border:2px solid var(--muted)}
+.ms-card.done .ms-node{border-color:var(--green)}
+.ms-card.now .ms-node{border-color:var(--blue);animation:pulse 1.8s infinite}
+.ms-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-bottom:12px}
+.ms-head h3{color:var(--white);font-size:1.1rem}
+.ms-status{font-size:.72rem;font-weight:700;color:var(--cyan);border:1px solid rgba(57,208,255,.35);border-radius:20px;padding:2px 10px}
+.ms-bar{height:8px;border-radius:8px;background:rgba(48,54,61,.8);overflow:hidden}
+.ms-bar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--neon-c),var(--neon-v));background-size:200% 100%;transition:width 1.6s cubic-bezier(.2,.8,.2,1) .3s;animation:shine 3s linear infinite}
+.ms-card.in .ms-bar i{width:var(--w,0)}
+.ms-pct{margin-top:6px;font-size:.78rem;color:var(--muted)}
+.ms-more{margin-top:10px}
+.ms-more summary{cursor:pointer;color:var(--white);font-weight:600;font-size:.9rem}
+.ms-body{padding-top:10px;animation:detail-in .45s ease both}
+.ms-body p{color:var(--muted);font-size:.9rem;margin-bottom:6px}
+.ms-body strong{color:var(--white)}
+@media(max-width:1200px){nav ul a{padding:8px 8px;font-size:.86rem}}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:480px}.chip{max-width:420px}}
+@media(max-width:600px){.hero-art{min-height:auto}.chip{max-width:340px}.tl{padding-left:46px}.ms-node{left:-46px;width:36px;height:36px}.tl-line{left:16px}.hero .btns .btn{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.wrap>h2::after{width:90px}.ms-bar i{width:var(--w,0)}.sp{box-shadow:none}.dp{display:none}.card{background:linear-gradient(145deg,rgba(22,27,34,.97),rgba(13,17,23,.96)) padding-box,linear-gradient(#30363d,#30363d) border-box}}
 </style>
 </head>
 <body>
+<div class="sp" id="sp" aria-hidden="true"></div>
+<div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="pt" id="pt" aria-hidden="true"></div>
 <header>
 <div class="wrap"><nav aria-label="Główna nawigacja">
@@ -171,6 +254,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <li><a href="#funkcje">Funkcje</a></li>
 <li><a href="#technologia">Technologia</a></li>
 <li><a href="#roadmapa">Roadmapa</a></li>
+<li><a href="#kamienie">Kamienie milowe</a></li>
 <li><a href="#spolecznosc">Dołącz</a></li>
 <li><a href="#social">Social Media</a></li>
 <li><a href="#faq">FAQ</a></li>
@@ -186,24 +270,37 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <h1><span class="grad">Technix-Pro</span><br>Technologia nowej generacji</h1>
 <p class="lead">Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy, tokenizację i globalną społeczność. Oficjalna strona projektu.</p>
 <div class="btns">
-<a href="https://t.me/TechnixProTg" data-open="app" target="_blank" rel="noopener noreferrer" class="btn btn-p">📲 Otwórz Telegram Mini-App</a>
+<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <a href="#social" class="btn btn-s">Social Media</a>
 </div>
 <div class="stats"><div><strong>Web3</strong>ekosystem</div><div><strong>7</strong>kanałów social</div><div><strong>Airdropy</strong>nagrody</div></div>
 </div>
 <div class="hero-art">
-<div class="hero-badge">🔗 Telegram mini app</div>
+<div class="hero-badge">🔗 Telegram – kanał · mini-app wkrótce</div>
 <div class="hero-badge b2">🎯 Social, treści, rozwój</div>
 <div class="hero-badge b3">⚡ Interakcje i społeczność</div>
+<div class="chip-tilt" id="tilt">
 <svg class="chip" viewBox="0 0 380 380" aria-hidden="true">
-<defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient></defs>
+<defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient>
+<linearGradient id="cg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22e5ff"/><stop offset="1" stop-color="#b44cff"/></linearGradient>
+<linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22e5ff" stop-opacity="0"/><stop offset=".5" stop-color="#22e5ff" stop-opacity=".45"/><stop offset="1" stop-color="#22e5ff" stop-opacity="0"/></linearGradient>
+<radialGradient id="coreG" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#a371f7" stop-opacity=".35"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<clipPath id="cclip"><rect x="134" y="134" width="112" height="112" rx="10"/></clipPath></defs>
+<g class="ring-g" fill="none"><circle class="ring r1" cx="190" cy="190" r="108" stroke="url(#cg2)" stroke-width="1.6" stroke-dasharray="3 9"/><circle class="ring r2" cx="190" cy="190" r="122" stroke="url(#cg)" stroke-width="1" stroke-dasharray="28 14 4 14"/></g>
 <g fill="none" stroke="url(#cg)" stroke-width="2" stroke-linecap="round"><path class="tr" d="M130 118V70H60V10" style="--d:0.0s"/><path class="tr" d="M130 262V310H60V370" style="--d:0.6s"/><path class="tr" d="M250 118V70h70V10" style="--d:1.2s"/><path class="tr" d="M250 262V310h70V370" style="--d:1.8s"/><path class="tr" d="M118 130H70V60H10" style="--d:.2s"/><path class="tr" d="M262 130H310V60H370" style="--d:.8s"/><path class="tr" d="M118 250H70V320H10" style="--d:1.4s"/><path class="tr" d="M262 250H310V320H370" style="--d:2s"/>
+<path class="tr" d="M160 118V96H110V30" style="--d:0.3s"/><path class="tr" d="M190 118V20" style="--d:0.9s"/><path class="tr" d="M220 118V96H270V30" style="--d:1.5s"/><path class="tr" d="M160 262V284H110V350" style="--d:0.5s"/><path class="tr" d="M190 262V360" style="--d:1.1s"/><path class="tr" d="M220 262V284H270V350" style="--d:1.7s"/><path class="tr" d="M118 160H96V110H30" style="--d:0.4s"/><path class="tr" d="M118 190H20" style="--d:1.0s"/><path class="tr" d="M118 220H96V270H30" style="--d:1.6s"/><path class="tr" d="M262 160H284V110H350" style="--d:0.7s"/><path class="tr" d="M262 190H360" style="--d:1.3s"/><path class="tr" d="M262 220H284V270H350" style="--d:1.9s"/>
 <rect x="118" y="118" width="144" height="144" rx="18" fill="#0d1117" stroke="url(#cg)" stroke-width="3" class="core"/>
+<rect class="core-glow" x="118" y="118" width="144" height="144" rx="18" fill="url(#coreG)" stroke="none"/>
 <rect x="134" y="134" width="112" height="112" rx="10" fill="none" stroke="#30363d"/>
+<g clip-path="url(#cclip)" stroke="none"><rect class="scan" x="134" y="134" width="112" height="14" fill="url(#scanG)"/></g>
 <text x="190" y="205" text-anchor="middle" font-size="46" font-weight="900" fill="url(#cg)" font-family="Segoe UI,Arial,sans-serif">TP</text>
 <text x="190" y="228" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="2" fill="#39d0ff" font-family="Segoe UI,Arial,sans-serif">COREENGINE</text>
 </g>
+<g class="pads"><circle class="pad" cx="60" cy="10" r="4.5" style="--d:0.0s"/><circle class="pad" cx="60" cy="370" r="4.5" style="--d:0.1s"/><circle class="pad" cx="320" cy="10" r="4.5" style="--d:0.3s"/><circle class="pad" cx="320" cy="370" r="4.5" style="--d:0.4s"/><circle class="pad" cx="10" cy="60" r="4.5" style="--d:0.6s"/><circle class="pad" cx="370" cy="60" r="4.5" style="--d:0.8s"/><circle class="pad" cx="10" cy="320" r="4.5" style="--d:0.9s"/><circle class="pad" cx="370" cy="320" r="4.5" style="--d:1.1s"/><circle class="pad" cx="110" cy="30" r="4.5" style="--d:1.2s"/><circle class="pad" cx="190" cy="20" r="4.5" style="--d:1.3s"/><circle class="pad" cx="270" cy="30" r="4.5" style="--d:1.5s"/><circle class="pad" cx="110" cy="350" r="4.5" style="--d:1.6s"/><circle class="pad" cx="190" cy="360" r="4.5" style="--d:1.8s"/><circle class="pad" cx="270" cy="350" r="4.5" style="--d:1.9s"/><circle class="pad" cx="30" cy="110" r="4.5" style="--d:2.1s"/><circle class="pad" cx="20" cy="190" r="4.5" style="--d:2.2s"/><circle class="pad" cx="30" cy="270" r="4.5" style="--d:2.4s"/><circle class="pad" cx="350" cy="110" r="4.5" style="--d:2.5s"/><circle class="pad" cx="360" cy="190" r="4.5" style="--d:2.7s"/><circle class="pad" cx="350" cy="270" r="4.5" style="--d:2.9s"/></g>
+<g class="dps"><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="2.4s" begin="0.0s" repeatCount="indefinite" path="M130 118V70H60V10"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="2.7s" begin="0.4s" repeatCount="indefinite" path="M250 262V310h70V370"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.0s" begin="0.8s" repeatCount="indefinite" path="M118 130H70V60H10"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.3s" begin="1.2s" repeatCount="indefinite" path="M262 250H310V320H370"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.6s" begin="1.6s" repeatCount="indefinite" path="M190 118V20"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.9s" begin="2.0s" repeatCount="indefinite" path="M118 190H20"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="4.2s" begin="2.4s" repeatCount="indefinite" path="M262 190H360"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="4.5s" begin="2.8s" repeatCount="indefinite" path="M190 262V360"/></circle></g>
 </svg>
+</div>
 </div>
 </div></section>
 
@@ -212,7 +309,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="informacje"><div class="wrap">
 <h2 class="rv">Informacje</h2><p class="sub rv">Czym jest Technix-Pro i co budujemy.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">📲</div><h3>Telegram Mini-App</h3><p>Uruchamiaj aplikację bezpośrednio w Telegramie, bez instalacji.</p></div>
+<div class="card rv"><div class="ic">📲</div><h3>Telegram Mini-App</h3><p>Uruchamiaj aplikację bezpośrednio w Telegramie, bez instalacji. Wkrótce.</p></div>
 <div class="card rv"><div class="ic">🌐</div><h3>Ekosystem Web3</h3><p>Przestrzeń pod airdropy, nagrody i przyszłą integrację tokenów.</p></div>
 <div class="card rv"><div class="ic">🛠️</div><h3>Sprzęt i rozwój</h3><p>Projekt rozwijany od podstaw – od warstwy sprzętowej po aplikację.</p></div>
 <div class="card rv"><div class="ic">👥</div><h3>Społeczność & Dev</h3><p>Szukamy moderatorów, twórców treści i programistów.</p></div>
@@ -226,7 +323,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 </div>
 <details class="deep-dive rv"><summary>Poznaj projekt bliżej</summary><div class="detail-content">
 <p>Technix-Pro łączy rozwój aplikacji, warstwę sprzętową i społeczność. Projekt jest budowany etapami, a kolejne możliwości będą udostępniane wraz z postępem prac.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Dostęp</span><h3>Mini-aplikacja</h3><p>Uruchomienie projektu zaczyna się od oficjalnego bota w Telegramie, bez instalowania osobnej aplikacji.</p></article><article><span class="detail-kicker">Kierunek</span><h3>Web3</h3><p>Projekt rozwija ekosystem pod nagrody, airdropy i przyszłe integracje tokenów.</p></article><article><span class="detail-kicker">Zespół</span><h3>Rozwój i społeczność</h3><p>Tworzymy miejsce na komunikację, treści i współpracę z aktywnymi osobami.</p></article></div>
+<div class="detail-grid"><article><span class="detail-kicker">Dostęp</span><h3>Mini-aplikacja</h3><p>Mini-aplikacja w Telegramie będzie dostępna wkrótce – do tego czasu śledź oficjalny kanał Telegram.</p></article><article><span class="detail-kicker">Kierunek</span><h3>Web3</h3><p>Projekt rozwija ekosystem pod nagrody, airdropy i przyszłe integracje tokenów.</p></article><article><span class="detail-kicker">Zespół</span><h3>Rozwój i społeczność</h3><p>Tworzymy miejsce na komunikację, treści i współpracę z aktywnymi osobami.</p></article></div>
 </div></details>
 </div></section>
 
@@ -242,7 +339,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 </div>
 <details class="deep-dive rv"><summary>Sprawdź, jak działają funkcje ekosystemu</summary><div class="detail-content">
 <p>Funkcje są projektowane jako połączone elementy: łatwy dostęp do aplikacji, udział społeczności i stopniowe rozszerzanie możliwości Web3.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Pierwszy krok</span><h3>Wejście do aplikacji</h3><p>Otwórz oficjalną mini-aplikację przez Telegram i śledź udostępniane tam informacje.</p></article><article><span class="detail-kicker">Aktywność</span><h3>Airdropy i nagrody</h3><p>Aktywni użytkownicy mogą brać udział w przyszłych wydarzeniach i nagrodach społeczności.</p></article><article><span class="detail-kicker">Rozwój</span><h3>Treści i komunikacja</h3><p>Kanały społecznościowe mają pomóc w rozbudowie zasięgu i przekazywaniu aktualności.</p></article></div>
+<div class="detail-grid"><article><span class="detail-kicker">Pierwszy krok</span><h3>Wejście do aplikacji</h3><p>Mini-aplikacja będzie dostępna wkrótce; na razie śledź informacje na oficjalnym kanale Telegram.</p></article><article><span class="detail-kicker">Aktywność</span><h3>Airdropy i nagrody</h3><p>Aktywni użytkownicy mogą brać udział w przyszłych wydarzeniach i nagrodach społeczności.</p></article><article><span class="detail-kicker">Rozwój</span><h3>Treści i komunikacja</h3><p>Kanały społecznościowe mają pomóc w rozbudowie zasięgu i przekazywaniu aktualności.</p></article></div>
 </div></details>
 </div></section>
 
@@ -258,15 +355,37 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="roadmapa"><div class="wrap">
 <h2 class="rv">Roadmapa</h2><p class="sub rv">Dokąd zmierzamy – plan może ulegać zmianom.</p>
 <ol class="road">
-<li class="done rv"><small>Zrealizowane</small><h3>Faza 1 – Fundament</h3><p>Pierwsza wersja mini-aplikacji i oficjalna strona projektu.</p></li>
-<li class="now rv"><small>W trakcie</small><h3>Faza 2 – Rozwój aplikacji</h3><p>Rozbudowa funkcji aplikacji i zaplecza dla użytkowników.</p></li>
-<li class="rv"><small>Planowane</small><h3>Faza 3 – Społeczność</h3><p>Moderacja, program twórców i kanały social.</p></li>
-<li class="rv"><small>Planowane</small><h3>Faza 4 – Web3</h3><p>Airdropy, nagrody i tokenizacja projektu.</p></li>
+<li class="done rv"><small>Zrealizowane</small><h3>Faza 1 – Fundament</h3><p>Pierwsza wersja mini-aplikacji i oficjalna strona projektu.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Pierwsza wersja mini-aplikacji</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalna strona projektu</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Pierwsze oficjalne kanały social</li></ul></li>
+<li class="now rv"><small>W trakcie</small><h3>Faza 2 – Rozwój aplikacji</h3><p>Rozbudowa funkcji aplikacji i zaplecza dla użytkowników.</p><ul class="ck"><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Rozbudowa funkcji mini-aplikacji</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Zaplecze dla użytkowników</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Testy i poprawki jakości</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Udostępnienie mini-aplikacji (wkrótce)</li></ul></li>
+<li class="rv"><small>Planowane</small><h3>Faza 3 – Społeczność</h3><p>Moderacja, program twórców i kanały social.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalny kanał Telegram i Discord</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Moderacja społeczności</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Program twórców</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Rozbudowa kanałów social (np. TikTok)</li></ul></li>
+<li class="rv"><small>Planowane</small><h3>Faza 4 – Web3</h3><p>Airdropy, nagrody i tokenizacja projektu.</p><ul class="ck"><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Airdropy dla aktywnych członków</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>System nagród</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Tokenizacja projektu</li></ul><p class="note">Etapy Web3 to kierunek rozwoju – plan może ulec zmianie.</p></li>
 </ol>
 <details class="deep-dive rv"><summary>Jak czytać roadmapę?</summary><div class="detail-content">
 <p>Roadmapa przedstawia kierunek prac, a nie gwarantowane terminy. Statusy pomagają odróżnić ukończone fundamenty od bieżących i planowanych etapów.</p>
 <div class="detail-grid"><article><span class="detail-kicker">Ukończone</span><h3>Fundament</h3><p>Uruchomiono pierwszą wersję mini-aplikacji i oficjalną stronę projektu.</p></article><article><span class="detail-kicker">Aktualnie</span><h3>Rozwój</h3><p>Trwają prace nad lepszą strukturą, treściami i komunikacją z użytkownikami.</p></article><article><span class="detail-kicker">Przyszłość</span><h3>Ekspansja</h3><p>Planowane są dalsze etapy społecznościowe i elementy Web3.</p></article></div>
 </div></details>
+</div></section>
+
+<section id="kamienie"><div class="wrap">
+<h2 class="rv">Kamienie milowe</h2><p class="sub rv">Oś czasu projektu – postęp każdej fazy wynika ze statusów z roadmapy. Plan może ulec zmianie.</p>
+<div class="tl" id="tl"><div class="tl-line" aria-hidden="true"><i id="tlf"></i></div>
+<article class="ms-card rv done" data-phase="1"><span class="ms-node" aria-hidden="true">🧱</span>
+<div class="ms-head"><span class="ms-status">✅ Zrealizowane</span><h3>Faza 1 – Fundament</h3></div>
+<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 1 – Fundament" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> pierwsza wersja mini-aplikacji, oficjalna strona i pierwsze kanały społecznościowe.</p><p><strong>Dlaczego to ważne:</strong> daje podstawę, na której budowane są kolejne etapy.</p></div></details></article>
+<article class="ms-card rv now" data-phase="2"><span class="ms-node" aria-hidden="true">📲</span>
+<div class="ms-head"><span class="ms-status">🔄 W trakcie</span><h3>Faza 2 – Rozwój aplikacji</h3></div>
+<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 2 – Rozwój aplikacji" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> rozbudowę funkcji mini-aplikacji, zaplecze dla użytkowników oraz testy przed udostępnieniem.</p><p><strong>Dlaczego to ważne:</strong> mini-aplikacja będzie dostępna wkrótce, po zakończeniu prac i testów.</p></div></details></article>
+<article class="ms-card rv " data-phase="3"><span class="ms-node" aria-hidden="true">👥</span>
+<div class="ms-head"><span class="ms-status">⏳ Planowane</span><h3>Faza 3 – Społeczność</h3></div>
+<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 3 – Społeczność" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> moderację, program twórców oraz rozwój kanałów social, w tym Discord i Telegram.</p><p><strong>Dlaczego to ważne:</strong> aktywna społeczność napędza rozwój i zasięg projektu.</p></div></details></article>
+<article class="ms-card rv " data-phase="4"><span class="ms-node" aria-hidden="true">🌐</span>
+<div class="ms-head"><span class="ms-status">⏳ Planowane</span><h3>Faza 4 – Web3</h3></div>
+<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 4 – Web3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> airdropy, system nagród i tokenizację – bez gwarancji terminów; plan może ulec zmianie.</p><p><strong>Dlaczego to ważne:</strong> to docelowy kierunek ekosystemu, realizowany dopiero po wcześniejszych etapach.</p></div></details></article>
+</div>
 </div></section>
 
 <section id="spolecznosc"><div class="wrap">
@@ -289,37 +408,38 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <a class="soc rv" data-social="youtube" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 1 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.8zM9.6 15.5V8.5L15.5 12l-5.9 3.5z"/></svg><div><strong>YouTube</strong><span>materiały / prezentacje</span></div><i class="tag">Wkrótce</i></a>
 <a class="soc rv" data-social="discord" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.5 8 1 11.4 1.2 14.7c1.4 1.1 2.8 1.8 4.2 2.2.3-.4.6-.9.8-1.4-.5-.2-1-.4-1.5-.7.1-.1.2-.2.3-.3 2.9 1.3 6.1 1.3 9 0 .1.1.2.2.3.3-.5.3-1 .5-1.5.7.2.5.5 1 .8 1.4 1.4-.4 2.8-1.1 4.2-2.2.2-3.3-.3-6.7-1.3-10.3zM8.8 13.4c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6zm6.4 0c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6z"/></svg><div><strong>Discord</strong><span>społeczność / rozmowy</span></div><i class="tag">Wkrótce</i></a>
 <a class="soc rv" data-social="x" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h6.9l4.8 6.3L18.2 2z"/></svg><div><strong>X</strong><span>news / komunikaty</span></div><i class="tag">Wkrótce</i></a>
-<a class="soc rv" data-social="telegram" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg><div><strong>Telegram</strong><span>mini app / bot</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="telegram" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg><div><strong>Telegram – kanał</strong><span>oficjalny kanał</span></div><i class="tag">LIVE</i></a>
 <a class="soc rv" data-social="facebook" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.4 0-1.8.9-1.8 1.8v2.2h3.1l-.5 3.5h-2.6v8.4A12 12 0 0 0 24 12z"/></svg><div><strong>Facebook</strong><span>społeczność / posty</span></div><i class="tag">LIVE</i></a>
 <a class="soc rv" data-social="instagram" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zm0 2.1c-3.1 0-3.5 0-4.7.1-2.2.1-3.3 1.2-3.4 3.4-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 2.2 1.2 3.3 3.4 3.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c2.2-.1 3.3-1.2 3.4-3.4.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-2.2-1.2-3.3-3.4-3.4-1.2-.1-1.6-.1-4.7-.1zm0 3.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.1a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.7-.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg><div><strong>Instagram</strong><span>reels / zdjęcia</span></div><i class="tag">LIVE</i></a>
 </div>
 <details class="deep-dive rv"><summary>Co znajdziesz w kanałach społeczności?</summary><div class="detail-content">
-<p>Lista kanałów pokazuje miejsca publikacji aktualności i materiałów. Linki, które są już znane, działają od razu. Telegram prowadzi do mini-aplikacji i oficjalnego kanału projektu.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Wideo</span><h3>TikTok i YouTube</h3><p>Krótkie materiały, poradniki i informacje o premierach.</p></article><article><span class="detail-kicker">Społeczność</span><h3>Discord i Telegram</h3><p>Rozmowy, wsparcie, ogłoszenia i wejście do mini-aplikacji.</p></article><article><span class="detail-kicker">Aktualności</span><h3>X, Facebook, Instagram</h3><p>Wiadomości, komunikaty i materiały wizualne w jednym miejscu.</p></article></div>
+<p>Lista kanałów pokazuje miejsca publikacji aktualności i materiałów. Linki, które są już znane, działają od razu. Telegram prowadzi do oficjalnego kanału projektu (mini-aplikacja będzie dostępna wkrótce).</p>
+<div class="detail-grid"><article><span class="detail-kicker">Wideo</span><h3>TikTok i YouTube</h3><p>Krótkie materiały, poradniki i informacje o premierach.</p></article><article><span class="detail-kicker">Społeczność</span><h3>Discord i Telegram</h3><p>Rozmowy, wsparcie i ogłoszenia – Telegram to oficjalny kanał projektu.</p></article><article><span class="detail-kicker">Aktualności</span><h3>X, Facebook, Instagram</h3><p>Wiadomości, komunikaty i materiały wizualne w jednym miejscu.</p></article></div>
 </div></details>
 </div></section>
 
 <section id="faq"><div class="wrap">
 <h2 class="rv">FAQ</h2><p class="sub rv">Najczęstsze pytania.</p>
 <div class="faq rv">
-<details><summary>Jak uruchomić aplikację?</summary><p>Użyj przycisku „Otwórz Telegram Mini-App”, aby przejść do bota w Telegramie.</p></details>
+<details><summary>Jak uruchomić aplikację?</summary><p>Telegram Mini-App będzie dostępna wkrótce – przycisk jest na razie nieaktywny. Już teraz możesz dołączyć do społeczności przez oficjalny kanał Telegram i śledzić ogłoszenie premiery.</p></details>
 <details><summary>Gdzie znajdę linki do social mediów?</summary><p>Linki do kanałów pojawią się w sekcji Social Media. Telegram, Facebook, Instagram, YouTube, X i Discord są już dodane do strony.</p></details>
 <details><summary>Czy mogę dołączyć do zespołu?</summary><p>Tak – szukamy moderatorów, twórców treści i programistów.</p></details>
 <details><summary>Czy token jest już dostępny?</summary><p>Tokenizacja to planowany etap rozwoju. Szczegóły będą publikowane wraz z postępami roadmapy.</p></details>
 <details><summary>Gdzie sprawdzę aktualny status projektu?</summary><p>Najważniejsze etapy znajdziesz w sekcji Roadmapa, a aktualności pojawią się w kanałach Social Media.</p></details>
 </div>
 <details class="deep-dive rv"><summary>Nie ma tu Twojego pytania?</summary><div class="detail-content">
-<p>Sprawdź roadmapę i oficjalne kanały społecznościowe, aby znaleźć najnowsze informacje. W sprawach dotyczących projektu skontaktuj się z nami przez oficjalnego bota Telegram.</p>
+<p>Sprawdź roadmapę i oficjalne kanały społecznościowe, aby znaleźć najnowsze informacje. W sprawach dotyczących projektu skontaktuj się z nami przez oficjalny kanał Telegram.</p>
 <div class="btns"><a class="btn btn-s" href="#roadmapa">Przejdź do roadmapy</a><a class="btn btn-s" href="#kontakt">Kontakt</a></div>
 </div></details>
 </div></section>
 
 <section id="kontakt"><div class="wrap">
-<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Napisz do nas przez bota i dołącz do społeczności.</p>
-<a href="https://t.me/TechnixProTg" data-open="app" target="_blank" rel="noopener noreferrer" class="btn btn-p">Otwórz Telegram Mini-App</a></div>
+<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Mini-aplikacja będzie dostępna wkrótce. Już teraz dołącz do społeczności przez oficjalny kanał Telegram.</p>
+<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a></div>
 <details class="deep-dive rv"><summary>Jak skontaktować się z projektem?</summary><div class="detail-content">
-<p>Oficjalnym punktem kontaktu jest bot Technix-Pro w Telegramie. Możesz rozpocząć od pytania o projekt, zgłoszenia chęci dołączenia do zespołu lub prośby o wskazanie właściwego kanału społecznościowego.</p>
-<div class="detail-grid"><article><span class="detail-kicker">1. Otwórz</span><h3>Przejdź do Telegrama</h3><p>Użyj przycisku powyżej, aby otworzyć oficjalnego bota w nowej karcie.</p></article><article><span class="detail-kicker">2. Wybierz</span><h3>Rodzaj kontaktu</h3><p>Napisz, czy chodzi o współpracę, społeczność, aktualności czy pytania o projekt.</p></article><article><span class="detail-kicker">3. Działaj</span><h3>Dołącz do rozwoju</h3><p>Po kontakcie możesz zostać skierowany do odpowiedniego kanału lub zespołu.</p></article></div>
+<p>Oficjalnym punktem kontaktu jest kanał Technix-Pro w Telegramie (mini-aplikacja będzie dostępna wkrótce). Możesz rozpocząć od pytania o projekt, zgłoszenia chęci dołączenia do zespołu lub prośby o wskazanie właściwego kanału społecznościowego.</p>
+<div class="detail-grid"><article><span class="detail-kicker">1. Otwórz</span><h3>Przejdź do Telegrama</h3><p>Użyj przycisku „Dołącz do kanału Telegram” powyżej, aby otworzyć oficjalny kanał w nowej karcie.</p></article><article><span class="detail-kicker">2. Wybierz</span><h3>Rodzaj kontaktu</h3><p>Napisz, czy chodzi o współpracę, społeczność, aktualności czy pytania o projekt.</p></article><article><span class="detail-kicker">3. Działaj</span><h3>Dołącz do rozwoju</h3><p>Po kontakcie możesz zostać skierowany do odpowiedniego kanału lub zespołu.</p></article></div>
 </div></details>
 </div></section>
 </main>
@@ -332,7 +452,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <a href="https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1z"/></svg></a>
 <a href="https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 1 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.8zM9.6 15.5V8.5L15.5 12l-5.9 3.5z"/></svg></a>
 <a href="https://discord.gg/NUPGBjmSD" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.5 8 1 11.4 1.2 14.7c1.4 1.1 2.8 1.8 4.2 2.2.3-.4.6-.9.8-1.4-.5-.2-1-.4-1.5-.7.1-.1.2-.2.3-.3 2.9 1.3 6.1 1.3 9 0 .1.1.2.2.3.3-.5.3-1 .5-1.5.7.2.5.5 1 .8 1.4 1.4-.4 2.8-1.1 4.2-2.2.2-3.3-.3-6.7-1.3-10.3z"/></svg></a>
-<a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg></a>
+<a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" aria-label="Telegram – kanał"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg></a>
 </div>
 <p>&copy; 2026 Technix-Pro. Wszelkie prawa zastrzeżone.</p>
 </div></footer>
@@ -340,14 +460,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <script>
 (function(){
 var LINKS={tiktok:'',youtube:'https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9',discord:'https://discord.gg/NUPGBjmSD',x:'https://x.com/TechnixProo',telegram:'https://t.me/TechnixProTg',facebook:'https://www.facebook.com/share/1HYtutg5Jw/',instagram:'https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA=='};
-var OPEN={app:'https://t.me/TechnixProTg'};
 function safe(u){return /^https:\/\//i.test(u) || /^https:\/\/t\.me\//i.test(u)}
 document.querySelectorAll('[data-social]').forEach(function(a){var u=LINKS[a.getAttribute('data-social')];if(u&&safe(u)){a.href=u;a.target='_blank';a.rel='noopener noreferrer';a.removeAttribute('aria-disabled');a.classList.add('live');var tag=a.querySelector('.tag');if(tag)tag.style.display='none'}});
-document.querySelectorAll('[data-open]').forEach(function(a){var u=OPEN[a.getAttribute('data-open')];if(u&&safe(u))a.href=u});
+document.querySelectorAll('[data-open]').forEach(function(a){a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1');a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation()})});
 document.querySelectorAll('.soc[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
 var mq=document.getElementById('mq'),w='Technix-Pro,Web3,Telegram Mini-App,Airdropy,Społeczność,Tokenizacja,Innowacje,Technologia,Telegram,Discord,Instagram,YouTube,Facebook,X'.split(',').map(function(t){return '<span>'+t+'</span>'}).join('');
 mq.innerHTML=w+w;
-var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<28;k++){var p=document.createElement('i');p.style.left=(k*3.9+Math.random()*5)+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=.2+Math.random()*.7;pt.appendChild(p)}}
+var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<40;k++){var p=document.createElement('i');var z=2+Math.random()*3;p.style.width=p.style.height=z+'px';if(k%3===0)p.style.background='var(--neon-v)';p.style.left=(k*2.7+Math.random()*4)+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=.2+Math.random()*.7;pt.appendChild(p)}}
 var burger=document.getElementById('burger'),menu=document.getElementById('menu');
 burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
 menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
@@ -357,6 +476,24 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
 var links=document.querySelectorAll('#menu a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
 function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
 window.addEventListener('scroll',spy,{passive:true});spy();
+var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+var sp=document.getElementById('sp');
+function prog(){var h=document.documentElement.scrollHeight-window.innerHeight;if(sp)sp.style.transform='scaleX('+(h>0?Math.min(1,window.scrollY/h):0)+')'}
+window.addEventListener('scroll',prog,{passive:true});prog();
+document.querySelectorAll('.grid,.counters,.social,.detail-grid').forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})});
+document.querySelectorAll('.card,.soc').forEach(function(c){c.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(!reduce&&c.classList.contains('card')){c.style.setProperty('--rx',((.5-y/r.height)*6).toFixed(2)+'deg');c.style.setProperty('--ry',((x/r.width-.5)*6).toFixed(2)+'deg')}});c.addEventListener('pointerleave',function(){c.style.removeProperty('--rx');c.style.removeProperty('--ry')})});
+if(!reduce&&fine){document.querySelectorAll('.btn:not(.btn-soon)').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--bx',((e.clientX-r.left-r.width/2)*.12).toFixed(1)+'px');b.style.setProperty('--by',((e.clientY-r.top-r.height/2)*.18).toFixed(1)+'px')});b.addEventListener('pointerleave',function(){b.style.removeProperty('--bx');b.style.removeProperty('--by')})})}
+var art=document.querySelector('.hero-art'),tilt=document.getElementById('tilt'),chipSvg=document.querySelector('.chip');
+if(reduce){if(chipSvg&&chipSvg.pauseAnimations)chipSvg.pauseAnimations();document.querySelectorAll('.dp').forEach(function(d){d.style.display='none'})}
+else if(art&&tilt){if(fine){art.addEventListener('pointermove',function(e){var r=art.getBoundingClientRect();tilt.style.transform='perspective(900px) rotateX('+((.5-(e.clientY-r.top)/r.height)*14).toFixed(2)+'deg) rotateY('+(((e.clientX-r.left)/r.width-.5)*18).toFixed(2)+'deg)'});art.addEventListener('pointerleave',function(){tilt.style.transform=''})}else{window.addEventListener('scroll',function(){tilt.style.transform='perspective(900px) rotateX('+Math.sin(window.scrollY/160)*5+'deg) rotateY('+Math.cos(window.scrollY/200)*7+'deg)'},{passive:true})}}
+var cards=document.querySelectorAll('.ms-card');
+function pct(n){var it=document.querySelectorAll('.road li:nth-child('+n+') .ck li'),sc=0;[].forEach.call(it,function(l){sc+=l.classList.contains('ok')?1:l.classList.contains('wip')?.5:0});return it.length?Math.round(sc/it.length*100):0}
+cards.forEach(function(c){var v=pct(c.getAttribute('data-phase')),b=c.querySelector('.ms-bar');c.style.setProperty('--w',v+'%');b.setAttribute('aria-valuenow',v);c.querySelector('.ms-pct').textContent=v+'% ukończenia'});
+var tl=document.getElementById('tl'),tlf=document.getElementById('tlf');
+function tlp(){if(!tl||!tlf)return;var r=tl.getBoundingClientRect(),v=(window.innerHeight*.6-r.top)/r.height;tlf.style.transform='scaleY('+Math.max(0,Math.min(1,v))+')'}
+window.addEventListener('scroll',tlp,{passive:true});window.addEventListener('resize',tlp);tlp();
+
 })();
 </script>
 </body>
