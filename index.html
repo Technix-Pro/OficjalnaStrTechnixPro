@@ -238,6 +238,30 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:480px}.chip{max-width:420px}}
 @media(max-width:600px){.hero-art{min-height:auto}.chip{max-width:340px}.tl{padding-left:46px}.ms-node{left:-46px;width:36px;height:36px}.tl-line{left:16px}.hero .btns .btn{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.wrap>h2::after{width:90px}.ms-bar i{width:var(--w,0)}.sp{box-shadow:none}.dp{display:none}.card{background:linear-gradient(145deg,rgba(22,27,34,.97),rgba(13,17,23,.96)) padding-box,linear-gradient(#30363d,#30363d) border-box}}
+
+/* v2: perf + premium additions */
+.tp{position:relative;isolation:isolate;animation:none!important;transform:rotate(-4deg);border:1px solid rgba(255,255,255,.35);box-shadow:0 0 14px rgba(163,113,247,.5),inset 0 0 8px rgba(255,255,255,.18);text-shadow:0 0 8px rgba(34,229,255,.8);transition:transform .3s ease}
+.tp::after{content:"";position:absolute;inset:-4px;border-radius:15px;box-shadow:0 0 30px rgba(163,113,247,.8);opacity:0;z-index:-1;animation:tpg 2.8s ease-in-out infinite alternate}
+.logo:hover .tp{transform:rotate(0) scale(1.06)}
+@keyframes tpg{to{opacity:.9}}
+.orbs i{filter:blur(50px);will-change:transform}
+.soc svg,.fsoc svg{filter:drop-shadow(0 0 4px rgba(34,229,255,.45));transition:transform .3s ease,filter .3s ease}
+.soc:hover svg,.fsoc a:hover svg{transform:scale(1.12) rotate(-4deg);filter:drop-shadow(0 0 8px rgba(180,76,255,.8))}
+.story-quote{position:relative;margin:0 0 26px;padding:24px 26px;border-radius:16px;border:1px solid rgba(88,166,255,.3);background:linear-gradient(135deg,rgba(34,229,255,.08),rgba(180,76,255,.1));color:var(--white);font-size:1.15rem;line-height:1.6;overflow:hidden}
+.story-quote strong{background:linear-gradient(90deg,var(--neon-c),var(--neon-v));-webkit-background-clip:text;background-clip:text;color:transparent}
+.story-quote::after,.support-box::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transform:skewX(-20deg);animation:shim 6s ease-in-out infinite}
+@keyframes shim{0%,60%{transform:translateX(0) skewX(-20deg)}100%{transform:translateX(450%) skewX(-20deg)}}
+.aces .card .ico{display:inline-grid;place-items:center;width:44px;height:44px;margin-bottom:10px;border-radius:12px;font-size:1.3rem;background:linear-gradient(135deg,rgba(34,229,255,.18),rgba(180,76,255,.22));border:1px solid rgba(88,166,255,.3);transition:transform .3s ease}
+.aces .card:hover .ico{transform:translateY(-3px) rotate(-6deg)}
+.support-box{position:relative;overflow:hidden;text-align:center;padding:34px 22px;border-radius:18px;border:1px solid rgba(180,76,255,.4);background:linear-gradient(145deg,rgba(22,27,34,.96),rgba(30,18,48,.9))}
+.support-box p{max-width:680px;margin:0 auto 18px}
+.support-box .btns{justify-content:center}
+.support-note{font-size:.85rem;color:var(--muted)}
+.hero-accent{display:inline-block;margin:0 0 14px;padding:6px 14px;border-radius:999px;border:1px solid rgba(34,229,255,.4);background:rgba(34,229,255,.07);color:var(--neon-c);font-size:.85rem;font-weight:700;letter-spacing:.5px;position:relative;overflow:hidden}
+.hero-accent::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:shim 5s ease-in-out infinite}
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+@media(max-width:600px){.pt{display:none}.orbs i{filter:blur(36px)}}
+@media(prefers-reduced-motion:reduce){.tp::after{opacity:.5}.story-quote::after,.support-box::after,.hero-accent::after{display:none}}
 </style>
 </head>
 <body>
@@ -250,12 +274,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
 <ul id="menu">
 <li><a href="#glowna">Start</a></li>
+<li><a href="#historia">Historia</a></li>
 <li><a href="#informacje">Informacje</a></li>
 <li><a href="#funkcje">Funkcje</a></li>
 <li><a href="#technologia">Technologia</a></li>
 <li><a href="#roadmapa">Roadmapa</a></li>
 <li><a href="#kamienie">Kamienie milowe</a></li>
 <li><a href="#spolecznosc">Dołącz</a></li>
+<li><a href="#wsparcie">Wsparcie</a></li>
 <li><a href="#social">Social Media</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
@@ -267,6 +293,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="glowna" class="hero"><div class="wrap hero-grid">
 <div>
 <div class="badge">Budowanie Ekosystemu Web3 od Podstaw</div>
+<span class="hero-accent">🇵🇱 Polski projekt budowany od zera</span>
 <h1><span class="grad">Technix-Pro</span><br>Technologia nowej generacji</h1>
 <p class="lead">Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy, tokenizację i globalną społeczność. Oficjalna strona projektu.</p>
 <div class="btns">
@@ -305,6 +332,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 </div></section>
 
 <div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="historia"><div class="wrap">
+<h2 class="rv">Historia projektu</h2><p class="sub rv">Zobacz, jak jeden Polak tworzy coś od zera i buduje coś wielkiego.</p>
+<blockquote class="story-quote rv">Technix-Pro to <strong>polski projekt budowany od zera</strong> – bez gotowych szablonów i wielkiego budżetu, za to z jasną wizją: krok po kroku stworzyć ekosystem łączący Telegram Mini-App, Web3 i technologię. Każda funkcja, każdy etap roadmapy i każda zmiana na tej stronie to efekt pracy jednej osoby, która konsekwentnie rozwija swoje ambicje.</blockquote>
+<div class="grid aces">
+<div class="card rv"><span class="ico" aria-hidden="true">🇵🇱</span><h3>Polski projekt od zera</h3><p>Twórca samodzielnie projektuje, koduje i rozwija Technix-Pro – od pierwszego pomysłu po kolejne etapy.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">📱</span><h3>Mini-app w Telegramie</h3><p>Aplikacja w miejscu, gdzie są użytkownicy – bez instalacji. Premiera wkrótce, na razie dołącz do kanału.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">🤝</span><h3>Społeczność i rozwój krok po kroku</h3><p>Otwarta roadmapa, regularne aktualizacje i miejsce dla moderatorów, twórców oraz programistów.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">⚙️</span><h3>Web3, technologia, hardware</h3><p>Nowoczesny stos technologiczny i wizja sięgająca od oprogramowania po sprzęt.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">🚀</span><h3>Potencjał do rozbudowy</h3><p>Modularna architektura pozwala dodawać kolejne funkcje i moduły wraz ze wzrostem społeczności.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">💎</span><h3>Unikalny charakter</h3><p>Własny styl, własna identyfikacja i ambicja, by wyróżnić się na tle gotowych rozwiązań.</p></div>
+</div>
+</div></section>
 
 <section id="informacje"><div class="wrap">
 <h2 class="rv">Informacje</h2><p class="sub rv">Czym jest Technix-Pro i co budujemy.</p>
@@ -401,6 +441,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 </div></details>
 </div></section>
 
+<section id="wsparcie"><div class="wrap">
+<h2 class="rv">Wsparcie projektu</h2><p class="sub rv">Pomóż rozwijać Technix-Pro – bez wielkich słów, po prostu bądź blisko.</p>
+<div class="support-box rv">
+<p>Projekt rośnie dzięki ludziom, którzy w niego wierzą. Najlepszym wsparciem jest dołączenie do kanału Telegram, obserwowanie social mediów, udostępnianie projektu znajomym i dzielenie się opinią. Każda osoba w społeczności realnie pomaga budować Technix-Pro.</p>
+<div class="btns"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do kanału wsparcia</a><a class="btn btn-s" href="#social">Obserwuj w social mediach</a></div>
+<p class="support-note">Wsparcie ma charakter społecznościowy – nie obiecujemy żadnych korzyści finansowych.</p>
+</div>
+</div></section>
+
 <section id="social"><div class="wrap">
 <h2 class="rv">Social Media</h2><p class="sub rv">Bądź na bieżąco – TikTok, YouTube, Discord, X, Telegram, Facebook i Instagram.</p>
 <div class="social">
@@ -466,33 +515,35 @@ document.querySelectorAll('[data-open]').forEach(function(a){a.removeAttribute('
 document.querySelectorAll('.soc[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
 var mq=document.getElementById('mq'),w='Technix-Pro,Web3,Telegram Mini-App,Airdropy,Społeczność,Tokenizacja,Innowacje,Technologia,Telegram,Discord,Instagram,YouTube,Facebook,X'.split(',').map(function(t){return '<span>'+t+'</span>'}).join('');
 mq.innerHTML=w+w;
-var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<40;k++){var p=document.createElement('i');var z=2+Math.random()*3;p.style.width=p.style.height=z+'px';if(k%3===0)p.style.background='var(--neon-v)';p.style.left=(k*2.7+Math.random()*4)+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=.2+Math.random()*.7;pt.appendChild(p)}}
+var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<14;k++){var p=document.createElement('i');var z=2+Math.random()*3;p.style.width=p.style.height=z+'px';if(k%3===0)p.style.background='var(--neon-v)';p.style.left=(k*7.2+Math.random()*4)+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=.2+Math.random()*.7;pt.appendChild(p)}}
 var burger=document.getElementById('burger'),menu=document.getElementById('menu');
 burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
 menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
 var els=document.querySelectorAll('.rv');
-function count(el){var t=+el.getAttribute('data-count'),n=0,s=Math.max(1,Math.ceil(t/40));var i=setInterval(function(){n=Math.min(t,n+s);el.textContent=n;if(n>=t)clearInterval(i)},30)}
+function count(el){var t=+el.getAttribute('data-count'),n=0,s=Math.max(1,Math.ceil(t/25));var i=setInterval(function(){n=Math.min(t,n+s);el.textContent=n;if(n>=t)clearInterval(i)},40)}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');var c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){io.observe(el)})}else{els.forEach(function(el){el.classList.add('in');var c=el.querySelector('[data-count]');if(c)c.textContent=c.getAttribute('data-count')})}
 var links=document.querySelectorAll('#menu a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
 function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
-window.addEventListener('scroll',spy,{passive:true});spy();
+var rafS=0,onS=[];function raf(f){onS.push(f);if(!rafS)rafS=requestAnimationFrame(function(){rafS=0;var q=onS;onS=[];q.forEach(function(g){g()})})}
+window.addEventListener('scroll',function(){raf(spy)},{passive:true});spy();
 var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 var fine=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 var sp=document.getElementById('sp');
 function prog(){var h=document.documentElement.scrollHeight-window.innerHeight;if(sp)sp.style.transform='scaleX('+(h>0?Math.min(1,window.scrollY/h):0)+')'}
-window.addEventListener('scroll',prog,{passive:true});prog();
+window.addEventListener('scroll',function(){raf(prog)},{passive:true});prog();
 document.querySelectorAll('.grid,.counters,.social,.detail-grid').forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})});
-document.querySelectorAll('.card,.soc').forEach(function(c){c.addEventListener('pointermove',function(e){if(e.pointerType==='touch')return;var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(!reduce&&c.classList.contains('card')){c.style.setProperty('--rx',((.5-y/r.height)*6).toFixed(2)+'deg');c.style.setProperty('--ry',((x/r.width-.5)*6).toFixed(2)+'deg')}});c.addEventListener('pointerleave',function(){c.style.removeProperty('--rx');c.style.removeProperty('--ry')})});
+document.querySelectorAll('.card,.soc').forEach(function(c){c.addEventListener('pointermove',function(e){if(e.pointerType==='touch'||c._r)return;var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c._r=1;requestAnimationFrame(function(){c._r=0});c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(!reduce&&c.classList.contains('card')){c.style.setProperty('--rx',((.5-y/r.height)*6).toFixed(2)+'deg');c.style.setProperty('--ry',((x/r.width-.5)*6).toFixed(2)+'deg')}});c.addEventListener('pointerleave',function(){c.style.removeProperty('--rx');c.style.removeProperty('--ry')})});
 if(!reduce&&fine){document.querySelectorAll('.btn:not(.btn-soon)').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.setProperty('--bx',((e.clientX-r.left-r.width/2)*.12).toFixed(1)+'px');b.style.setProperty('--by',((e.clientY-r.top-r.height/2)*.18).toFixed(1)+'px')});b.addEventListener('pointerleave',function(){b.style.removeProperty('--bx');b.style.removeProperty('--by')})})}
 var art=document.querySelector('.hero-art'),tilt=document.getElementById('tilt'),chipSvg=document.querySelector('.chip');
 if(reduce){if(chipSvg&&chipSvg.pauseAnimations)chipSvg.pauseAnimations();document.querySelectorAll('.dp').forEach(function(d){d.style.display='none'})}
-else if(art&&tilt){if(fine){art.addEventListener('pointermove',function(e){var r=art.getBoundingClientRect();tilt.style.transform='perspective(900px) rotateX('+((.5-(e.clientY-r.top)/r.height)*14).toFixed(2)+'deg) rotateY('+(((e.clientX-r.left)/r.width-.5)*18).toFixed(2)+'deg)'});art.addEventListener('pointerleave',function(){tilt.style.transform=''})}else{window.addEventListener('scroll',function(){tilt.style.transform='perspective(900px) rotateX('+Math.sin(window.scrollY/160)*5+'deg) rotateY('+Math.cos(window.scrollY/200)*7+'deg)'},{passive:true})}}
+else if(art&&tilt){if(fine){art.addEventListener('pointermove',function(e){if(art._r)return;art._r=1;requestAnimationFrame(function(){art._r=0});var r=art.getBoundingClientRect();tilt.style.transform='perspective(900px) rotateX('+((.5-(e.clientY-r.top)/r.height)*14).toFixed(2)+'deg) rotateY('+(((e.clientX-r.left)/r.width-.5)*18).toFixed(2)+'deg)'});art.addEventListener('pointerleave',function(){tilt.style.transform=''})}else{window.addEventListener('scroll',function(){raf(function(){tilt.style.transform='perspective(900px) rotateX('+Math.sin(window.scrollY/160)*5+'deg) rotateY('+Math.cos(window.scrollY/200)*7+'deg)'})},{passive:true})}}
 var cards=document.querySelectorAll('.ms-card');
 function pct(n){var it=document.querySelectorAll('.road li:nth-child('+n+') .ck li'),sc=0;[].forEach.call(it,function(l){sc+=l.classList.contains('ok')?1:l.classList.contains('wip')?.5:0});return it.length?Math.round(sc/it.length*100):0}
 cards.forEach(function(c){var v=pct(c.getAttribute('data-phase')),b=c.querySelector('.ms-bar');c.style.setProperty('--w',v+'%');b.setAttribute('aria-valuenow',v);c.querySelector('.ms-pct').textContent=v+'% ukończenia'});
 var tl=document.getElementById('tl'),tlf=document.getElementById('tlf');
 function tlp(){if(!tl||!tlf)return;var r=tl.getBoundingClientRect(),v=(window.innerHeight*.6-r.top)/r.height;tlf.style.transform='scaleY('+Math.max(0,Math.min(1,v))+')'}
-window.addEventListener('scroll',tlp,{passive:true});window.addEventListener('resize',tlp);tlp();
+window.addEventListener('scroll',function(){raf(tlp)},{passive:true});window.addEventListener('resize',function(){raf(tlp)});tlp();
+document.addEventListener('visibilitychange',function(){document.body.classList.toggle('paused',document.hidden)});
 
 })();
 </script>
