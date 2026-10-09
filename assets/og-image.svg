@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Technix-Pro</title>
+  <desc id="description">Oficjalna strona projektu Technix-Pro</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#22e5ff"/>
+      <stop offset="1" stop-color="#b44cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1040" cy="100" r="300" fill="#b44cff" opacity=".12"/>
+  <circle cx="130" cy="570" r="300" fill="#22e5ff" opacity=".1"/>
+  <rect x="104" y="150" width="136" height="136" rx="32" fill="#161b22" stroke="url(#accent)" stroke-width="5"/>
+  <path d="M135 184h74v19h-27v49h-21v-49h-26z" fill="url(#accent)"/>
+  <path d="M174 215h20a15 15 0 0 1 0 30h-20zm18 19h-1v-6h1a3 3 0 0 0 0 6" fill="#f0f6fc"/>
+  <text x="104" y="380" fill="#f0f6fc" font-family="Segoe UI,Arial,sans-serif" font-size="66" font-weight="800">Technix-Pro</text>
+  <text x="108" y="442" fill="#c9d1d9" font-family="Segoe UI,Arial,sans-serif" font-size="28">Oficjalna strona projektu</text>
+  <rect x="108" y="485" width="116" height="5" rx="3" fill="url(#accent)"/>
+</svg>
