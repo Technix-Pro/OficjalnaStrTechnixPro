@@ -9,8 +9,12 @@
 <meta property="og:title" content="Technix-Pro | Oficjalna Strona Projektu">
 <meta property="og:description" content="Poznaj polski projekt Technix-Pro, śledź rozwój mini-aplikacji Telegram i dołącz do społeczności.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:image" content="assets/technix-pro-logo.svg">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="assets/technix-pro-logo.svg">
 <meta name="theme-color" content="#0d1117">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Technix-Pro","description":"Polski projekt Technix-Pro – ekosystem Web3 z mini-aplikacją na Telegramie i społecznością.","sameAs":["https://t.me/TechnixProTg","https://x.com/TechnixProo","https://www.facebook.com/share/1HYtutg5Jw/","https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA==","https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9","https://discord.gg/NUPGBjmSD"]}</script>
 <link rel="preload" as="image" href="assets/technix-pro-logo.svg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27%2307060f%27 stroke=%27%23b44cff%27/%3E%3Ctext x=%2732%27 y=%2739%27 font-size=%2730%27 font-family=%27Segoe UI,Arial%27 fill=%27%2322e5ff%27 text-anchor=%27middle%27%3ETP%3C/text%3E%3C/svg%3E">
 <style>
@@ -394,17 +398,50 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 .ck-list li::before{content:"▸";position:absolute;left:4px;color:var(--cyan)}
 .content-block h3{color:var(--white);font-size:1.25rem}
 #bezpieczenstwo .card:hover,#engine .card:hover{border-color:var(--cyan)}
+/* --- Etap 1: treść, UX, nowe funkcje --- */
+html{scroll-padding-top:84px}
+.skip-link{position:fixed;top:8px;left:8px;z-index:100;padding:10px 16px;border-radius:8px;background:var(--bg2);color:var(--white);border:2px solid var(--cyan);font-weight:700;transform:translateY(-200%)}
+.skip-link:focus,.skip-link:focus-visible{transform:none;outline:2px solid var(--cyan);outline-offset:2px}
+.soc:focus-visible,.lite-control:focus-visible,.deep-dive summary:focus-visible,.ms-more summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+html[data-theme=light] a:focus-visible,html[data-theme=light] button:focus-visible,html[data-theme=light] summary:focus-visible,html[data-theme=light] .soc:focus-visible,html[data-theme=light] .lite-control:focus-visible,html[data-theme=light] .skip-link:focus-visible{outline-color:#005a73}
+html[data-theme=light] .soc .tag{color:#3d4b5a;border-color:#8c99a8}
+.lite-control[hidden]{display:none}
+@media(min-width:1101px){nav{gap:12px}nav ul{min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding:4px 2px}}
+@media(min-width:1101px) and (max-width:1280px){nav ul{gap:0}nav ul a{padding:8px 6px;font-size:.8rem;white-space:nowrap}.logo{font-size:.95rem}}
+nav ul a[aria-current=true]{color:var(--white)}
+.soc[aria-disabled=true]{cursor:not-allowed}
+.soc[aria-disabled=true] .tag{color:#ffd66b;border-color:rgba(255,214,107,.45)}
+html[data-theme=light] .soc[aria-disabled=true] .tag{color:#7a5200;border-color:#b58105}
+.status-grid{margin:22px 0}
+.status-item .detail-kicker{display:block;margin-bottom:6px}
+.content-block p{margin:0 0 12px}
+.role-meta{display:block;margin-top:8px;font-size:.82rem;color:var(--muted)}
+.rules-box{margin:26px 0}
+.rules-box h3,.join-steps h3{color:var(--white);margin-bottom:10px}
+.join-steps{margin:26px 0}
+.verify-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:16px 20px;margin:0 0 22px;border:1px solid #ffd66b;border-left-width:4px;border-radius:12px;background:rgba(255,214,107,.08);color:var(--white)}
+.verify-bar .lite-control{margin:0}
+html[data-theme=light] .verify-bar{border-color:#b58105;background:rgba(255,214,107,.18)}
+.faq-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.faq-tools .lite-control{margin:0}
+.faq-empty{padding:16px 18px;margin-bottom:14px;border:1px dashed var(--line);border-radius:12px;color:var(--text)}
+.faq-empty[hidden]{display:none}
+.faq-empty .lite-control{margin:10px 0 0}
+.form-error{min-height:1.4em;margin-top:8px;font-size:.88rem;color:#ff8b8b}
+html[data-theme=light] .form-error{color:#a40e26}
+@media(max-width:600px){.verify-bar{flex-direction:column;align-items:stretch}.verify-bar .lite-control{justify-content:center}}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+<a class="skip-link" href="#glowna">Przejdź do treści</a>
 <div class="sp" id="sp" aria-hidden="true"></div>
 <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="pt" id="pt" aria-hidden="true"></div>
 <header>
 <div class="wrap"><nav aria-label="Główna nawigacja">
 <a href="#glowna" class="logo" aria-label="Technix-Pro"><span class="tp"><img src="assets/technix-pro-logo.svg" alt="" width="40" height="40" decoding="async"></span><span>TECHNIX<b>-PRO</b></span></a>
-<button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+<button class="burger" id="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
 <ul id="menu">
 <li><a href="#glowna">Start</a></li>
 <li><a href="#historia">Historia</a></li>
@@ -434,7 +471,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <h1><span class="grad">Technix-Pro</span><br>Technologia nowej generacji</h1>
 <p class="lead">Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy, tokenizację i globalną społeczność. Oficjalna strona projektu.</p>
 <div class="btns">
-<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <a href="#social" class="btn btn-s">Social Media</a>
 </div>
@@ -442,7 +479,9 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <button class="lite-control" id="theme-toggle" type="button" aria-pressed="false">☀️ Jasny motyw</button>
 <button class="lite-control" type="button" data-copy="page">🔗 Kopiuj link do strony</button>
 <button class="lite-control" type="button" data-copy="telegram">✈️ Kopiuj link Telegram</button>
+<button class="lite-control" type="button" data-share hidden>📤 Udostępnij</button>
 </div>
+<noscript><p class="support-note">Przełącznik motywu, kopiowanie i udostępnianie linków oraz licznik premiery wymagają włączonego JavaScript. Oficjalny kanał Telegram otworzysz przyciskiem powyżej.</p></noscript>
 <p class="copy-status" id="copy-status" aria-live="polite"></p>
 <div class="countdown rv" id="app-countdown" aria-live="polite">
 <strong>Premiera Telegram Mini-App</strong>
@@ -598,6 +637,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <section id="bezpieczenstwo"><div class="wrap">
 <h2 class="rv">Bezpieczeństwo i walka z oszustwami</h2><p class="sub rv">Ochrona użytkowników jest priorytetem – zanim pojawią się nagrody, token czy listing.</p>
 <div class="callout rv"><strong>Zasada nr 1:</strong> nigdy nie poprosimy Cię o frazę seed, klucz prywatny ani o wysłanie środków „na weryfikację”. Każdy, kto o to prosi w imieniu Technix-Pro, jest oszustem.</div>
+<div class="verify-bar rv" role="note" data-copy-scope><strong>⚠️ Sprawdź oficjalne linki.</strong><span>Jedyny potwierdzony kanał Telegram projektu: <code>https://t.me/TechnixProTg</code>. Inne adresy, zaproszenia i prywatne wiadomości traktuj jako podejrzane.</span><button class="lite-control" type="button" data-copy="telegram">📋 Kopiuj oficjalny link Telegram</button><span class="copy-status" aria-live="polite"></span></div>
 <div class="grid">
 <div class="card rv"><div class="ic">🔗</div><h3>Tylko oficjalne linki</h3><p>Prawdziwe kanały znajdziesz w sekcji Social Media na tej stronie. Wszystko inne traktuj jako podejrzane.</p></div>
 <div class="card rv"><div class="ic">🚫</div><h3>Brak obietnic zysku</h3><p>Nie gwarantujemy zarobków. Kto obiecuje pewny zysk w naszym imieniu – kłamie.</p></div>
@@ -622,20 +662,49 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <section id="engine"><div class="wrap">
 <h2 class="rv">EngineCore, nagrody i aktywna społeczność</h2><p class="sub rv">Kierunek współpracy i plany dla społeczności — szczegóły będą publikowane po ich potwierdzeniu.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">⚙️</div><h3>Współpraca z EngineCore</h3><p>Rozwijany kierunek współpracy wspierający ambicje technologiczne projektu. Zakres i konkretne rezultaty będą przedstawiane publicznie, gdy zostaną potwierdzone.</p></div>
+<div class="card rv"><div class="ic">⚙️</div><h3>Współpraca z EngineCore</h3><p>Rozwijany kierunek współpracy wspierający ambicje technologiczne projektu. Zakres i konkretne rezultaty będą przedstawiane publicznie, gdy zostaną potwierdzone. W planach EngineCore ma pełnić rolę warstwy silnika i zaplecza dla aplikacji.</p></div>
 <div class="card rv"><div class="ic">🎁</div><h3>Możliwe przyszłe nagrody</h3><p>Nagrody i korzyści dla aktywnych osób są planem, nie gwarancją. Zasady, jeśli zostaną wdrożone, opublikujemy z wyprzedzeniem.</p></div>
 <div class="card rv"><div class="ic">🔥</div><h3>Szukamy aktywnych</h3><p>Zapraszamy moderatorów, twórców, programistów i użytkowników do opiniowania projektu oraz pomocy w jego rozwijaniu.</p></div>
 </div>
+<div class="content-block rv">
+<h3>Czym jest EngineCore w kontekście Technix-Pro?</h3>
+<p>EngineCore to kierunek współpracy technologicznej, który ma wzmocnić techniczne zaplecze Technix-Pro. W planach jest to warstwa silnika i zaplecza – „rdzeń”, na którym może opierać się mini-aplikacja w Telegramie i jej kolejne funkcje. Napis „COREENGINE” na grafice chipa w sekcji głównej symbolizuje właśnie tę warstwę rdzenia; to element wizualny, a nie potwierdzenie gotowego produktu.</p>
+<p>Obok rozwoju technologii rośnie aktywna społeczność: osoby, które testują, moderują, tworzą treści i dzielą się opiniami. Jeśli w przyszłości pojawią się nagrody, będą one dodatkiem do wspólnej pracy – planem, a nie gwarancją.</p>
+</div>
+<div class="status-grid rv" role="list" aria-label="Status EngineCore: potwierdzone, planowane, bez obietnic">
+<div class="status-item" role="listitem"><span class="detail-kicker">✅ Potwierdzone</span><strong>Co już jest</strong><p>Oficjalna strona, kanał Telegram, kanały social media, publiczna roadmapa oraz zasady bezpieczeństwa. Współpraca z EngineCore jest kierunkiem, który rozwijamy.</p></div>
+<div class="status-item" role="listitem"><span class="detail-kicker">🛠️ Planowane</span><strong>Co jest w planach</strong><p>Połączenie warstwy silnika z mini-aplikacją, testy z udziałem społeczności oraz ewentualne zasady nagród – publikowane z wyprzedzeniem, zanim zaczną obowiązywać.</p></div>
+<div class="status-item" role="listitem"><span class="detail-kicker">🚫 Bez obietnic</span><strong>Czego jeszcze nie obiecujemy</strong><p>Zysków, konkretnych terminów, nagród, tokena ani listingu. Nie ogłaszamy niczego, czego nie możemy potwierdzić.</p></div>
+</div>
+<details class="deep-dive rv"><summary>Jak EngineCore łączy się z aplikacją i społecznością?</summary><div class="detail-content">
+<p>Poniżej opisujemy, jak ta współpraca ma działać w planowanym kształcie. To kierunek, nie gotowa specyfikacja – szczegóły będą publikowane po ich potwierdzeniu.</p>
+<div class="detail-grid"><article><span class="detail-kicker">Aplikacja</span><h3>Silnik aplikacji</h3><p>Warstwa zaplecza ma wspierać działanie mini-aplikacji w Telegramie, tak aby kolejne funkcje można było dodawać stopniowo i testować z udziałem społeczności.</p></article><article><span class="detail-kicker">Ochrona</span><h3>Bezpieczeństwo</h3><p>Nigdy nie prosimy o frazę seed ani klucz prywatny. Komunikaty publikujemy wyłącznie przez oficjalne kanały wskazane na tej stronie.</p></article><article><span class="detail-kicker">Zasady</span><h3>Nagrody i zasady</h3><p>Nagrody są planem, nie gwarancją. Jeśli zostaną wdrożone, regulamin i warunki opublikujemy z wyprzedzeniem.</p></article><article><span class="detail-kicker">Jawność</span><h3>Przejrzystość</h3><p>Postępy, roadmapę i decyzje pokazujemy publicznie. Niepubliczne pozostają wyłącznie dane wrażliwe.</p></article></div>
+</div></details>
 <div class="btns rv"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do aktywnej społeczności</a><a class="btn btn-s" href="#spolecznosc">Zobacz, jak pomóc</a></div>
 </div></section>
 
 <section id="spolecznosc"><div class="wrap">
 <h2 class="rv">Dołącz do zespołu</h2><p class="sub rv">Współtwórz Technix-Pro od zera.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">🛡️</div><h3>Moderatorzy</h3><p>Dbaj o porządek i pomagaj nowym osobom.</p></div>
-<div class="card rv"><div class="ic">🎬</div><h3>Twórcy treści</h3><p>Twórz materiały, które pokażą projekt światu.</p></div>
-<div class="card rv"><div class="ic">💻</div><h3>Programiści</h3><p>Współtwórz aplikację i ekosystem od podstaw.</p></div>
+<div class="card rv"><div class="ic">🛡️</div><h3>Moderatorzy</h3><p>Dbaj o porządek i pomagaj nowym osobom. Szukamy osób kulturalnych i cierpliwych; zadania to m.in. odpowiadanie na pytania, usuwanie spamu i zgłaszanie podejrzanych kont. Doświadczenie nie jest wymagane.</p><span class="role-meta">Orientacyjnie: kilka godzin tygodnia, elastycznie.</span></div>
+<div class="card rv"><div class="ic">🎬</div><h3>Twórcy treści</h3><p>Twórz materiały, które pokażą projekt światu. Szukamy osób piszących, nagrywających lub projektujących grafiki; przykładowe zadania to krótkie wideo, posty i infografiki. Wystarczy pomysł i chęć, doświadczenie nie jest konieczne.</p><span class="role-meta">Orientacyjnie: pojedyncze materiały, we własnym tempie.</span></div>
+<div class="card rv"><div class="ic">💻</div><h3>Programiści</h3><p>Współtwórz aplikację i ekosystem od podstaw. Szukamy osób znających technologie webowe (HTML, CSS, JavaScript) lub Telegram Mini Apps; przykładowe zadania to poprawki strony, testy i drobne funkcje. Podstawowa znajomość technologii jest potrzebna.</p><span class="role-meta">Orientacyjnie: zadania w ustalonym wspólnie wymiarze.</span></div>
+<div class="card rv"><div class="ic">🧪</div><h3>Testerzy aplikacji</h3><p>Gdy mini-aplikacja będzie gotowa do prób, przydadzą się osoby zgłaszające błędy i uwagi. Nie jest potrzebna wiedza techniczna – wystarczy dokładny opis problemu.</p><span class="role-meta">Zaproszenie do zgłoszeń – nie gwarancja przyjęcia.</span></div>
+<div class="card rv"><div class="ic">✍️</div><h3>Tłumacze i redaktorzy</h3><p>Pomóż w tłumaczeniu komunikatów, sprawdzaniu pisowni i dbaniu o spójny, zrozumiały język na stronie i w kanałach.</p><span class="role-meta">Zaproszenie do zgłoszeń – nie gwarancja przyjęcia.</span></div>
+<div class="card rv"><div class="ic">📣</div><h3>Ambasadorzy społeczności</h3><p>Wspieraj nowe osoby, pokazuj oficjalne linki i zasady bezpieczeństwa oraz dziel się opiniami o projekcie – bez obietnic zysków.</p><span class="role-meta">Zaproszenie do zgłoszeń – nie gwarancja przyjęcia.</span></div>
 </div>
+<div class="join-steps rv"><h3>Jak dołączyć?</h3>
+<div class="steps">
+<div class="step"><span class="step-number">1</span><strong>Wejdź na kanał</strong><p>Otwórz oficjalny kanał Telegram Technix-Pro.</p></div>
+<div class="step"><span class="step-number">2</span><strong>Opisz, w czym pomagasz</strong><p>Napisz krótko, w jakiej roli chcesz pomóc i ile masz czasu.</p></div>
+<div class="step"><span class="step-number">3</span><strong>Rozmowa lub zadanie próbne</strong><p>Krótka rozmowa albo małe zadanie na początek – bez presji.</p></div>
+<div class="step"><span class="step-number">4</span><strong>Start</strong><p>Jeśli współpraca pasuje obu stronom, ustalamy zakres i zaczynamy.</p></div>
+</div></div>
+<div class="rules-box rv"><h3>Zasady społeczności</h3>
+<ul class="ck-list"><li>Szacunek wobec innych osób – bez wyzwisk i hejtu.</li><li>Zero spamu i scamu: żadnych podejrzanych linków ani ofert „na skróty”.</li><li>Brak obietnic zysku – nikt nie gwarantuje zarobków w imieniu projektu.</li><li>Korzystamy wyłącznie z oficjalnych kanałów podanych na tej stronie.</li></ul>
+</div>
+<div class="btns rv" data-copy-scope><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz na kanale Telegram</a><button class="lite-control" type="button" data-copy="telegram">✈️ Kopiuj link Telegram</button><button class="lite-control" type="button" data-share hidden>📤 Udostępnij</button><p class="copy-status" aria-live="polite" style="flex-basis:100%;text-align:center"></p></div>
+<p class="support-note rv" style="text-align:center">Zgłoszenie nie gwarantuje przyjęcia do zespołu. Nie zbieramy adresów e-mail ani innych danych osobowych – kontakt odbywa się w Telegramie.</p>
 <details class="deep-dive rv"><summary>Dowiedz się więcej o współpracy</summary><div class="detail-content">
 <p>Projekt rozwija jedna osoba, więc każda pomoc ma realne znaczenie. Do zespołu mogą dołączyć osoby zainteresowane moderacją, tworzeniem treści i rozwojem oprogramowania. Opisz, w jakim obszarze chcesz pomóc, kontaktując się przez oficjalny kanał Telegram – wszystko poza danymi wrażliwymi robimy jawnie.</p>
 <div class="detail-grid"><article><span class="detail-kicker">Społeczność</span><h3>Moderatorzy</h3><p>Pomagają utrzymać przyjazną przestrzeń i wspierają nowe osoby.</p></article><article><span class="detail-kicker">Treści</span><h3>Twórcy</h3><p>Przygotowują materiały promocyjne, krótkie wideo i komunikaty.</p></article><article><span class="detail-kicker">Kod</span><h3>Programiści</h3><p>Wspierają rozwój strony, mini-aplikacji i kolejnych funkcji.</p></article></div>
@@ -689,6 +758,9 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <h2 class="rv">FAQ</h2><p class="sub rv">Najczęstsze pytania.</p>
 <label class="vh" for="faq-search">Szukaj w pytaniach i odpowiedziach</label><input class="faq-search" id="faq-search" type="search" placeholder="Szukaj w FAQ…" autocomplete="off">
 <p class="faq-status" id="faq-status" aria-live="polite"></p>
+<noscript><p class="support-note">Wyszukiwarka FAQ wymaga JavaScript – wszystkie pytania są jednak widoczne poniżej.</p></noscript>
+<div class="faq-empty" id="faq-empty" hidden><p>Brak wyników.</p><button class="lite-control" id="faq-clear" type="button">Wyczyść wyszukiwanie</button></div>
+<div class="faq-tools" id="faq-tools" hidden><button class="lite-control" id="faq-expand" type="button">Rozwiń wszystko</button><button class="lite-control" id="faq-collapse" type="button">Zwiń wszystko</button></div>
 <div class="faq rv">
 <details><summary>Jak uruchomić aplikację?</summary><p>Telegram Mini-App jest w przygotowaniu; przycisk „Telegram Mini-App – Wkrótce” pozostaje nieaktywny. Termin i oficjalny link pojawią się w kanale Telegram po zakończeniu prac i testów.</p></details>
 <details><summary>Gdzie znajdę linki do social mediów?</summary><p>Linki do kanałów pojawią się w sekcji Social Media. Telegram, Facebook, Instagram, YouTube, X i Discord są już dodane do strony.</p></details>
@@ -707,6 +779,11 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <details><summary>Czym jest współpraca z EngineCore?</summary><p>To rozwijany kierunek współpracy związany z ambicjami technologicznymi projektu. Konkretne zakresy i efekty będą publikowane po ich potwierdzeniu.</p></details>
 <details><summary>Jak chronicie użytkowników przed oszustwami?</summary><p>Komunikujemy tylko przez oficjalne linki, nie prosimy o seed ani klucze, nie obiecujemy zysków i planujemy moderację oraz zgłaszanie fałszywych kont. Szczegóły w sekcji Bezpieczeństwo.</p></details>
 <details><summary>Czy będą nagrody dla społeczności?</summary><p>Nagrody i korzyści są możliwym kierunkiem rozwoju, nie obietnicą. Jeśli zostaną wdrożone, zasady i warunki zostaną opublikowane z wyprzedzeniem.</p></details>
+<details><summary>Jaką rolę ma pełnić EngineCore?</summary><p>W planach EngineCore ma być warstwą silnika i zaplecza, na której może opierać się mini-aplikacja. To kierunek współpracy technologicznej – konkretne zakresy i efekty opublikujemy dopiero po ich potwierdzeniu.</p></details>
+<details><summary>Co z EngineCore jest już gotowe, a co planowane?</summary><p>Gotowe są strona, kanały społecznościowe, roadmapa i zasady bezpieczeństwa. Połączenie silnika z aplikacją i ewentualne nagrody są planami; nie podajemy terminów ani nie obiecujemy zysków.</p></details>
+<details><summary>Jak zgłosić się do zespołu?</summary><p>Wejdź na oficjalny kanał Telegram, opisz, w czym chcesz pomóc, a następnie odbędzie się krótka rozmowa lub zadanie próbne. Szczegóły znajdziesz w sekcji „Dołącz do zespołu”.</p></details>
+<details><summary>Czy potrzebuję doświadczenia, aby pomagać?</summary><p>Nie zawsze. Przy moderacji, testach i tworzeniu treści wystarczą chęci i kultura osobista. Przy programowaniu potrzebna jest podstawowa znajomość technologii webowych.</p></details>
+<details><summary>Czy zgłoszenie gwarantuje miejsce w zespole?</summary><p>Nie. Zaproszenie do zgłoszeń nie oznacza gwarancji przyjęcia. Nie zbieramy też adresów e-mail ani innych danych osobowych.</p></details>
 </div>
 <details class="deep-dive rv"><summary>Nie ma tu Twojego pytania?</summary><div class="detail-content">
 <p>Sprawdź roadmapę i oficjalne kanały społecznościowe, aby znaleźć najnowsze informacje. W sprawach dotyczących projektu skontaktuj się z nami przez oficjalny kanał Telegram.</p>
@@ -716,12 +793,13 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 
 <section id="kontakt"><div class="wrap">
 <div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Projekt rozwija jedna osoba, a jego kolejne etapy są publiczne. Dołącz do oficjalnego kanału, śledź status prac i zgłoś, jak możesz pomóc.</p>
-<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
-<form class="notify-form" id="notify-form" action="https://t.me/TechnixProTg" method="get" target="_blank">
-<label><input type="checkbox" required> Chcę otrzymać informację o premierze. Po przejściu do kanału mogę włączyć powiadomienia Telegram.</label>
+<form class="notify-form" id="notify-form" action="https://t.me/TechnixProTg" method="get" target="_blank" rel="noopener noreferrer">
+<label><input type="checkbox" id="notify-consent" required aria-describedby="notify-status"> Chcę otrzymać informację o premierze. Po przejściu do kanału mogę włączyć powiadomienia Telegram.</label>
 <button class="btn btn-p" type="submit">🔔 Zapisz się na powiadomienia</button>
 </form>
+<p class="form-error" id="notify-status" role="status" aria-live="polite"></p>
 <p class="support-note">Nie zbieramy adresu e-mail ani innych danych — powiadomienia włączysz bezpośrednio w Telegramie.</p>
 </div>
 <details class="deep-dive rv"><summary>Jak skontaktować się z projektem?</summary><div class="detail-content">
@@ -745,7 +823,8 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Wróć na górę" hidden>↑ Do góry</button>
-<dialog class="lightbox" id="lightbox" aria-label="Powiększona grafika">
+<dialog class="lightbox" id="lightbox" aria-label="Powiększona grafika" aria-labelledby="lightbox-title">
+<h2 class="vh" id="lightbox-title">Powiększona grafika</h2>
 <button class="lightbox-close" id="lightbox-close" type="button">Zamknij ✕</button>
 <div class="lightbox-content" id="lightbox-content"></div>
 </dialog>
@@ -766,32 +845,43 @@ applyTheme(theme);
 if(themeToggle)themeToggle.addEventListener('click',function(){theme=theme==='light'?'dark':'light';applyTheme(theme);try{localStorage.setItem('technix-pro-theme',theme)}catch(e){}});
 var copyStatus=document.getElementById('copy-status');
 function copyText(text){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);return new Promise(function(resolve,reject){var field=document.createElement('textarea');field.value=text;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();var ok=document.execCommand('copy');field.remove();ok?resolve():reject(new Error('copy failed'))})}
-document.querySelectorAll('[data-copy]').forEach(function(button){button.addEventListener('click',function(){var value=button.dataset.copy==='telegram'?'https://t.me/TechnixProTg':window.location.href;copyText(value).then(function(){copyStatus.textContent=button.dataset.copy==='telegram'?'Skopiowano link do kanału Telegram.':'Skopiowano link do strony.'}).catch(function(){copyStatus.textContent='Nie udało się skopiować linku. Zaznacz i skopiuj go ręcznie.'})})});
+document.querySelectorAll('[data-copy]').forEach(function(button){button.addEventListener('click',function(){var value=button.dataset.copy==='telegram'?'https://t.me/TechnixProTg':window.location.href;var scope=button.closest('[data-copy-scope]'),status=(scope&&scope.querySelector('.copy-status'))||copyStatus;copyText(value).then(function(){status.textContent=button.dataset.copy==='telegram'?'Skopiowano link do kanału Telegram.':'Skopiowano link do strony.'}).catch(function(){status.textContent='Nie udało się skopiować linku. Zaznacz i skopiuj go ręcznie.'})})});
+document.querySelectorAll('[data-share]').forEach(function(button){button.hidden=false;button.addEventListener('click',function(){var scope=button.closest('[data-copy-scope]'),status=(scope&&scope.querySelector('.copy-status'))||copyStatus,data={title:document.title,text:'Technix-Pro – oficjalna strona projektu',url:window.location.href};function fallback(){copyText(data.url).then(function(){status.textContent='Udostępnianie jest niedostępne – skopiowano link do strony.'}).catch(function(){status.textContent='Nie udało się skopiować linku. Zaznacz i skopiuj go ręcznie.'})}try{if(navigator.share){navigator.share(data).then(function(){status.textContent='Dziękujemy za udostępnienie strony.'}).catch(function(err){if(err&&err.name==='AbortError')return;fallback()})}else fallback()}catch(err){fallback()}})});
 var faqSearch=document.getElementById('faq-search'),faqItems=document.querySelectorAll('.faq details'),faqStatus=document.getElementById('faq-status');
 function filterFaq(){var query=faqSearch.value.trim().toLocaleLowerCase('pl'),visible=0;faqItems.forEach(function(item){var match=item.textContent.toLocaleLowerCase('pl').indexOf(query)!==-1;item.hidden=!match;if(match)visible++});faqStatus.textContent=query?(visible?visible+' '+(visible===1?'pytanie':'pytań')+' znaleziono.':'Brak pasujących pytań.'):(faqItems.length+' pytań — wpisz hasło, aby przefiltrować listę.')}
 if(faqSearch){faqSearch.addEventListener('input',filterFaq);filterFaq()}
+var faqEmpty=document.getElementById('faq-empty'),faqClear=document.getElementById('faq-clear'),faqTools=document.getElementById('faq-tools');
+function faqEmptyState(){if(!faqEmpty||!faqSearch)return;var any=false;faqItems.forEach(function(i){if(!i.hidden)any=true});faqEmpty.hidden=any||!faqSearch.value.trim()}
+if(faqSearch){faqSearch.addEventListener('input',faqEmptyState);if(faqClear)faqClear.addEventListener('click',function(){faqSearch.value='';filterFaq();faqEmptyState();faqSearch.focus()})}
+if(faqTools){faqTools.hidden=false;var setFaq=function(open){faqItems.forEach(function(i){if(!i.hidden)i.open=open})};document.getElementById('faq-expand').addEventListener('click',function(){setFaq(true)});document.getElementById('faq-collapse').addEventListener('click',function(){setFaq(false)})}
+var notifyForm=document.getElementById('notify-form'),notifyConsent=document.getElementById('notify-consent'),notifyStatus=document.getElementById('notify-status');
+if(notifyForm&&notifyConsent&&notifyStatus){notifyConsent.addEventListener('invalid',function(){notifyConsent.setCustomValidity('Zaznacz zgodę, aby przejść do kanału Telegram.');notifyStatus.style.color='';notifyStatus.textContent='Zaznacz zgodę powyżej, aby przejść do kanału Telegram.'});notifyConsent.addEventListener('change',function(){notifyConsent.setCustomValidity('');notifyStatus.textContent=''});notifyForm.addEventListener('submit',function(){notifyStatus.style.color='var(--cyan)';notifyStatus.textContent='Za chwilę zostaniesz przeniesiony do kanału Telegram (nowa karta). Powiadomienia włączysz tam samodzielnie.'})}
+var lightboxTrigger=null;
+document.querySelectorAll('[data-lightbox]').forEach(function(g){g.addEventListener('click',function(){lightboxTrigger=g},true);g.addEventListener('keydown',function(){lightboxTrigger=g},true)});
 var lightbox=document.getElementById('lightbox'),lightboxContent=document.getElementById('lightbox-content');
 function openLightbox(source){lightboxContent.replaceChildren();if(source.matches('svg')){var image=document.createElement('img'),graphicCopy=source.cloneNode(true);graphicCopy.querySelectorAll('animate,animateMotion').forEach(function(animation){animation.remove()});image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(new XMLSerializer().serializeToString(graphicCopy));image.alt=source.getAttribute('aria-label')||'Powiększona grafika Technix-Pro';lightboxContent.appendChild(image)}else{var copy=source.cloneNode(true);copy.removeAttribute('data-lightbox');copy.removeAttribute('aria-label');copy.style.animation='none';lightboxContent.appendChild(copy)}if(lightbox.showModal)lightbox.showModal();else lightbox.setAttribute('open','')}
 document.querySelectorAll('[data-lightbox],.chip[data-lightbox]').forEach(function(graphic){graphic.addEventListener('click',function(){openLightbox(graphic)});graphic.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(graphic)}})});
 document.getElementById('lightbox-close').addEventListener('click',function(){lightbox.close?lightbox.close():lightbox.removeAttribute('open')});
 lightbox.addEventListener('click',function(event){if(event.target===lightbox){if(lightbox.close)lightbox.close();else lightbox.removeAttribute('open')}});
+lightbox.addEventListener('close',function(){if(lightboxTrigger&&lightboxTrigger.focus){try{lightboxTrigger.focus()}catch(e){}}});
 var toTop=document.getElementById('to-top');
 toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});
 function safe(u){return /^https:\/\//i.test(u) || /^https:\/\/t\.me\//i.test(u)}
 document.querySelectorAll('[data-social]').forEach(function(a){var u=LINKS[a.getAttribute('data-social')];if(u&&safe(u)){a.href=u;a.target='_blank';a.rel='noopener noreferrer';a.removeAttribute('aria-disabled');a.classList.add('live');var tag=a.querySelector('.tag');if(tag)tag.style.display='none'}});
 document.querySelectorAll('[data-open]').forEach(function(a){a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.setAttribute('tabindex','-1');a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation()})});
-document.querySelectorAll('.soc[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
+document.querySelectorAll('.soc[aria-disabled=true]').forEach(function(a){var n=a.querySelector('strong');a.removeAttribute('href');a.setAttribute('role','link');a.setAttribute('tabindex','0');a.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();a.click()}});a.setAttribute('aria-label',(n?n.textContent:'Kanał')+' – wkrótce, link jeszcze niedostępny');a.addEventListener('click',function(e){e.preventDefault();if(copyStatus)copyStatus.textContent=(n?n.textContent:'Ten kanał')+' – link pojawi się wkrótce.'})});
 var mq=document.getElementById('mq'),w='Technix-Pro,Web3,Telegram Mini-App,Airdropy,Społeczność,Tokenizacja,Innowacje,Technologia,Telegram,Discord,Instagram,YouTube,Facebook,X'.split(',').map(function(t){return '<span>'+t+'</span>'}).join('');
 mq.innerHTML=w+w;
 var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){for(var k=0;k<14;k++){var p=document.createElement('i');var z=2+Math.random()*3;p.style.width=p.style.height=z+'px';if(k%3===0)p.style.background='var(--neon-v)';p.style.left=(k*7.2+Math.random()*4)+'vw';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*18)+'s';p.style.opacity=.2+Math.random()*.7;pt.appendChild(p)}}
 var burger=document.getElementById('burger'),menu=document.getElementById('menu');
-burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',String(o))});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
 menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
 var els=document.querySelectorAll('.rv');
 function count(el){var t=+el.getAttribute('data-count'),n=0,s=Math.max(1,Math.ceil(t/25));var i=setInterval(function(){n=Math.min(t,n+s);el.textContent=n;if(n>=t)clearInterval(i)},40)}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('offscreen');e.target.classList.add('in');var c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){el.classList.add('offscreen');io.observe(el)})}else{els.forEach(function(el){el.classList.add('in');var c=el.querySelector('[data-count]');if(c)c.textContent=c.getAttribute('data-count')})}
 var links=document.querySelectorAll('#menu a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
-function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('active',i===cur)})}
+function spy(){var y=window.scrollY+120,cur=0,best=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y&&s.offsetTop>best){best=s.offsetTop;cur=i}});links.forEach(function(a,i){a.classList.toggle('active',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});var act=links[cur];if(act&&menu.scrollWidth>menu.clientWidth&&!menu.classList.contains('open')&&window.innerWidth>1100)menu.scrollLeft=act.offsetLeft-menu.clientWidth/2+act.offsetWidth/2}
 var rafS=0,onS=[];function raf(f){onS.push(f);if(!rafS)rafS=requestAnimationFrame(function(){rafS=0;var q=onS;onS=[];q.forEach(function(g){g()})})}
 window.addEventListener('scroll',function(){raf(spy)},{passive:true});spy();
 var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
