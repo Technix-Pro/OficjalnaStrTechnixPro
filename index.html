@@ -263,6 +263,27 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .support-box p{max-width:680px;margin:0 auto 18px}
 .support-box .btns{justify-content:center}
 .support-note{font-size:.85rem;color:var(--muted)}
+.support-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+.support-card{padding:24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,rgba(22,27,34,.97),rgba(13,17,23,.95));position:relative;overflow:hidden}
+.support-card:first-child{border-color:rgba(57,208,255,.32)}
+.support-card:nth-child(2){border-color:rgba(163,113,247,.38)}
+.support-card:nth-child(3){border-color:rgba(46,160,67,.35)}
+.support-card h3{display:flex;align-items:center;gap:10px;color:var(--white);font-size:1.08rem;margin-bottom:12px}
+.support-icon{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:11px;background:linear-gradient(135deg,rgba(34,229,255,.16),rgba(180,76,255,.2));font-size:1.2rem}
+.support-card p{color:var(--muted);font-size:.91rem;margin-bottom:12px}
+.support-card strong{color:var(--white)}
+.support-list{list-style:none;display:grid;gap:10px;margin-top:16px}
+.support-list li{position:relative;padding-left:25px;color:var(--text);font-size:.88rem}
+.support-list li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:800}
+.payment-status{display:inline-flex;align-items:center;gap:7px;margin:0 0 12px;padding:5px 10px;border:1px solid rgba(255,204,102,.35);border-radius:999px;background:rgba(255,204,102,.08);color:#ffd580;font-size:.75rem;font-weight:700}
+.qr-placeholder{display:grid;place-items:center;gap:7px;min-height:142px;margin:14px 0;padding:16px;border:1px dashed rgba(163,113,247,.55);border-radius:12px;background:rgba(163,113,247,.06);text-align:center}
+.qr-placeholder span{font-size:1.7rem}
+.qr-placeholder strong{font-size:.85rem}
+.qr-placeholder small{max-width:230px;color:var(--muted);font-size:.76rem}
+.support-card .btn{margin-top:4px;padding:10px 14px;font-size:.85rem}
+.support-disclaimer{margin-top:18px;padding:14px 16px;border-left:3px solid var(--cyan);border-radius:0 10px 10px 0;background:rgba(34,229,255,.06);color:var(--text);font-size:.85rem}
+@media(max-width:900px){.support-layout{grid-template-columns:1fr 1fr}.support-card:last-child{grid-column:1/-1}}
+@media(max-width:600px){.support-layout{grid-template-columns:1fr}.support-card:last-child{grid-column:auto}.support-card{padding:20px}}
 .hero-accent{display:inline-block;margin:0 0 14px;padding:6px 14px;border-radius:999px;border:1px solid rgba(34,229,255,.4);background:rgba(34,229,255,.07);color:var(--neon-c);font-size:.85rem;font-weight:700;letter-spacing:.5px;position:relative;overflow:hidden}
 .hero-accent::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:shim 5s ease-in-out infinite}
 body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
@@ -626,12 +647,30 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="wsparcie"><div class="wrap">
-<h2 class="rv">Wsparcie projektu</h2><p class="sub rv">Pomóż rozwijać Technix-Pro – bez wielkich słów, po prostu bądź blisko.</p>
-<div class="support-box rv">
-<p>Projekt rośnie dzięki ludziom, którzy w niego wierzą. Najlepszym wsparciem jest dołączenie do kanału Telegram, obserwowanie social mediów, udostępnianie projektu znajomym i dzielenie się opinią. Każda osoba w społeczności realnie pomaga budować Technix-Pro – a skoro projekt tworzy jedna osoba, Twoja aktywność naprawdę się liczy.</p>
-<ul class="ck-list"><li>Dołącz do kanału i włącz powiadomienia.</li><li>Zgłaszaj pomysły, błędy i podejrzane konta.</li><li>Udostępniaj projekt tym, którzy cenią uczciwe Web3.</li><li>Zaoferuj umiejętności: moderacja, treści, kod.</li></ul>
-<div class="btns"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do kanału wsparcia</a><a class="btn btn-s" href="#social">Obserwuj w social mediach</a></div>
-<p class="support-note">Wsparcie ma charakter społecznościowy – nie obiecujemy żadnych korzyści finansowych.</p>
+<h2 class="rv">Wesprzyj Technix-Pro</h2><p class="sub rv">Dobrowolne wsparcie pomaga rozwijać projekt niezależnie i w przejrzysty sposób. Wybierz świadomie — wsparcie finansowe nie jest wymagane.</p>
+<div class="support-layout">
+<article class="support-card rv">
+<h3><span class="support-icon" aria-hidden="true">🧭</span>Tryb wsparcia</h3>
+<p>Technix-Pro rozwija jedna osoba, a za aplikacją stoją kolejne etapy pracy, które wymagają czasu i stabilnego zaplecza. Wsparcie przeznaczę na <strong>rozwój aplikacji, infrastrukturę, testy, utrzymanie oraz dalszy rozwój projektu</strong>.</p>
+<p>Pomaga pokrywać koszty narzędzi i usług, sprawdzać rozwiązania przed ich wdrożeniem oraz utrzymywać projekt podczas budowania kolejnych funkcji. Dzięki temu mogę skupić więcej pracy na bezpiecznym i systematycznym rozwoju.</p>
+<ul class="support-list"><li>rozwój i testowanie funkcji aplikacji</li><li>serwery, domeny i niezbędne usługi</li><li>utrzymanie oraz kolejne etapy projektu</li></ul>
+</article>
+<article class="support-card rv">
+<h3><span class="support-icon" aria-hidden="true">💳</span>Metody płatności</h3>
+<span class="payment-status">Dane płatności nie zostały jeszcze opublikowane</span>
+<p><strong>TON:</strong> adres portfela zostanie podany po jego potwierdzeniu w oficjalnym kanale. Nie wysyłaj środków na adresy otrzymane w prywatnych wiadomościach.</p>
+<div class="qr-placeholder" role="img" aria-label="Miejsce na kod QR, który zostanie dodany po potwierdzeniu adresu portfela">
+<span aria-hidden="true">▦</span><strong>Kod QR portfela</strong><small>Pojawi się tutaj dopiero razem ze zweryfikowanym adresem TON.</small>
+</div>
+<p><strong>BLIK / Revolut:</strong> dostępność i szczegóły potwierdzaj wyłącznie w oficjalnym kanale Technix-Pro.</p>
+<a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Oficjalny kanał Telegram</a>
+</article>
+<article class="support-card rv">
+<h3><span class="support-icon" aria-hidden="true">🛡️</span>Przejrzystość i bezpieczeństwo</h3>
+<p>Wsparcie jest dobrowolne i służy finansowaniu prac nad projektem. <strong>Nie jest inwestycją ani lokatą</strong> i nie daje udziałów, tokenów, zysków ani gwarancji zwrotu. Nie składamy obietnic finansowych.</p>
+<ul class="support-list"><li>korzystaj wyłącznie z danych opublikowanych na tej stronie lub potwierdzonych w oficjalnym kanale</li><li>nikt z zespołu nie poprosi Cię o seed phrase, klucz prywatny ani zdalny dostęp do portfela</li><li>uważaj na podszywające się konta, presję czasu i obietnice gwarantowanego zysku</li></ul>
+<p class="support-disclaimer">Jeśli dane płatności lub wiadomość budzą wątpliwości, wstrzymaj się z przelewem i sprawdź informację w oficjalnym kanale.</p>
+</article>
 </div>
 </div></section>
 
