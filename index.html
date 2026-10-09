@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
 <title>Technix-Pro | Oficjalna Strona Projektu</title>
 <meta name="description" content="Technix-Pro – ekosystem Web3 z mini-aplikacją na Telegramie, airdropami i społecznością.">
 <meta name="robots" content="index,follow">
@@ -10,10 +11,11 @@
 <meta property="og:description" content="Poznaj polski projekt Technix-Pro, śledź rozwój mini-aplikacji Telegram i dołącz do społeczności.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:image" content="assets/technix-pro-logo.svg">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="assets/technix-pro-logo.svg">
+<meta property="og:image" content="assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/og-image.svg">
 <meta name="theme-color" content="#0d1117">
+<link rel="manifest" href="site.webmanifest">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Technix-Pro","description":"Polski projekt Technix-Pro – ekosystem Web3 z mini-aplikacją na Telegramie i społecznością.","sameAs":["https://t.me/TechnixProTg","https://x.com/TechnixProo","https://www.facebook.com/share/1HYtutg5Jw/","https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA==","https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9","https://discord.gg/NUPGBjmSD"]}</script>
 <link rel="preload" as="image" href="assets/technix-pro-logo.svg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27%2307060f%27 stroke=%27%23b44cff%27/%3E%3Ctext x=%2732%27 y=%2739%27 font-size=%2730%27 font-family=%27Segoe UI,Arial%27 fill=%27%2322e5ff%27 text-anchor=%27middle%27%3ETP%3C/text%3E%3C/svg%3E">
@@ -49,7 +51,7 @@ h1{font-size:clamp(2.2rem,7vw,4.2rem);line-height:1.1;color:var(--white);margin-
 h2{font-size:clamp(1.6rem,4vw,2.2rem);color:var(--white);margin-bottom:8px}
 .sub{color:var(--muted);margin-bottom:32px}
 .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer;position:relative;overflow:hidden}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:10px;font:inherit;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer;position:relative;overflow:hidden}
 .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.14),transparent);transform:translateX(-120%);transition:transform .7s ease}
 .btn:hover::after{transform:translateX(120%)}
 .btn:hover{transform:translateY(-3px)}
@@ -373,6 +375,8 @@ section:not(.hero){content-visibility:auto;contain-intrinsic-size:auto 700px}
 .faq-search:focus{outline:2px solid var(--cyan);outline-offset:2px}
 .faq-status{min-height:1.5em;margin-bottom:10px;color:var(--muted);font-size:.88rem}
 .graphic{cursor:zoom-in}
+.graphic-button{display:block;width:100%;max-width:640px;padding:0;border:0;background:transparent;color:inherit;cursor:zoom-in}
+.graphic-button svg{display:block}
 .coin{padding:0;font-family:inherit;cursor:zoom-in}
 .coin img{display:block;width:100%;height:100%;object-fit:contain}
 .lightbox{width:min(90vw,680px);max-width:680px;max-height:90vh;margin:auto;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);color:var(--white);box-shadow:0 24px 80px #0009}
@@ -400,6 +404,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 #bezpieczenstwo .card:hover,#engine .card:hover{border-color:var(--cyan)}
 /* --- Etap 1: treść, UX, nowe funkcje --- */
 html{scroll-padding-top:84px}
+section[id]{scroll-margin-top:36px}
 .skip-link{position:fixed;top:8px;left:8px;z-index:100;padding:10px 16px;border-radius:8px;background:var(--bg2);color:var(--white);border:2px solid var(--cyan);font-weight:700;transform:translateY(-200%)}
 .skip-link:focus,.skip-link:focus-visible{transform:none;outline:2px solid var(--cyan);outline-offset:2px}
 .soc:focus-visible,.lite-control:focus-visible,.deep-dive summary:focus-visible,.ms-more summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
@@ -430,6 +435,26 @@ html[data-theme=light] .verify-bar{border-color:#b58105;background:rgba(255,214,
 .form-error{min-height:1.4em;margin-top:8px;font-size:.88rem;color:#ff8b8b}
 html[data-theme=light] .form-error{color:#a40e26}
 @media(max-width:600px){.verify-bar{flex-direction:column;align-items:stretch}.verify-bar .lite-control{justify-content:center}}
+input:focus-visible,[role=button]:focus-visible,[role=link]:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.fsoc-soon{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 10px;border:1px solid var(--line);border-radius:10px;color:var(--muted)}
+.fsoc-soon svg{width:18px;height:18px;fill:currentColor}
+.privacy-note{margin-top:12px}
+.changelog{margin:20px 0}
+@media(max-width:600px){.btn,.lite-control,.to-top,.lightbox-close,.burger,.fsoc a{min-height:44px}.faq summary,.deep-dive summary,.ms-more summary{min-height:44px;display:flex;align-items:center}}
+@media print{
+  :root,html[data-theme=light]{--bg:#fff;--bg2:#fff;--line:#aaa;--text:#111;--muted:#333;--white:#000}
+  html,body{background:#fff!important;color:#111!important;overflow:visible!important;scroll-behavior:auto}
+  body::before,header,.orbs,.pt,.sp,.to-top,.utility-controls,.btns button,.lite-control{display:none!important}
+  main,section,.wrap{content-visibility:visible!important;contain:initial!important}
+  section{padding:18px 0!important}
+  .card,.ms-card,.support-panel,.changelog li{break-inside:avoid}
+  .rv{opacity:1!important;transform:none!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;box-shadow:none!important;text-shadow:none!important}
+  .card,.soc,.road li,.ms-card,.support-panel,.faq details,.deep-dive,.token-feature{background:#fff!important;color:#111!important;border-color:#888!important}
+  .card p,.soc span,.sub,.support-note,.detail-content>p,.faq details p{color:#333!important}
+  details:not([open])>:not(summary){display:block!important}
+  a{color:#111!important;text-decoration:underline}
+}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -441,7 +466,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 <header>
 <div class="wrap"><nav aria-label="Główna nawigacja">
 <a href="#glowna" class="logo" aria-label="Technix-Pro"><span class="tp"><img src="assets/technix-pro-logo.svg" alt="" width="40" height="40" decoding="async"></span><span>TECHNIX<b>-PRO</b></span></a>
-<button class="burger" id="burger" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
+<button class="burger" id="burger" type="button" aria-label="Menu" aria-controls="menu" aria-expanded="false">☰</button>
 <ul id="menu">
 <li><a href="#glowna">Start</a></li>
 <li><a href="#historia">Historia</a></li>
@@ -457,6 +482,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 <li><a href="#wsparcie">Wsparcie</a></li>
 <li><a href="#kamienie">Postęp</a></li>
 <li><a href="#social">Social Media</a></li>
+<li><a href="#changelog">Co nowego</a></li>
 <li><a href="#faq">FAQ</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
@@ -471,12 +497,13 @@ html[data-theme=light] .form-error{color:#a40e26}
 <h1><span class="grad">Technix-Pro</span><br>Technologia nowej generacji</h1>
 <p class="lead">Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy, tokenizację i globalną społeczność. Oficjalna strona projektu.</p>
 <div class="btns">
-<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<button class="btn btn-p btn-soon" data-open="app" type="button" disabled aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></button>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <a href="#social" class="btn btn-s">Social Media</a>
 </div>
 <div class="utility-controls">
 <button class="lite-control" id="theme-toggle" type="button" aria-pressed="false">☀️ Jasny motyw</button>
+<button class="lite-control" id="lite-toggle" type="button" aria-pressed="false">Tryb oszczędny (mniej animacji)</button>
 <button class="lite-control" type="button" data-copy="page">🔗 Kopiuj link do strony</button>
 <button class="lite-control" type="button" data-copy="telegram">✈️ Kopiuj link Telegram</button>
 <button class="lite-control" type="button" data-share hidden>📤 Udostępnij</button>
@@ -495,7 +522,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 <div class="hero-badge b2">🎯 Social, treści, rozwój</div>
 <div class="hero-badge b3">⚡ Interakcje i społeczność</div>
 <div class="chip-tilt" id="tilt">
-<svg class="chip graphic" data-lightbox viewBox="0 0 380 380" role="button" tabindex="0" aria-label="Powiększ grafikę układu Technix-Pro">
+<button class="graphic-button graphic" type="button" data-lightbox tabindex="0" aria-label="Powiększ grafikę układu Technix-Pro"><svg class="chip" viewBox="0 0 380 380" aria-hidden="true">
 <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58a6ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient>
 <linearGradient id="cg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22e5ff"/><stop offset="1" stop-color="#b44cff"/></linearGradient>
 <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22e5ff" stop-opacity="0"/><stop offset=".5" stop-color="#22e5ff" stop-opacity=".45"/><stop offset="1" stop-color="#22e5ff" stop-opacity="0"/></linearGradient>
@@ -513,7 +540,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 </g>
 <g class="pads"><circle class="pad" cx="60" cy="10" r="4.5" style="--d:0.0s"/><circle class="pad" cx="60" cy="370" r="4.5" style="--d:0.1s"/><circle class="pad" cx="320" cy="10" r="4.5" style="--d:0.3s"/><circle class="pad" cx="320" cy="370" r="4.5" style="--d:0.4s"/><circle class="pad" cx="10" cy="60" r="4.5" style="--d:0.6s"/><circle class="pad" cx="370" cy="60" r="4.5" style="--d:0.8s"/><circle class="pad" cx="10" cy="320" r="4.5" style="--d:0.9s"/><circle class="pad" cx="370" cy="320" r="4.5" style="--d:1.1s"/><circle class="pad" cx="110" cy="30" r="4.5" style="--d:1.2s"/><circle class="pad" cx="190" cy="20" r="4.5" style="--d:1.3s"/><circle class="pad" cx="270" cy="30" r="4.5" style="--d:1.5s"/><circle class="pad" cx="110" cy="350" r="4.5" style="--d:1.6s"/><circle class="pad" cx="190" cy="360" r="4.5" style="--d:1.8s"/><circle class="pad" cx="270" cy="350" r="4.5" style="--d:1.9s"/><circle class="pad" cx="30" cy="110" r="4.5" style="--d:2.1s"/><circle class="pad" cx="20" cy="190" r="4.5" style="--d:2.2s"/><circle class="pad" cx="30" cy="270" r="4.5" style="--d:2.4s"/><circle class="pad" cx="350" cy="110" r="4.5" style="--d:2.5s"/><circle class="pad" cx="360" cy="190" r="4.5" style="--d:2.7s"/><circle class="pad" cx="350" cy="270" r="4.5" style="--d:2.9s"/></g>
 <g class="dps"><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="2.4s" begin="0.0s" repeatCount="indefinite" path="M130 118V70H60V10"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="2.7s" begin="0.4s" repeatCount="indefinite" path="M250 262V310h70V370"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.0s" begin="0.8s" repeatCount="indefinite" path="M118 130H70V60H10"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.3s" begin="1.2s" repeatCount="indefinite" path="M262 250H310V320H370"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.6s" begin="1.6s" repeatCount="indefinite" path="M190 118V20"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="3.9s" begin="2.0s" repeatCount="indefinite" path="M118 190H20"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="4.2s" begin="2.4s" repeatCount="indefinite" path="M262 190H360"/></circle><circle class="dp" r="3.2" fill="#22e5ff"><animateMotion dur="4.5s" begin="2.8s" repeatCount="indefinite" path="M190 262V360"/></circle></g>
-</svg>
+</svg></button>
 </div>
 </div>
 </div></section>
@@ -637,7 +664,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 <section id="bezpieczenstwo"><div class="wrap">
 <h2 class="rv">Bezpieczeństwo i walka z oszustwami</h2><p class="sub rv">Ochrona użytkowników jest priorytetem – zanim pojawią się nagrody, token czy listing.</p>
 <div class="callout rv"><strong>Zasada nr 1:</strong> nigdy nie poprosimy Cię o frazę seed, klucz prywatny ani o wysłanie środków „na weryfikację”. Każdy, kto o to prosi w imieniu Technix-Pro, jest oszustem.</div>
-<div class="verify-bar rv" role="note" data-copy-scope><strong>⚠️ Sprawdź oficjalne linki.</strong><span>Jedyny potwierdzony kanał Telegram projektu: <code>https://t.me/TechnixProTg</code>. Inne adresy, zaproszenia i prywatne wiadomości traktuj jako podejrzane.</span><button class="lite-control" type="button" data-copy="telegram">📋 Kopiuj oficjalny link Telegram</button><span class="copy-status" aria-live="polite"></span></div>
+<div class="verify-bar rv" role="note" data-copy-scope><strong>⚠️ Sprawdź oficjalne linki.</strong><span>Jedyny potwierdzony kanał Telegram projektu: <code>https://t.me/TechnixProTg</code>. Inne adresy, zaproszenia i prywatne wiadomości traktuj jako podejrzane.</span><button class="lite-control" type="button" data-copy="telegram">📋 Kopiuj oficjalny link Telegram</button><button class="lite-control" type="button" data-share hidden>📤 Udostępnij</button><span class="copy-status" aria-live="polite"></span></div>
 <div class="grid">
 <div class="card rv"><div class="ic">🔗</div><h3>Tylko oficjalne linki</h3><p>Prawdziwe kanały znajdziesz w sekcji Social Media na tej stronie. Wszystko inne traktuj jako podejrzane.</p></div>
 <div class="card rv"><div class="ic">🚫</div><h3>Brak obietnic zysku</h3><p>Nie gwarantujemy zarobków. Kto obiecuje pewny zysk w naszym imieniu – kłamie.</p></div>
@@ -647,6 +674,8 @@ html[data-theme=light] .form-error{color:#a40e26}
 <details class="deep-dive rv"><summary>Jak rozpoznać scam?</summary><div class="detail-content">
 <ul class="ck-list"><li>Prośba o seed, klucz prywatny lub dostęp do portfela.</li><li>Presja czasu: „tylko dziś”, „ostatnie miejsca”.</li><li>Prywatne wiadomości od rzekomej „administracji”.</li><li>Obietnica gwarantowanego zysku lub podwojenia środków.</li><li>Link inny niż ten z oficjalnej strony lub kanału Telegram.</li></ul>
 </div></details>
+<div class="btns rv"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">🚨 Zgłoś oszustwo / podejrzany link</a></div>
+<p class="support-note rv">W zgłoszeniu opisz problem i dołącz zrzut ekranu, podejrzany link oraz nazwę konta. Skorzystaj z dostępnej w oficjalnym kanale drogi kontaktu; nigdy nie wysyłaj frazy seed, kluczy ani kodów.</p>
 </div></section>
 
 <section id="token"><div class="wrap">
@@ -740,18 +769,26 @@ html[data-theme=light] .form-error{color:#a40e26}
 <section id="social"><div class="wrap">
 <h2 class="rv">Social Media</h2><p class="sub rv">Bądź na bieżąco – TikTok, YouTube, Discord, X, Telegram, Facebook i Instagram.</p>
 <div class="social">
-<a class="soc rv" data-social="tiktok" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.100a6.200 6.200 0 1 0 5.300 6.1V7.9c1 .9 2.3 1.5 3.6 1.5V6.2c-1.6-.1-3-1.1-3.3-2.2z"/></svg><div><strong>TikTok</strong><span>wideo / aktualności</span></div><i class="tag">Wkrótce</i></a>
-<a class="soc rv" data-social="youtube" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 1 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.8zM9.6 15.5V8.5L15.5 12l-5.9 3.5z"/></svg><div><strong>YouTube</strong><span>materiały / prezentacje</span></div><i class="tag">Wkrótce</i></a>
-<a class="soc rv" data-social="discord" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.5 8 1 11.4 1.2 14.7c1.4 1.1 2.8 1.8 4.2 2.2.3-.4.6-.9.8-1.4-.5-.2-1-.4-1.5-.7.1-.1.2-.2.3-.3 2.9 1.3 6.1 1.3 9 0 .1.1.2.2.3.3-.5.3-1 .5-1.5.7.2.5.5 1 .8 1.4 1.4-.4 2.8-1.1 4.2-2.2.2-3.3-.3-6.7-1.3-10.3zM8.8 13.4c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6zm6.4 0c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6z"/></svg><div><strong>Discord</strong><span>społeczność / rozmowy</span></div><i class="tag">Wkrótce</i></a>
-<a class="soc rv" data-social="x" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h6.9l4.8 6.3L18.2 2z"/></svg><div><strong>X</strong><span>news / komunikaty</span></div><i class="tag">Wkrótce</i></a>
-<a class="soc rv" data-social="telegram" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg><div><strong>Telegram – kanał</strong><span>oficjalny kanał</span></div><i class="tag">LIVE</i></a>
-<a class="soc rv" data-social="facebook" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.4 0-1.8.9-1.8 1.8v2.2h3.1l-.5 3.5h-2.6v8.4A12 12 0 0 0 24 12z"/></svg><div><strong>Facebook</strong><span>społeczność / posty</span></div><i class="tag">LIVE</i></a>
-<a class="soc rv" data-social="instagram" href="#kontakt" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zm0 2.1c-3.1 0-3.5 0-4.7.1-2.2.1-3.3 1.2-3.4 3.4-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 2.2 1.2 3.3 3.4 3.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c2.2-.1 3.3-1.2 3.4-3.4.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-2.2-1.2-3.3-3.4-3.4-1.2-.1-1.6-.1-4.7-.1zm0 3.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.1a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.7-.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg><div><strong>Instagram</strong><span>reels / zdjęcia</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="tiktok" href="#social" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.100a6.200 6.200 0 1 0 5.300 6.1V7.9c1 .9 2.3 1.5 3.6 1.5V6.2c-1.6-.1-3-1.1-3.3-2.2z"/></svg><div><strong>TikTok</strong><span>wideo / aktualności</span></div><i class="tag">Wkrótce</i></a>
+<a class="soc rv" data-social="youtube" href="https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9" target="_blank" rel="noopener noreferrer" aria-label="YouTube" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 1 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.8zM9.6 15.5V8.5L15.5 12l-5.9 3.5z"/></svg><div><strong>YouTube</strong><span>materiały / prezentacje</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="discord" href="https://discord.gg/NUPGBjmSD" target="_blank" rel="noopener noreferrer" aria-label="Discord" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.5 8 1 11.4 1.2 14.7c1.4 1.1 2.8 1.8 4.2 2.2.3-.4.6-.9.8-1.4-.5-.2-1-.4-1.5-.7.1-.1.2-.2.3-.3 2.9 1.3 6.1 1.3 9 0 .1.1.2.2.3.3-.5.3-1 .5-1.5.7.2.5.5 1 .8 1.4 1.4-.4 2.8-1.1 4.2-2.2.2-3.3-.3-6.7-1.3-10.3zM8.8 13.4c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6zm6.4 0c-.8 0-1.5-.7-1.5-1.6s.7-1.6 1.5-1.6 1.5.7 1.5 1.6-.7 1.6-1.5 1.6z"/></svg><div><strong>Discord</strong><span>społeczność / rozmowy</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="x" href="https://x.com/TechnixProo" target="_blank" rel="noopener noreferrer" aria-label="X" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h6.9l4.8 6.3L18.2 2z"/></svg><div><strong>X</strong><span>news / komunikaty</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="telegram" href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" aria-label="Telegram – kanał" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg><div><strong>Telegram – kanał</strong><span>oficjalny kanał</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="facebook" href="https://www.facebook.com/share/1HYtutg5Jw/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3v-3.5h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.4 0-1.8.9-1.8 1.8v2.2h3.1l-.5 3.5h-2.6v8.4A12 12 0 0 0 24 12z"/></svg><div><strong>Facebook</strong><span>społeczność / posty</span></div><i class="tag">LIVE</i></a>
+<a class="soc rv" data-social="instagram" href="https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" aria-disabled="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.6 4.8-4.9 4.9-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1zm0 2.1c-3.1 0-3.5 0-4.7.1-2.2.1-3.3 1.2-3.4 3.4-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 2.2 1.2 3.3 3.4 3.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c2.2-.1 3.3-1.2 3.4-3.4.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-2.2-1.2-3.3-3.4-3.4-1.2-.1-1.6-.1-4.7-.1zm0 3.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2.1a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm5.7-.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6z"/></svg><div><strong>Instagram</strong><span>reels / zdjęcia</span></div><i class="tag">LIVE</i></a>
 </div>
 <details class="deep-dive rv"><summary>Co znajdziesz w kanałach społeczności?</summary><div class="detail-content">
 <p>Lista kanałów pokazuje miejsca publikacji aktualności i materiałów. Linki, które są już znane, działają od razu. Telegram prowadzi do oficjalnego kanału projektu (mini-aplikacja będzie dostępna wkrótce).</p>
 <div class="detail-grid"><article><span class="detail-kicker">Wideo</span><h3>TikTok i YouTube</h3><p>Krótkie materiały, poradniki i informacje o premierach.</p></article><article><span class="detail-kicker">Społeczność</span><h3>Discord i Telegram</h3><p>Rozmowy, wsparcie i ogłoszenia – Telegram to oficjalny kanał projektu.</p></article><article><span class="detail-kicker">Aktualności</span><h3>X, Facebook, Instagram</h3><p>Wiadomości, komunikaty i materiały wizualne w jednym miejscu.</p></article></div>
 </div></details>
+</div></section>
+
+<section id="changelog"><div class="wrap">
+<h2 class="rv">Co nowego</h2><p class="sub rv">Najważniejsze zmiany w stronie Technix-Pro.</p>
+<ul class="changelog rv">
+<li><strong>Etap 1:</strong> nowe sekcje EngineCore i społeczności oraz ulepszenia dostępności i nawigacji.</li>
+<li><strong>Etap finałowy:</strong> uzupełnienia SEO, strona 404, manifest, tryb oszczędny, zgłaszanie podejrzanych linków i drukowanie.</li>
+</ul>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -793,7 +830,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 
 <section id="kontakt"><div class="wrap">
 <div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Projekt rozwija jedna osoba, a jego kolejne etapy są publiczne. Dołącz do oficjalnego kanału, śledź status prac i zgłoś, jak możesz pomóc.</p>
-<span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
+<button class="btn btn-p btn-soon" data-open="app" type="button" disabled aria-disabled="true" aria-label="Telegram Mini-App – wkrótce, przycisk jest obecnie niedostępny" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></button>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <form class="notify-form" id="notify-form" action="https://t.me/TechnixProTg" method="get" target="_blank" rel="noopener noreferrer">
 <label><input type="checkbox" id="notify-consent" required aria-describedby="notify-status"> Chcę otrzymać informację o premierze. Po przejściu do kanału mogę włączyć powiadomienia Telegram.</label>
@@ -818,8 +855,10 @@ html[data-theme=light] .form-error{color:#a40e26}
 <a href="https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 1 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.8zM9.6 15.5V8.5L15.5 12l-5.9 3.5z"/></svg></a>
 <a href="https://discord.gg/NUPGBjmSD" target="_blank" rel="noopener noreferrer" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C1.5 8 1 11.4 1.2 14.7c1.4 1.1 2.8 1.8 4.2 2.2.3-.4.6-.9.8-1.4-.5-.2-1-.4-1.5-.7.1-.1.2-.2.3-.3 2.9 1.3 6.1 1.3 9 0 .1.1.2.2.3.3-.5.3-1 .5-1.5.7.2.5.5 1 .8 1.4 1.4-.4 2.8-1.1 4.2-2.2.2-3.3-.3-6.7-1.3-10.3z"/></svg></a>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" aria-label="Telegram – kanał"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3 18.7 19.6c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-5 9.3-8.4c.4-.4-.1-.6-.6-.2l-11.5 7.2-4.9-1.5c-1-.3-1-.9.2-1.4L20.9 3.2c.7-.3 1.3.2 1 .9z"/></svg></a>
+<span class="fsoc-soon" role="img" aria-label="TikTok – wkrótce"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 2h-3.3v13.3a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.1a6.2 6.2 0 1 0 5.3 6.1V7.9c1 .9 2.3 1.5 3.6 1.5V6.2c-1.6-.1-3-1.1-3.3-2.2z"/></svg>TikTok · wkrótce</span>
 </div>
 <p>&copy; 2026 Technix-Pro. Wszelkie prawa zastrzeżone.</p>
+<p class="privacy-note">Prywatność: strona nie używa cookies ani analityki. W localStorage zapisuje wyłącznie wybór motywu i trybu oszczędnego.</p>
 </div></footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Wróć na górę" hidden>↑ Do góry</button>
@@ -832,6 +871,7 @@ html[data-theme=light] .form-error{color:#a40e26}
 <script>
 (function(){
 var LINKS={tiktok:'',youtube:'https://youtube.com/@technix-pro?si=25RqePI-7GJ0ZMk9',discord:'https://discord.gg/NUPGBjmSD',x:'https://x.com/TechnixProo',telegram:'https://t.me/TechnixProTg',facebook:'https://www.facebook.com/share/1HYtutg5Jw/',instagram:'https://www.instagram.com/technixprooficjalnie?xtok=MTFuNXE1d21zdWU3bA=='};
+// Ustaw datę ISO 8601, np. '2026-12-01T18:00:00+01:00', aby włączyć odliczanie.
 var MINI_APP_LAUNCH_DATE='';
 var countdown=document.getElementById('countdown-value'),launchTime=Date.parse(MINI_APP_LAUNCH_DATE);
 if(countdown&&Number.isFinite(launchTime)){
@@ -843,6 +883,14 @@ try{theme=localStorage.getItem('technix-pro-theme')==='light'?'light':'dark'}cat
 function applyTheme(value){document.documentElement.dataset.theme=value;if(themeToggle){themeToggle.setAttribute('aria-pressed',value==='light');themeToggle.textContent=value==='light'?'🌙 Ciemny motyw':'☀️ Jasny motyw'}if(themeColor)themeColor.content=value==='light'?'#f4f7fb':'#0d1117'}
 applyTheme(theme);
 if(themeToggle)themeToggle.addEventListener('click',function(){theme=theme==='light'?'dark':'light';applyTheme(theme);try{localStorage.setItem('technix-pro-theme',theme)}catch(e){}});
+var liteToggle=document.getElementById('lite-toggle'),litePreference=null;
+try{litePreference=localStorage.getItem('technix-pro-lite')}catch(e){}
+function automaticLite(){return !!(navigator.connection&&navigator.connection.saveData)||window.matchMedia('(prefers-reduced-motion:reduce)').matches}
+function applyLite(value){document.body.classList.toggle('lite',value);if(liteToggle)liteToggle.setAttribute('aria-pressed',String(value))}
+applyLite(litePreference===null?automaticLite():litePreference==='true');
+if(liteToggle)liteToggle.addEventListener('click',function(){var value=!document.body.classList.contains('lite');applyLite(value);try{localStorage.setItem('technix-pro-lite',String(value));litePreference=String(value)}catch(e){}});
+var motionPreference=window.matchMedia('(prefers-reduced-motion:reduce)');
+if(motionPreference.addEventListener)motionPreference.addEventListener('change',function(){if(litePreference===null)applyLite(automaticLite())});
 var copyStatus=document.getElementById('copy-status');
 function copyText(text){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(text);return new Promise(function(resolve,reject){var field=document.createElement('textarea');field.value=text;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();var ok=document.execCommand('copy');field.remove();ok?resolve():reject(new Error('copy failed'))})}
 document.querySelectorAll('[data-copy]').forEach(function(button){button.addEventListener('click',function(){var value=button.dataset.copy==='telegram'?'https://t.me/TechnixProTg':window.location.href;var scope=button.closest('[data-copy-scope]'),status=(scope&&scope.querySelector('.copy-status'))||copyStatus;copyText(value).then(function(){status.textContent=button.dataset.copy==='telegram'?'Skopiowano link do kanału Telegram.':'Skopiowano link do strony.'}).catch(function(){status.textContent='Nie udało się skopiować linku. Zaznacz i skopiuj go ręcznie.'})})});
@@ -859,7 +907,7 @@ if(notifyForm&&notifyConsent&&notifyStatus){notifyConsent.addEventListener('inva
 var lightboxTrigger=null;
 document.querySelectorAll('[data-lightbox]').forEach(function(g){g.addEventListener('click',function(){lightboxTrigger=g},true);g.addEventListener('keydown',function(){lightboxTrigger=g},true)});
 var lightbox=document.getElementById('lightbox'),lightboxContent=document.getElementById('lightbox-content');
-function openLightbox(source){lightboxContent.replaceChildren();if(source.matches('svg')){var image=document.createElement('img'),graphicCopy=source.cloneNode(true);graphicCopy.querySelectorAll('animate,animateMotion').forEach(function(animation){animation.remove()});image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(new XMLSerializer().serializeToString(graphicCopy));image.alt=source.getAttribute('aria-label')||'Powiększona grafika Technix-Pro';lightboxContent.appendChild(image)}else{var copy=source.cloneNode(true);copy.removeAttribute('data-lightbox');copy.removeAttribute('aria-label');copy.style.animation='none';lightboxContent.appendChild(copy)}if(lightbox.showModal)lightbox.showModal();else lightbox.setAttribute('open','')}
+function openLightbox(source){lightboxContent.replaceChildren();var artwork=source.matches('svg')?source:source.querySelector('svg');if(artwork){var image=document.createElement('img'),graphicCopy=artwork.cloneNode(true);graphicCopy.querySelectorAll('animate,animateMotion').forEach(function(animation){animation.remove()});image.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(new XMLSerializer().serializeToString(graphicCopy));image.alt=source.getAttribute('aria-label')||artwork.getAttribute('aria-label')||'Powiększona grafika Technix-Pro';lightboxContent.appendChild(image)}else{var copy=source.cloneNode(true);copy.removeAttribute('data-lightbox');copy.removeAttribute('aria-label');copy.style.animation='none';lightboxContent.appendChild(copy)}if(lightbox.showModal)lightbox.showModal();else lightbox.setAttribute('open','')}
 document.querySelectorAll('[data-lightbox],.chip[data-lightbox]').forEach(function(graphic){graphic.addEventListener('click',function(){openLightbox(graphic)});graphic.addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(graphic)}})});
 document.getElementById('lightbox-close').addEventListener('click',function(){lightbox.close?lightbox.close():lightbox.removeAttribute('open')});
 lightbox.addEventListener('click',function(event){if(event.target===lightbox){if(lightbox.close)lightbox.close();else lightbox.removeAttribute('open')}});
@@ -876,12 +924,17 @@ var pt=document.getElementById('pt');if(pt&&!window.matchMedia('(prefers-reduced
 var burger=document.getElementById('burger'),menu=document.getElementById('menu');
 burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',String(o))});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
-menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');if(window.innerWidth<=1100)setTimeout(function(){burger.focus()},0)}});
 var els=document.querySelectorAll('.rv');
-function count(el){var t=+el.getAttribute('data-count'),n=0,s=Math.max(1,Math.ceil(t/25));var i=setInterval(function(){n=Math.min(t,n+s);el.textContent=n;if(n>=t)clearInterval(i)},40)}
+function count(el){var t=+el.getAttribute('data-count'),n=0,s=Math.max(1,Math.ceil(t/25));if(document.body.classList.contains('lite')||window.matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=t;return}var i=setInterval(function(){n=Math.min(t,n+s);el.textContent=n;if(n>=t)clearInterval(i)},40)}
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('offscreen');e.target.classList.add('in');var c=e.target.querySelector('[data-count]');if(c)count(c);io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(el){el.classList.add('offscreen');io.observe(el)})}else{els.forEach(function(el){el.classList.add('in');var c=el.querySelector('[data-count]');if(c)c.textContent=c.getAttribute('data-count')})}
 var links=document.querySelectorAll('#menu a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
-function spy(){var y=window.scrollY+120,cur=0,best=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y&&s.offsetTop>best){best=s.offsetTop;cur=i}});links.forEach(function(a,i){a.classList.toggle('active',i===cur);if(i===cur)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});var act=links[cur];if(act&&menu.scrollWidth>menu.clientWidth&&!menu.classList.contains('open')&&window.innerWidth>1100)menu.scrollLeft=act.offsetLeft-menu.clientWidth/2+act.offsetWidth/2}
+function spy(){var y=window.scrollY+120,cur=0,best=-1;secs.forEach(function(s,i){if(s&&s.offsetTop<=y&&s.offsetTop>best){best=s.offsetTop;cur=i}});var currentSection=secs[cur];links.forEach(function(a,i){var active=secs[i]===currentSection;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});var act=links[cur];if(act&&menu.scrollWidth>menu.clientWidth&&!menu.classList.contains('open')&&window.innerWidth>1100)menu.scrollLeft=act.offsetLeft-menu.clientWidth/2+act.offsetWidth/2}
+function alignAnchor(target){if(!target)return;var root=document.documentElement,old=root.style.scrollBehavior;root.style.scrollBehavior='auto';target.scrollIntoView({block:'start'});root.style.scrollBehavior=old;setTimeout(function(){var top=target.getBoundingClientRect().top+window.scrollY-(parseFloat(getComputedStyle(root).scrollPaddingTop)||0)-(parseFloat(getComputedStyle(target).scrollMarginTop)||0);root.style.scrollBehavior='auto';window.scrollTo(0,top);root.style.scrollBehavior=old;spy()},400)}
+document.addEventListener('click',function(e){var link=e.target.closest&&e.target.closest('a[href^="#"]');if(!link)return;var target=document.getElementById(link.hash.slice(1));if(!target)return;e.preventDefault();if(window.location.hash!==link.hash)history.pushState(null,'',link.hash);alignAnchor(target)});
+window.addEventListener('popstate',function(){alignAnchor(document.getElementById(window.location.hash.slice(1)))});
+window.addEventListener('hashchange',function(){alignAnchor(document.getElementById(window.location.hash.slice(1)))});
+window.addEventListener('load',function(){if(window.location.hash)alignAnchor(document.getElementById(window.location.hash.slice(1)))});
 var rafS=0,onS=[];function raf(f){onS.push(f);if(!rafS)rafS=requestAnimationFrame(function(){rafS=0;var q=onS;onS=[];q.forEach(function(g){g()})})}
 window.addEventListener('scroll',function(){raf(spy)},{passive:true});spy();
 var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
