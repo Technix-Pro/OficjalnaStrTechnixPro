@@ -298,9 +298,14 @@ section:not(.hero){content-visibility:auto;contain-intrinsic-size:auto 700px}
 .lite-control[aria-pressed="true"]{border-color:var(--cyan);color:var(--cyan)}
 .to-top{position:fixed;right:18px;bottom:18px;z-index:40;opacity:.9}
 .to-top:hover{border-color:var(--cyan)}
-.content-block{margin:26px 0}
+.content-block{margin:34px 0}
 .content-block>p{max-width:820px;margin:8px 0 14px;color:var(--muted)}
+.content-block h3{margin-bottom:8px}
 .steps,.personas,.status-grid,.tech-explainer,.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:20px 0 26px}
+.tech span{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);color:var(--white);font-size:.9rem}
+.faq{max-width:900px}
+.faq details{line-height:1.65}
 .step,.status-item,.tech-item,.help-card{padding:17px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
 .step strong,.status-item strong,.tech-item strong,.help-card strong{display:block;color:var(--white);margin-bottom:5px}
 .step p,.status-item p,.tech-item p,.help-card p{font-size:.88rem;color:var(--muted)}
@@ -432,7 +437,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <div class="badge">Budowanie Ekosystemu Web3 od Podstaw</div>
 <span class="hero-accent">🇵🇱 Polski projekt budowany od zera</span>
 <h1><span class="grad">Technix-Pro</span><br>Technologia nowej generacji</h1>
-<p class="lead">Od sprzętu i dedykowanej mini-aplikacji na Telegramie, po airdropy, tokenizację i globalną społeczność. Oficjalna strona projektu.</p>
+<p class="lead">Jednoosobowy, publicznie rozwijany projekt z planem wdrożenia Telegram Mini-App w trzech fazach. Najpierw stabilna aplikacja i społeczność, później — jeśli projekt będzie na to gotowy — integracje TON, nagrody, przyszły token i ambitny cel listingu.</p>
 <div class="btns">
 <span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">📲 Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
@@ -483,28 +488,28 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 
 <section id="historia"><div class="wrap">
 <h2 class="rv">Historia projektu</h2><p class="sub rv">Od samodzielnie budowanych fundamentów do otwartego projektu TON i Telegrama.</p>
-<blockquote class="story-quote rv">Technix-Pro to <strong>polski projekt rozwijany od podstaw przez jedną osobę</strong>. Plan zakłada trzy fazy wdrożenia Telegram Mini-App: fundament, rozwój i testy, a następnie publiczny start oraz budowanie społeczności. Dopiero na tej podstawie mogą powstać kolejne elementy ekosystemu TON, w tym nagrody i przyszły token; listing pozostaje ambitnym celem, a nie obietnicą. Postępy, decyzje i zmiany chcę pokazywać publicznie — z wyjątkiem danych wrażliwych.</blockquote>
+<blockquote class="story-quote rv">Technix-Pro to <strong>polski projekt rozwijany od podstaw przez jedną osobę</strong>. Plan aplikacji ma trzy etapy: przygotowanie fundamentów, rozwój i testy oraz publiczny start połączony z budowaniem społeczności. Dopiero stabilna aplikacja i realne potrzeby użytkowników uzasadnią dalsze prace nad TON, nagrodami czy przyszłym tokenem. Listing jest ambitnym, długoterminowym celem — nie obietnicą. Roadmapa, status prac i uzasadnienie ważnych decyzji są pokazywane publicznie; prywatne pozostają dane wrażliwe.</blockquote>
 <div class="grid aces">
 <div class="card rv"><span class="ico" aria-hidden="true">🇵🇱</span><h3>Polski projekt od zera</h3><p>Twórca samodzielnie projektuje, koduje i rozwija Technix-Pro – od pierwszego pomysłu po kolejne etapy.</p></div>
-<div class="card rv"><span class="ico" aria-hidden="true">📱</span><h3>Mini-app w Telegramie</h3><p>Aplikacja w miejscu, gdzie są użytkownicy – bez instalacji. Premiera wkrótce, na razie dołącz do kanału.</p></div>
-<div class="card rv"><span class="ico" aria-hidden="true">🤝</span><h3>Społeczność i rozwój krok po kroku</h3><p>Otwarta roadmapa, regularne aktualizacje i miejsce dla moderatorów, twórców oraz programistów.</p></div>
-<div class="card rv"><span class="ico" aria-hidden="true">⚙️</span><h3>Web3, technologia, hardware</h3><p>Nowoczesny stos technologiczny i wizja sięgająca od oprogramowania po sprzęt.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">📱</span><h3>Mini-app w Telegramie</h3><p>Docelowo aplikację będzie można uruchomić z poziomu Telegrama, bez osobnej instalacji. Jest w przygotowaniu — premiera nastąpi po rozwoju i testach.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">🤝</span><h3>Społeczność współtworząca</h3><p>Użytkownicy pomagają wyłapywać problemy, ustalać priorytety i budować bezpieczne miejsce do rozmowy — to ważne, gdy projekt prowadzi jedna osoba.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">⚙️</span><h3>Web3 i rozwój etapami</h3><p>Najpierw użyteczna aplikacja i sprawdzone podstawy; integracje TON oraz ewentualny token będą rozważane dopiero w kolejnych etapach.</p></div>
 <div class="card rv"><span class="ico" aria-hidden="true">🚀</span><h3>Potencjał do rozbudowy</h3><p>Modularna architektura pozwala dodawać kolejne funkcje i moduły wraz ze wzrostem społeczności.</p></div>
 <div class="card rv"><span class="ico" aria-hidden="true">💎</span><h3>Unikalny charakter</h3><p>Własny styl, własna identyfikacja i ambicja, by wyróżnić się na tle gotowych rozwiązań.</p></div>
 </div>
 
 <div class="content-block rv"><h3>Dlaczego to robię</h3>
-<p>Chcę stworzyć w Polsce otwartą przestrzeń dla twórców i aktywnych użytkowników, łączącą Telegram, technologię TON i społeczność. Projekt rozwijam sam, dlatego liczą się konkretne uwagi, testy i pomoc społeczności. Ambicją jest budowa użytecznego ekosystemu oraz jasne informowanie o jego możliwościach i ryzykach — bez udawania, że przyszłe nagrody, token czy listing są już pewne.</p></div>
+<p>Chcę stworzyć otwarty projekt, w którym rozwój aplikacji na Telegramie i przyszłe możliwości Web3 wynikają z faktycznych potrzeb użytkowników. Ponieważ Technix-Pro rozwija jedna osoba, społeczność jest partnerem w testowaniu, zgłaszaniu błędów, wyborze priorytetów i pilnowaniu przejrzystej komunikacji. Cel jest ambitny — rozwój w ekosystemie TON, aktywna społeczność, a w dalszej perspektywie możliwy token i listing — ale każdy z tych kroków zależy od postępów i zostanie ogłoszony bez obietnic zysku.</p></div>
 <div class="grid pillars">
 <div class="card rv"><span class="ico" aria-hidden="true">🛠️</span><h3>Co dokładnie robimy</h3><p>Najpierw trzy fazy aplikacji w Telegramie i rozwój społeczności. Nagrody, token w TON i ewentualny listing to dalsze plany zależne od postępów i możliwości projektu.</p></div>
 <div class="card rv"><span class="ico" aria-hidden="true">🎯</span><h3>Dlaczego to robimy</h3><p>Bo polska scena Web3 potrzebuje projektu, który stawia na uczciwość, otwartość i realną współpracę z użytkownikami.</p></div>
-<div class="card rv"><span class="ico" aria-hidden="true">👁️</span><h3>Co będzie publiczne</h3><p>Wszystko poza danymi wrażliwymi – Twoimi i projektu: postępy prac, roadmapa, zasady nagród, decyzje i zmiany.</p></div>
+<div class="card rv"><span class="ico" aria-hidden="true">👁️</span><h3>Co będzie publiczne</h3><p>Roadmapa, statusy, oficjalne zasady i ważne decyzje będą publikowane w dostępnych kanałach. Dane osobowe, dostępowe i inne wrażliwe informacje nie będą ujawniane.</p></div>
 <div class="card rv"><span class="ico" aria-hidden="true">🚪</span><h3>Jak dołączyć</h3><p>Wejdź na kanał Telegram, napisz w czym chcesz pomóc i zostań jedną z pierwszych osób, które współtworzą projekt.</p></div>
 </div>
 <div class="steps timeline-lite">
-<div class="step rv"><span class="step-number">1</span><strong>Aplikacja – 3 fazy</strong><p>Fundament, rozwój i publiczny start mini-aplikacji w Telegramie.</p></div>
-<div class="step rv"><span class="step-number">2</span><strong>Token</strong><p>Nagrody i token w ekosystemie TON – po stabilnym starcie aplikacji.</p></div>
-<div class="step rv"><span class="step-number">3</span><strong>Listing</strong><p>Długoterminowy cel, komunikowany jawnie i bez obietnic zysków.</p></div>
+<div class="step rv"><span class="step-number">1</span><strong>Fundament</strong><p>Przygotowanie koncepcji, strony, kanałów i podstaw aplikacji.</p></div>
+<div class="step rv"><span class="step-number">2</span><strong>Rozwój i testy</strong><p>Rozbudowa funkcji oraz sprawdzanie stabilności i bezpieczeństwa.</p></div>
+<div class="step rv"><span class="step-number">3</span><strong>Publiczny start</strong><p>Udostępnienie aplikacji i rozwój społeczności; dalsze plany zależą od efektów tego etapu.</p></div>
 </div>
 </div></section>
 
@@ -512,9 +517,9 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <h2 class="rv">Informacje</h2><p class="sub rv">Czym jest Technix-Pro, kto go buduje i dokąd zmierza – konkretnie.</p>
 <div class="grid">
 <div class="card rv"><div class="ic">📲</div><h3>Telegram Mini-App</h3><p>Docelowo aplikacja będzie otwierana w Telegramie bez osobnej instalacji. Trwa rozwój; dostęp i termin premiery zostaną ogłoszone w oficjalnym kanale.</p></div>
-<div class="card rv"><div class="ic">🌐</div><h3>Kierunek Web3 i TON</h3><p>Po stabilnym uruchomieniu aplikacji można będzie ocenić integracje Web3, wydarzenia społecznościowe i ewentualne nagrody.</p></div>
-<div class="card rv"><div class="ic">🛠️</div><h3>Rozwój od podstaw</h3><p>Jedna osoba prowadzi projekt od planowania i strony po aplikację. Zakres funkcji będzie ujawniany wraz z ich gotowością.</p></div>
-<div class="card rv"><div class="ic">👥</div><h3>Społeczność współtwórców</h3><p>Projekt zaprasza moderatorów, twórców treści i programistów do zgłaszania pomysłów i pomocy w rozwoju.</p></div>
+<div class="card rv"><div class="ic">🌐</div><h3>Kierunek Web3 i TON</h3><p>Po sprawdzeniu aplikacji i potrzeb społeczności będzie można ocenić, które integracje TON/Web3 mają praktyczny sens.</p></div>
+<div class="card rv"><div class="ic">🛠️</div><h3>Jednoosobowy rozwój</h3><p>Jedna osoba odpowiada za planowanie i realizację projektu. Publiczne statusy pomagają jasno oddzielić to, co działa, od tego, co dopiero jest planowane.</p></div>
+<div class="card rv"><div class="ic">👥</div><h3>Społeczność współtwórców</h3><p>Moderatorzy pomagają dbać o bezpieczeństwo, testerzy sprawdzają działanie, a twórcy i programiści mogą wnosić konkretne umiejętności.</p></div>
 </div>
 <div class="token-feature rv"><div class="token-copy"><span class="detail-kicker">Element wizualny projektu</span><h3>Token TP — kierunek przyszłego rozwoju</h3><p>Tokenizacja pozostaje planowanym etapem ekosystemu. Szczegóły i dostępność będą komunikowane wraz z postępem roadmapy.</p></div><button class="coin" type="button" data-lightbox aria-label="Powiększ token TP"><img src="assets/technix-pro-token.svg" alt="" width="110" height="110" loading="lazy" decoding="async"></button></div>
 <div class="counters" style="margin-top:20px">
@@ -524,48 +529,48 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <div class="card rv"><strong data-count="6">0</strong><span>sekcji funkcji</span></div>
 </div>
 <details class="deep-dive rv"><summary>Poznaj projekt bliżej</summary><div class="detail-content">
-<p>Technix-Pro łączy rozwój aplikacji, warstwę sprzętową i społeczność. Projekt tworzy jedna osoba, publicznie i etapami: 3 fazy wdrożenia aplikacji, potem token i listing – wszystko w ekosystemie TON / Telegram Mini Apps. Kolejne możliwości będą udostępniane wraz z postępem prac.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Dostęp</span><h3>Mini-aplikacja</h3><p>Mini-aplikacja w Telegramie będzie dostępna wkrótce – do tego czasu śledź oficjalny kanał Telegram.</p></article><article><span class="detail-kicker">Kierunek</span><h3>Web3</h3><p>Projekt rozwija ekosystem pod nagrody, airdropy i przyszłe integracje tokenów.</p></article><article><span class="detail-kicker">Zespół</span><h3>Rozwój i społeczność</h3><p>Tworzymy miejsce na komunikację, treści i współpracę z aktywnymi osobami.</p></article></div>
+<p>Technix-Pro rozwija aplikację na Telegramie i społeczność w trzech fazach. Projekt prowadzi jedna osoba, a aktualny status i zmiany w planie są komunikowane publicznie. Integracje TON, nagrody, token i listing to dalsze możliwości — zależne od stabilnego wdrożenia, zainteresowania społeczności i realnych warunków.</p>
+<div class="detail-grid"><article><span class="detail-kicker">Dostęp</span><h3>Mini-aplikacja</h3><p>Najpierw rozwój i testy; oficjalny link oraz termin premiery pojawią się w kanale Telegram.</p></article><article><span class="detail-kicker">Kierunek</span><h3>TON i Web3</h3><p>Możliwe integracje oraz nagrody będą oceniane po uruchomieniu aplikacji — nie są obecnie gwarantowanymi funkcjami.</p></article><article><span class="detail-kicker">Zespół</span><h3>Wkład społeczności</h3><p>Opinie, testy i zgłoszenia pomagają jednej osobie rozwijać projekt w kierunku odpowiadającym użytkownikom.</p></article></div>
 </div></details>
 </div></section>
 
 <section id="funkcje"><div class="wrap">
 <h2 class="rv">Funkcje</h2><p class="sub rv">Kierunki rozwoju aplikacji — funkcje będą udostępniane po wdrożeniu i testach.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">⚡</div><h3>Dostęp w Telegramie</h3><p>Planowany prosty start Mini-App z poziomu Telegrama, bez instalowania osobnej aplikacji.</p></div>
-<div class="card rv"><div class="ic">🎁</div><h3>Wydarzenia i nagrody</h3><p>Możliwe przyszłe aktywności dla społeczności; zasady będą ogłoszone publicznie, jeśli zostaną wdrożone.</p></div>
-<div class="card rv"><div class="ic">🔐</div><h3>Bezpieczne korzystanie</h3><p>Oficjalne komunikaty, jasne zasady oraz edukacja o fałszywych linkach i próbach wyłudzeń.</p></div>
-<div class="card rv"><div class="ic">📈</div><h3>Przyszły token</h3><p>Rozważany etap ekosystemu TON po rozwoju aplikacji; dziś token nie jest dostępny do zakupu.</p></div>
-<div class="card rv"><div class="ic">🤝</div><h3>Współtworzenie</h3><p>Możliwość zgłaszania pomysłów i wspierania projektu jako moderator, twórca lub programista.</p></div>
-<div class="card rv"><div class="ic">📡</div><h3>Publiczne aktualności</h3><p>Roadmapa i oficjalne kanały służą do śledzenia statusu, decyzji oraz ogłoszeń o kolejnych etapach.</p></div>
+<div class="card rv"><div class="ic">⚡</div><h3>Wejście przez Telegram</h3><p>Docelowa mini-aplikacja ma uruchamiać się bezpośrednio w Telegramie. Przycisk pozostaje nieaktywny do premiery.</p></div>
+<div class="card rv"><div class="ic">🧪</div><h3>Rozwój i testy</h3><p>Przed publicznym startem plan obejmuje rozbudowę funkcji, sprawdzenie działania i poprawki zgłoszone podczas testów.</p></div>
+<div class="card rv"><div class="ic">🔐</div><h3>Bezpieczna komunikacja</h3><p>Oficjalne linki i jasne zasady mają pomagać rozpoznać fałszywe konta, podejrzane wiadomości i próby wyłudzeń.</p></div>
+<div class="card rv"><div class="ic">🎁</div><h3>Możliwe wydarzenia</h3><p>Aktywności i nagrody dla społeczności mogą pojawić się w przyszłości; ich wdrożenie i warunki nie są gwarantowane.</p></div>
+<div class="card rv"><div class="ic">🤝</div><h3>Współtworzenie</h3><p>Opinie, testy, zgłoszenia i pomoc moderatorów, twórców lub programistów wspierają rozwój projektu.</p></div>
+<div class="card rv"><div class="ic">📡</div><h3>Publiczne aktualności</h3><p>Roadmapa i oficjalne kanały pokazują status prac, zmiany planów oraz potwierdzone ogłoszenia.</p></div>
 </div>
 <details class="deep-dive rv"><summary>Sprawdź, jak działają funkcje ekosystemu</summary><div class="detail-content">
-<p>Funkcje są projektowane jako połączone elementy: łatwy dostęp do aplikacji, udział społeczności i stopniowe rozszerzanie możliwości Web3.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Pierwszy krok</span><h3>Wejście do aplikacji</h3><p>Mini-aplikacja będzie dostępna wkrótce; na razie śledź informacje na oficjalnym kanale Telegram.</p></article><article><span class="detail-kicker">Aktywność</span><h3>Airdropy i nagrody</h3><p>Aktywni użytkownicy mogą brać udział w przyszłych wydarzeniach i nagrodach społeczności.</p></article><article><span class="detail-kicker">Rozwój</span><h3>Treści i komunikacja</h3><p>Kanały społecznościowe mają pomóc w rozbudowie zasięgu i przekazywaniu aktualności.</p></article></div>
+<p>Na start liczą się sprawna obsługa w Telegramie, rzetelne testy i przejrzysta komunikacja. Dodatkowe moduły będą planowane na podstawie opinii użytkowników i możliwości jednoosobowego zespołu.</p>
+<div class="detail-grid"><article><span class="detail-kicker">Etap 1</span><h3>Przygotowanie</h3><p>Uporządkowanie podstaw aplikacji i informacji dostępnych dla użytkowników.</p></article><article><span class="detail-kicker">Etap 2</span><h3>Testowanie</h3><p>Weryfikacja funkcji, zbieranie zgłoszeń i poprawianie problemów przed premierą.</p></article><article><span class="detail-kicker">Etap 3</span><h3>Publiczny start</h3><p>Udostępnienie mini-aplikacji, wsparcie społeczności i decyzje o kolejnych funkcjach.</p></article></div>
 </div></details>
 </div></section>
 
 <section id="technologia"><div class="wrap">
 <h2 class="rv">Technologia</h2><p class="sub rv">Obszary techniczne projektu i planowanych integracji — nie wszystkie są już wdrożone.</p>
-<div class="tech rv"><span>Telegram Mini Apps</span><span>TON / Web3</span><span>JavaScript</span><span>API</span><span>Infrastruktura cloud</span><span>Bezpieczeństwo</span><span>Integracje</span><span>Transparentny rozwój</span></div>
+<div class="tech rv"><span>Telegram Mini Apps · docelowy interfejs</span><span>TON / Web3 · dalszy kierunek</span><span>JavaScript · warstwa aplikacji</span><span>API · planowane usługi</span><span>Infrastruktura · przygotowanie do utrzymania</span><span>Bezpieczeństwo · testy i aktualizacje</span><span>Integracje · po weryfikacji potrzeb</span><span>Transparentność · publiczne statusy</span></div>
 <details class="deep-dive rv"><summary>Więcej o warstwach technologii</summary><div class="detail-content">
-<p>Plan zakłada interfejs dostępny w Telegramie, niezbędne usługi zaplecza i — w kolejnych etapach — integracje TON/Web3. Zakres wdrożeń będzie zależał od testów, bezpieczeństwa i możliwości utrzymania projektu rozwijanego przez jedną osobę.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Interfejs</span><h3>Telegram Mini Apps</h3><p>Warstwa użytkownika pozwala korzystać z aplikacji bezpośrednio w Telegramie.</p></article><article><span class="detail-kicker">Automatyzacja</span><h3>API i usługi</h3><p>Serwisy i integracje API mogą wspierać działania informacyjne i rozwojowe.</p></article><article><span class="detail-kicker">Skalowanie</span><h3>Cloud i przyszłe integracje</h3><p>Architektura zakłada rozwój kolejnych komponentów bez utraty prostoty użycia.</p></article></div>
+<p>Docelowo użytkownik ma wejść do mini-aplikacji z poziomu Telegrama. Potencjalne API i infrastruktura będą dobierane do rzeczywistych funkcji, a integracje TON/Web3 rozważane dopiero po testach podstawowej wersji. To planowane obszary, nie deklaracja, że każdy element jest już wdrożony.</p>
+<div class="detail-grid"><article><span class="detail-kicker">Interfejs</span><h3>Telegram Mini Apps</h3><p>Planowany punkt dostępu do aplikacji; publiczny link pojawi się po przygotowaniu i testach.</p></article><article><span class="detail-kicker">Zaplecze</span><h3>API i usługi</h3><p>Zakres usług będzie wynikać z potrzeb funkcji, niezawodności i możliwości utrzymania projektu.</p></article><article><span class="detail-kicker">Kolejne etapy</span><h3>TON i Web3</h3><p>Integracje będą oceniane pod kątem użyteczności, bezpieczeństwa i informacji zwrotnej społeczności.</p></article></div>
 </div></details>
 </div></section>
 
 <section id="roadmapa"><div class="wrap">
 <h2 class="rv">Roadmapa</h2><p class="sub rv">Trzy fazy wdrożenia aplikacji, a później możliwe etapy TON — statusy pokazują stan prac, nie gwarantują terminów.</p>
 <ol class="road">
-<li class="done rv"><small>Zrealizowane</small><h3>Faza 1 – Fundament</h3><p>Pierwsza wersja mini-aplikacji, oficjalna strona i pierwsze kanały – wszystko zbudowane przez jedną osobę, od zera.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Pierwsza wersja mini-aplikacji</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalna strona projektu</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Pierwsze oficjalne kanały social</li></ul></li>
-<li class="now rv"><small>W trakcie</small><h3>Faza 2 – Rozwój aplikacji</h3><p>Rozbudowa funkcji, zaplecze i testy jakości. Aplikacja trafi do użytkowników dopiero wtedy, gdy będzie bezpieczna i stabilna.</p><ul class="ck"><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Rozbudowa funkcji mini-aplikacji</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Zaplecze dla użytkowników</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Testy i poprawki jakości</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Udostępnienie mini-aplikacji (wkrótce)</li></ul></li>
-<li class="rv"><small>Planowane</small><h3>Faza 3 – Publiczny start i społeczność</h3><p>Otwarcie aplikacji dla użytkowników, moderacja, program twórców i współpraca z EngineCore.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalny kanał Telegram i Discord</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Publiczne udostępnienie mini-aplikacji w Telegramie</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Moderacja społeczności i zasady antyscamowe</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Program twórców i aktywnych użytkowników</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Rozwój współpracy z EngineCore</li></ul></li>
-<li class="rv"><small>Planowane</small><h3>Etap Token – nagrody i TON</h3><p>Airdropy, system nagród i przyszły token w ekosystemie TON – dopiero po stabilnym starcie aplikacji.</p><ul class="ck"><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Airdropy dla aktywnych członków społeczności</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>System nagród</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Publiczne zasady i opis tokena przed jakimkolwiek startem</li></ul><p class="note">Token jest planowanym etapem – bez obietnic zysków i bez gwarancji terminów.</p></li>
-<li class="rv"><small>Planowane</small><h3>Etap Listing – dostępność na rynku</h3><p>Ewentualny listing tokena po spełnieniu warunków technicznych, prawnych i społecznościowych.</p><ul class="ck"><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Przygotowanie dokumentacji i transparentnych informacji</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Wybór miejsc listingu i publiczne ogłoszenie</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Stała komunikacja i ochrona użytkowników przed fałszywymi kontami</li></ul><p class="note">Listing to cel długoterminowy – plan może ulec zmianie.</p></li>
+<li class="done rv"><small>Zrealizowane</small><h3>Faza 1 – Fundament</h3><p>Podstawy projektu, prototyp mini-aplikacji, oficjalna strona i pierwsze kanały przygotowane przez jedną osobę. Aplikacja nie jest jeszcze publicznie dostępna.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Fundamenty i prototyp mini-aplikacji</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalna strona projektu</li><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Pierwsze oficjalne kanały social</li></ul></li>
+<li class="now rv"><small>W trakcie</small><h3>Faza 2 – Rozwój aplikacji</h3><p>Rozbudowa funkcji, przygotowanie zaplecza i testy jakości. Celem jest gotowość do premiery, a nie publikacja niedopracowanej wersji.</p><ul class="ck"><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Rozbudowa funkcji mini-aplikacji</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Zaplecze dla użytkowników</li><li class="wip"><span class="st" aria-hidden="true">🔄</span><span class="vh">W trakcie: </span>Testy i poprawki jakości</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Udostępnienie mini-aplikacji (wkrótce)</li></ul></li>
+<li class="rv"><small>Planowane</small><h3>Faza 3 – Publiczny start i społeczność</h3><p>Po testach: otwarcie aplikacji, moderacja, zasady bezpieczeństwa i rozwój współpracy z użytkownikami. Społeczność pomoże wskazać, które funkcje rozwijać dalej.</p><ul class="ck"><li class="ok"><span class="st" aria-hidden="true">✅</span><span class="vh">Zrealizowane: </span>Oficjalny kanał Telegram i Discord</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Publiczne udostępnienie mini-aplikacji w Telegramie</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Moderacja społeczności i zasady antyscamowe</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Program twórców i aktywnych użytkowników</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Potwierdzenie i publiczne opisanie zakresu EngineCore</li></ul></li>
+<li class="rv"><small>Planowane</small><h3>Etap Token – nagrody i TON</h3><p>Dopiero po stabilnym starcie mogą zostać ocenione ewentualne aktywności, nagrody i przyszły token w ekosystemie TON.</p><ul class="ck"><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Ocena możliwości airdropów i nagród społeczności</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Opracowanie zasad, jeśli system nagród zostanie wdrożony</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Publiczne informacje przed ewentualnym startem tokena</li></ul><p class="note">Token nie jest dostępny do zakupu. Nie ma gwarancji jego powstania, terminów ani zysków.</p></li>
+<li class="rv"><small>Planowane</small><h3>Etap Listing – długoterminowy cel</h3><p>Ewentualny listing będzie rozważany wyłącznie po wcześniejszych etapach i spełnieniu warunków technicznych, prawnych oraz rynkowych.</p><ul class="ck"><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Ocena wymagań i przygotowanie dokumentacji</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Publiczna informacja, jeśli pojawią się potwierdzone ustalenia</li><li class="todo"><span class="st" aria-hidden="true">⏳</span><span class="vh">Planowane: </span>Komunikacja bez fałszywych obietnic i nieoficjalnych ofert</li></ul><p class="note">Listing to ambitny kierunek, nie gwarantowany rezultat.</p></li>
 </ol>
 <details class="deep-dive rv"><summary>Jak czytać roadmapę?</summary><div class="detail-content">
 <p>Fazy 1–3 dotyczą aplikacji: przygotowania fundamentów, rozwoju i testów oraz publicznego startu ze społecznością. Token i ewentualny listing są dalszymi, warunkowymi celami — nie częścią gwarantowanego wdrożenia. Statusy aktualizujemy wraz z postępem, a plany mogą się zmienić.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Ukończone</span><h3>Fundament</h3><p>Uruchomiono pierwszą wersję mini-aplikacji i oficjalną stronę projektu.</p></article><article><span class="detail-kicker">Aktualnie</span><h3>Rozwój</h3><p>Trwają prace nad lepszą strukturą, treściami i komunikacją z użytkownikami.</p></article><article><span class="detail-kicker">Przyszłość</span><h3>Ekspansja</h3><p>Planowane są dalsze etapy społecznościowe i elementy Web3.</p></article></div>
+<div class="detail-grid"><article><span class="detail-kicker">Ukończone</span><h3>Fundament</h3><p>Przygotowano podstawy projektu, prototyp mini-aplikacji, stronę i oficjalne kanały. Aplikacja nie jest jeszcze publiczna.</p></article><article><span class="detail-kicker">Aktualnie</span><h3>Rozwój i testy</h3><p>Trwają prace nad funkcjami i jakością aplikacji przed udostępnieniem użytkownikom.</p></article><article><span class="detail-kicker">Następnie</span><h3>Publiczny start</h3><p>Po premierze rozwój będzie obejmować społeczność i priorytety wynikające z jej opinii.</p></article></div>
 </div></details>
 </div></section>
 
@@ -574,24 +579,24 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <div class="tl" id="tl"><div class="tl-line" aria-hidden="true"><i id="tlf"></i></div>
 <article class="ms-card rv done" data-phase="1"><span class="ms-node" aria-hidden="true">🧱</span>
 <div class="ms-head"><span class="ms-status">✅ Zrealizowane</span><h3>Faza 1 – Fundament</h3></div>
-<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 1 – Fundament" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
-<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> fundamenty projektu, pierwszą wersję mini-aplikacji, oficjalną stronę i kanały społecznościowe.</p><p><strong>Dlaczego to ważne:</strong> wyznacza bazę do dalszego rozwoju aplikacji przez jedną osobę i pozwala społeczności śledzić projekt od początku.</p></div></details></article>
+<div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 1 – Fundament" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i></i></div><div class="ms-pct">100% ukończenia</div>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> podstawy projektu, prototyp mini-aplikacji, oficjalną stronę i kanały społecznościowe.</p><p><strong>Dlaczego to ważne:</strong> daje jednoosobowemu projektowi punkt wyjścia do dalszych prac i pozwala społeczności śledzić postęp od początku. Prototyp nie oznacza publicznej premiery aplikacji.</p></div></details></article>
 <article class="ms-card rv now" data-phase="2"><span class="ms-node" aria-hidden="true">📲</span>
 <div class="ms-head"><span class="ms-status">🔄 W trakcie</span><h3>Faza 2 – Rozwój aplikacji</h3></div>
 <div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 2 – Rozwój aplikacji" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
-<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> rozwój funkcji aplikacji, przygotowanie infrastruktury, testy, poprawki i utrzymanie.</p><p><strong>Dlaczego to ważne:</strong> aplikacja ma trafić do użytkowników dopiero po sprawdzeniu działania; termin premiery zostanie podany oficjalnie.</p></div></details></article>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> rozwój funkcji aplikacji, przygotowanie potrzebnego zaplecza, testy, poprawki i plan utrzymania.</p><p><strong>Dlaczego to ważne:</strong> użytkownicy otrzymają dostęp po sprawdzeniu działania. Termin premiery będzie podany w oficjalnym kanale, gdy zostanie potwierdzony.</p></div></details></article>
 <article class="ms-card rv " data-phase="3"><span class="ms-node" aria-hidden="true">👥</span>
 <div class="ms-head"><span class="ms-status">⏳ Planowane</span><h3>Faza 3 – Publiczny start i społeczność</h3></div>
 <div class="ms-bar" role="progressbar" aria-label="Postęp: Faza 3 – Publiczny start i społeczność" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
-<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> publiczny start aplikacji, rozwój społeczności, moderację, zasady antyscamowe i program twórców. Kierunek współpracy z EngineCore będzie komunikowany wraz z potwierdzonymi konkretami.</p><p><strong>Dlaczego to ważne:</strong> opinie i aktywność użytkowników pomogą wyznaczać dalsze priorytety projektu.</p></div></details></article>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> publiczny start aplikacji, rozwój społeczności, moderację i zasady antyscamowe. Informacje o EngineCore będą rozszerzane wyłącznie o potwierdzony zakres i konkretne ustalenia.</p><p><strong>Dlaczego to ważne:</strong> testerzy i użytkownicy pomogą wyznaczać priorytety, a społeczność zwiększy możliwości projektu prowadzonego przez jedną osobę.</p></div></details></article>
 <article class="ms-card rv " data-phase="4"><span class="ms-node" aria-hidden="true">🪙</span>
 <div class="ms-head"><span class="ms-status">⏳ Planowane</span><h3>Etap Token – nagrody i TON</h3></div>
 <div class="ms-bar" role="progressbar" aria-label="Postęp: Etap Token – nagrody i TON" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
-<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> airdropy, system nagród i przyszły token w ekosystemie TON.</p><p><strong>Dlaczego to ważne:</strong> to etap, który ma nagradzać aktywnych – realizowany dopiero po stabilnym starcie, bez gwarancji terminów i zysków.</p></div></details></article>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> ocenę możliwości nagród, airdropów lub przyszłego tokena w ekosystemie TON oraz publiczne zasady, jeśli ten etap będzie realizowany.</p><p><strong>Dlaczego to ważne:</strong> takie rozwiązania wymagają stabilnej aplikacji, jasnych reguł i odpowiedzialnej komunikacji; nie są gwarantowane.</p></div></details></article>
 <article class="ms-card rv " data-phase="5"><span class="ms-node" aria-hidden="true">🌐</span>
 <div class="ms-head"><span class="ms-status">⏳ Planowane</span><h3>Etap Listing – dostępność na rynku</h3></div>
 <div class="ms-bar" role="progressbar" aria-label="Postęp: Etap Listing – dostępność na rynku" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><div class="ms-pct">0%</div>
-<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> przygotowanie dokumentacji, wybór miejsc listingu i publiczne ogłoszenie.</p><p><strong>Dlaczego to ważne:</strong> to długoterminowy cel; plan może ulec zmianie, a każdy krok będzie komunikowany jawnie.</p></div></details></article>
+<details class="ms-more"><summary>Szczegóły kamieni milowych</summary><div class="ms-body"><p><strong>Co obejmuje:</strong> ewentualną ocenę wymagań rynkowych i prawnych oraz publikację informacji wyłącznie po potwierdzeniu ustaleń.</p><p><strong>Dlaczego to ważne:</strong> listing jest ambitnym, długoterminowym celem zależnym od wielu zewnętrznych warunków — nie można go zagwarantować.</p></div></details></article>
 </div>
 </div></section>
 
@@ -620,25 +625,25 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="engine"><div class="wrap">
-<h2 class="rv">EngineCore, nagrody i aktywna społeczność</h2><p class="sub rv">Kierunek współpracy i plany dla społeczności — szczegóły będą publikowane po ich potwierdzeniu.</p>
+<h2 class="rv">EngineCore i aktywna społeczność</h2><p class="sub rv">Możliwy kierunek współpracy, jasne granice tego, co potwierdzone, i konkretna rola społeczności.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">⚙️</div><h3>Współpraca z EngineCore</h3><p>Rozwijany kierunek współpracy wspierający ambicje technologiczne projektu. Zakres i konkretne rezultaty będą przedstawiane publicznie, gdy zostaną potwierdzone.</p></div>
-<div class="card rv"><div class="ic">🎁</div><h3>Możliwe przyszłe nagrody</h3><p>Nagrody i korzyści dla aktywnych osób są planem, nie gwarancją. Zasady, jeśli zostaną wdrożone, opublikujemy z wyprzedzeniem.</p></div>
-<div class="card rv"><div class="ic">🔥</div><h3>Szukamy aktywnych</h3><p>Zapraszamy moderatorów, twórców, programistów i użytkowników do opiniowania projektu oraz pomocy w jego rozwijaniu.</p></div>
+<div class="card rv"><div class="ic">⚙️</div><h3>Kierunek EngineCore</h3><p>EngineCore jest wskazywany jako możliwy partner technologiczny. Jeśli zakres współpracy zostanie uzgodniony, może dotyczyć konsultacji, wymiany wiedzy lub oceny integracji. Nie ogłaszamy partnerstwa ani efektów, dopóki nie będą potwierdzone.</p></div>
+<div class="card rv"><div class="ic">🧭</div><h3>Po co społeczność?</h3><p>Użytkownicy pomagają testować, zgłaszać problemy, wskazywać priorytety i wcześnie wychwytywać ryzyka. Ich udział uzupełnia możliwości jednoosobowego zespołu, ale nie oznacza gwarantowanych nagród.</p></div>
+<div class="card rv"><div class="ic">🔥</div><h3>Jak możesz pomóc</h3><p>Dołącz jako tester, moderator, twórca treści lub programista. Konkretne potrzeby i zasady współpracy będą ogłaszane w oficjalnym kanale.</p></div>
 </div>
-<div class="btns rv"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do aktywnej społeczności</a><a class="btn btn-s" href="#spolecznosc">Zobacz, jak pomóc</a></div>
+<div class="btns rv"><a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-p">📢 Dołącz do kanału i śledź ustalenia</a><a class="btn btn-s" href="#spolecznosc">Zobacz, jak pomóc</a></div>
 </div></section>
 
 <section id="spolecznosc"><div class="wrap">
-<h2 class="rv">Dołącz do zespołu</h2><p class="sub rv">Współtwórz Technix-Pro od zera.</p>
+<h2 class="rv">Dołącz do zespołu</h2><p class="sub rv">Projekt rozwija jedna osoba — Twoje umiejętności i informacja zwrotna mogą realnie wesprzeć kolejne etapy.</p>
 <div class="grid">
-<div class="card rv"><div class="ic">🛡️</div><h3>Moderatorzy</h3><p>Dbaj o porządek i pomagaj nowym osobom.</p></div>
-<div class="card rv"><div class="ic">🎬</div><h3>Twórcy treści</h3><p>Twórz materiały, które pokażą projekt światu.</p></div>
-<div class="card rv"><div class="ic">💻</div><h3>Programiści</h3><p>Współtwórz aplikację i ekosystem od podstaw.</p></div>
+<div class="card rv"><div class="ic">🛡️</div><h3>Moderatorzy i opiekunowie</h3><p>Pomagaj nowym osobom, porządkuj dyskusje i zgłaszaj fałszywe konta w oficjalnych kanałach.</p></div>
+<div class="card rv"><div class="ic">🎬</div><h3>Twórcy treści</h3><p>Przygotowuj materiały i komunikaty, które jasno tłumaczą postęp oraz plany bez obiecywania rezultatów.</p></div>
+<div class="card rv"><div class="ic">💻</div><h3>Programiści i testerzy</h3><p>Pomagaj sprawdzać działanie, zgłaszać błędy i oceniać pomysły na kolejne funkcje.</p></div>
 </div>
 <details class="deep-dive rv"><summary>Dowiedz się więcej o współpracy</summary><div class="detail-content">
-<p>Projekt rozwija jedna osoba, więc każda pomoc ma realne znaczenie. Do zespołu mogą dołączyć osoby zainteresowane moderacją, tworzeniem treści i rozwojem oprogramowania. Opisz, w jakim obszarze chcesz pomóc, kontaktując się przez oficjalny kanał Telegram – wszystko poza danymi wrażliwymi robimy jawnie.</p>
-<div class="detail-grid"><article><span class="detail-kicker">Społeczność</span><h3>Moderatorzy</h3><p>Pomagają utrzymać przyjazną przestrzeń i wspierają nowe osoby.</p></article><article><span class="detail-kicker">Treści</span><h3>Twórcy</h3><p>Przygotowują materiały promocyjne, krótkie wideo i komunikaty.</p></article><article><span class="detail-kicker">Kod</span><h3>Programiści</h3><p>Wspierają rozwój strony, mini-aplikacji i kolejnych funkcji.</p></article></div>
+<p>Wspólnota jest ważna nie jako liczba obserwujących, ale jako źródło testów, pomysłów i zaufania. Projekt prowadzi jedna osoba, dlatego pomoc w moderacji, treściach, testach i kodzie pozwala rozwijać go odpowiedzialniej. Napisz przez oficjalny kanał Telegram, jak możesz pomóc; nie wysyłaj danych wrażliwych.</p>
+<div class="detail-grid"><article><span class="detail-kicker">Bezpieczeństwo</span><h3>Moderatorzy</h3><p>Pomagają nowym osobom, dbają o kulturę rozmowy i zgłaszają podszywające się profile.</p></article><article><span class="detail-kicker">Komunikacja</span><h3>Twórcy</h3><p>Przygotowują materiały, które objaśniają aktualny status, plany i zasady.</p></article><article><span class="detail-kicker">Jakość</span><h3>Testerzy i programiści</h3><p>Sprawdzają funkcje, opisują błędy i wspierają rozwój strony oraz aplikacji.</p></article></div>
 </div></details>
 </div></section>
 
@@ -691,20 +696,21 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <p class="faq-status" id="faq-status" aria-live="polite"></p>
 <div class="faq rv">
 <details><summary>Jak uruchomić aplikację?</summary><p>Telegram Mini-App jest w przygotowaniu; przycisk „Telegram Mini-App – Wkrótce” pozostaje nieaktywny. Termin i oficjalny link pojawią się w kanale Telegram po zakończeniu prac i testów.</p></details>
-<details><summary>Gdzie znajdę linki do social mediów?</summary><p>Linki do kanałów pojawią się w sekcji Social Media. Telegram, Facebook, Instagram, YouTube, X i Discord są już dodane do strony.</p></details>
+<details><summary>Gdzie znajdę oficjalne kanały?</summary><p>Skorzystaj z działających linków w sekcji Social Media lub z linków w stopce. Kanały oznaczone jako „Wkrótce” nie są jeszcze aktywne; ogłoszenia projektu są publikowane w kanale Telegram.</p></details>
 <details><summary>Czy mogę dołączyć do zespołu?</summary><p>Tak – szukamy moderatorów, twórców treści i programistów.</p></details>
 <details><summary>Czy token jest już dostępny?</summary><p>Nie. Token to rozważany przyszły etap w ekosystemie TON, po rozwoju aplikacji. Nie jest dostępny do zakupu, a jego powstanie ani listing nie są gwarantowane.</p></details>
-<details><summary>Gdzie sprawdzę aktualny status projektu?</summary><p>Najważniejsze etapy znajdziesz w sekcji Roadmapa, a aktualności pojawią się w kanałach Social Media.</p></details>
+<details><summary>Gdzie sprawdzę aktualny status projektu?</summary><p>Roadmapa i kamienie milowe pokazują, co jest ukończone, w trakcie i planowane. Zmiany oraz potwierdzone ogłoszenia publikujemy też w oficjalnym kanale Telegram.</p></details>
 <details><summary>Czy muszę instalować aplikację?</summary><p>Nie. Telegram Mini-App będzie otwierana bezpośrednio w Telegramie. Jej przycisk pozostaje nieaktywny do czasu premiery.</p></details>
 <details><summary>Czy token TP jest już dostępny do zakupu?</summary><p>Nie. Tokenizacja jest kierunkiem rozwoju, a na stronie nie ma obecnie tokena dostępnego do zakupu ani obietnic zysku.</p></details>
 <details><summary>Jak otrzymać informację o premierze?</summary><p>Dołącz do oficjalnego kanału Telegram i włącz powiadomienia. Data premiery zostanie podana w oficjalnym komunikacie.</p></details>
 <details><summary>Jak mogę wesprzeć projekt?</summary><p>Już teraz możesz dołączyć do kanału, udostępnić stronę, przekazać opinię lub zaoferować pomoc w testach, moderacji, tworzeniu treści i programowaniu. Potwierdzone metody finansowe zostaną podane na stronie i ogłoszone w oficjalnym kanale; obecnie nie udostępniamy adresu TON, QR ani danych BLIK/Revolut.</p></details>
 <details><summary>Na co zostanie przeznaczone wsparcie finansowe?</summary><p>Na rozwój aplikacji, infrastrukturę, testy, poprawki, utrzymanie i wdrażanie kolejnych etapów. Nie publikujemy kwot ani podziału kosztów, których nie możemy potwierdzić.</p></details>
 <details><summary>Czy mogę teraz wysłać wpłatę?</summary><p>Nie udostępniamy obecnie potwierdzonych danych do wpłat. Nie wysyłaj środków na adresy portfeli ani kody QR z prywatnych wiadomości; ewentualna metoda zostanie opublikowana na stronie i potwierdzona w oficjalnym kanale.</p></details>
-<details><summary>Kto tworzy Technix-Pro?</summary><p>Projekt tworzy i rozwija jedna osoba – od pomysłu, przez kod, po społeczność. Robi to publicznie i krok po kroku.</p></details>
+<details><summary>Kto tworzy Technix-Pro?</summary><p>Projekt rozwija jedna osoba — od planowania i kodu po komunikację. Roadmapa i status prac są dostępne publicznie; szczegóły wrażliwe pozostają prywatne.</p></details>
 <details><summary>Jakie są fazy wdrożenia aplikacji?</summary><p>Plan obejmuje trzy fazy aplikacji: Fundament, Rozwój i testy oraz Publiczny start i społeczność. Token i ewentualny listing to dalsze, warunkowe plany, a nie gwarantowany element wdrożenia.</p></details>
 <details><summary>Co będzie publiczne, a co nie?</summary><p>Publiczne będą postępy, roadmapa, zasady nagród i decyzje. Niepubliczne pozostają wyłącznie dane wrażliwe – Twoje i projektu.</p></details>
-<details><summary>Czym jest współpraca z EngineCore?</summary><p>To rozwijany kierunek współpracy związany z ambicjami technologicznymi projektu. Konkretne zakresy i efekty będą publikowane po ich potwierdzeniu.</p></details>
+<details><summary>Na czym polega współpraca z EngineCore?</summary><p>EngineCore jest wskazywany jako możliwy kierunek współpracy technologicznej. Zakres, uzgodnienia i rezultaty nie są jeszcze potwierdzone; jeśli się pojawią, zostaną opisane publicznie. Nie traktuj wzmianki jako ogłoszenia zawartego partnerstwa.</p></details>
+<details><summary>Dlaczego społeczność jest ważna?</summary><p>Opinie i testy pomagają jednej osobie wyłapywać problemy, wybierać priorytety i tworzyć bezpieczniejsze zasady. Aktywność społeczności nie gwarantuje nagród, tokena ani zysku.</p></details>
 <details><summary>Jak chronicie użytkowników przed oszustwami?</summary><p>Komunikujemy tylko przez oficjalne linki, nie prosimy o seed ani klucze, nie obiecujemy zysków i planujemy moderację oraz zgłaszanie fałszywych kont. Szczegóły w sekcji Bezpieczeństwo.</p></details>
 <details><summary>Czy będą nagrody dla społeczności?</summary><p>Nagrody i korzyści są możliwym kierunkiem rozwoju, nie obietnicą. Jeśli zostaną wdrożone, zasady i warunki zostaną opublikowane z wyprzedzeniem.</p></details>
 </div>
@@ -715,7 +721,7 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 </div></section>
 
 <section id="kontakt"><div class="wrap">
-<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Projekt rozwija jedna osoba, a jego kolejne etapy są publiczne. Dołącz do oficjalnego kanału, śledź status prac i zgłoś, jak możesz pomóc.</p>
+<div class="cta rv"><h2>Zacznij od Telegrama</h2><p>Projekt rozwija jedna osoba według publicznej, trzyetapowej roadmapy. Dołącz do oficjalnego kanału, śledź potwierdzone aktualizacje i napisz, czy możesz pomóc w testach, treściach, moderacji lub programowaniu.</p>
 <span class="btn btn-p btn-soon" data-open="app" role="button" aria-disabled="true" tabindex="-1">Telegram Mini-App – Wkrótce<em class="soon-badge"><i></i>WKRÓTCE</em></span>
 <a href="https://t.me/TechnixProTg" target="_blank" rel="noopener noreferrer" class="btn btn-s">📢 Dołącz do kanału Telegram</a>
 <form class="notify-form" id="notify-form" action="https://t.me/TechnixProTg" method="get" target="_blank">
@@ -725,8 +731,8 @@ html[data-theme=light] .coin{background:radial-gradient(circle at 30% 30%,#fff,#
 <p class="support-note">Nie zbieramy adresu e-mail ani innych danych — powiadomienia włączysz bezpośrednio w Telegramie.</p>
 </div>
 <details class="deep-dive rv"><summary>Jak skontaktować się z projektem?</summary><div class="detail-content">
-<p>Oficjalnym punktem kontaktu i źródłem potwierdzonych ogłoszeń jest kanał Technix-Pro w Telegramie. Napisz, czy pytasz o roadmapę, chcesz zgłosić błąd lub zaoferować pomoc. Nie wysyłaj danych wrażliwych, kluczy ani kodów; Mini-App pozostaje oznaczona jako „Wkrótce”.</p>
-<div class="detail-grid"><article><span class="detail-kicker">1. Otwórz</span><h3>Przejdź do Telegrama</h3><p>Użyj przycisku „Dołącz do kanału Telegram” powyżej, aby otworzyć oficjalny kanał w nowej karcie.</p></article><article><span class="detail-kicker">2. Wybierz</span><h3>Rodzaj kontaktu</h3><p>Napisz, czy chodzi o współpracę, społeczność, aktualności czy pytania o projekt.</p></article><article><span class="detail-kicker">3. Działaj</span><h3>Dołącz do rozwoju</h3><p>Po kontakcie możesz zostać skierowany do odpowiedniego kanału lub zespołu.</p></article></div>
+<p>Oficjalnym punktem kontaktu i źródłem potwierdzonych ogłoszeń jest kanał Technix-Pro w Telegramie. Możesz zapytać o roadmapę, zgłosić błąd, przekazać opinię lub opisać, w czym chcesz pomóc. Strona nie zbiera adresu e-mail; nie wysyłaj seed phrase, kluczy, kodów ani innych danych wrażliwych. Telegram Mini-App nadal jest oznaczona jako „Wkrótce”.</p>
+<div class="detail-grid"><article><span class="detail-kicker">1. Otwórz</span><h3>Oficjalny kanał</h3><p>Skorzystaj z przycisku Telegram powyżej i sprawdź nazwę kanału przed dalszym kontaktem.</p></article><article><span class="detail-kicker">2. Opisz</span><h3>Temat wiadomości</h3><p>Podaj, czy pytasz o roadmapę, zgłaszasz błąd, czy oferujesz pomoc — bez danych dostępowych.</p></article><article><span class="detail-kicker">3. Śledź</span><h3>Potwierdzone informacje</h3><p>Ważne ustalenia będą publikowane publicznie; termin premiery pojawi się dopiero po potwierdzeniu.</p></article></div>
 </div></details>
 </div></section>
 </main>
